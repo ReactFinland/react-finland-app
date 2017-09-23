@@ -11,14 +11,24 @@ export default class LaunchScreen extends Component {
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
         <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.launch} style={styles.logo} />
-          </View>
-
           <View style={styles.section} >
-            <Image source={Images.ready} />
             <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
+              REACT 
+              <Text style={{color: 'rgb(0,168,184)'}}>
+              {` FINLAND `}
+              </Text>            
+            </Text>
+
+          </View>
+          <View style={styles.section} >
+            <Text style={styles.sectionText}>
+              One workshop day + two days of presentations
+            </Text>
+          </View>
+          <View style={styles.section} >
+            <Text style={styles.sectionText}>
+              Your chance to learn more about React up
+               north
             </Text>
           </View>
 
