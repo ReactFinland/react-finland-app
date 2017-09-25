@@ -1,0 +1,59 @@
+{
+  "schedule": [
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Brittney Finch",
+      "time": "14:00 - 15:00",
+      "title": "fugiat id exercitation adipisicing sit dolore minim proident"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Shields Sparks",
+      "time": "14:00 - 15:00",
+      "title": "velit eiusmod dolore enim nulla dolore consequat deserunt"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Violet Lowe",
+      "time": "14:00 - 15:00",
+      "title": "sit proident esse nulla ea minim excepteur id"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Sybil Baxter",
+      "time": "14:00 - 15:00",
+      "title": "in amet nisi deserunt voluptate et ex non"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Wagner Parks",
+      "time": "14:00 - 15:00",
+      "title": "nisi labore pariatur aliqua sit do et reprehenderit"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Frederick Watson",
+      "time": "14:00 - 15:00",
+      "title": "ullamco sint nostrud id enim incididunt eu anim"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Dyer Gallegos",
+      "time": "14:00 - 15:00",
+      "title": "laborum enim sint velit amet occaecat duis elit"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Lou Chen",
+      "time": "14:00 - 15:00",
+      "title": "laboris sit cupidatat magna fugiat irure consectetur occaecat"
+    },
+    {
+      "picture": "https://placeimg.com/50/50/people",
+      "author": "Tracie Macias",
+      "time": "14:00 - 15:00",
+      "title": "sit consequat nostrud et sint nulla elit pariatur"
+    }
+  ]
+}
+
