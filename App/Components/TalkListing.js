@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 import TalkCard from './TalkCard'
-import { Fonts, Colors } from '../Themes'
+import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
   background-color: ${Colors.background}

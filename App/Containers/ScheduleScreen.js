@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 
-import { Images } from '../Themes'
 import TalkListing from '../Components/TalkListing'
-import { Fonts, Colors, Metrics } from '../Themes'
-
-// TODO: move to redux
-const schedule = require('../Fixtures/schedule.json').schedule
+import { Colors, Metrics } from '../Themes'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -16,12 +12,18 @@ const Screen = styled.View`
   padding-bottom: 0;
 `
 
-export default class ScheduleScreen extends Component {
+class ScheduleScreen extends Component {
   render () {
     return (
       <Screen>
-        <TalkListing data={schedule} />
+        <TalkListing data={this.props.schedule} />
       </Screen>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  schedule: state.schedule.schedule
+})
+
+export default connect(mapStateToProps)(ScheduleScreen)
