@@ -14,8 +14,7 @@ const Separator = styled.View`
 `
 
 export default class TalkListing extends React.Component {
-  renderTalkCard ({ item }) {
-    const { author, title, picture, time } = item
+  renderTalkCard ({ item: { author, title, picture, time }}) {
     return <TalkCard
       author={author}
       picture={picture}
