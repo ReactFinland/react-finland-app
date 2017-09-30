@@ -14,16 +14,17 @@ const Screen = styled.View`
 
 class ScheduleScreen extends Component {
   render () {
+    let {schedule} = this.props
     return (
       <Screen>
-        <TalkListing data={this.props.schedule} />
+        <TalkListing data={schedule} />
       </Screen>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  schedule: state.schedule.schedule
+const mapStateToProps = ({schedule}) => ({
+  schedule: schedule.schedule
 })
 
 export default connect(mapStateToProps)(ScheduleScreen)
