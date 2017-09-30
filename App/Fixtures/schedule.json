@@ -1,59 +1,69 @@
 {
   "schedule": [
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Brittney Finch",
-      "time": "14:00 - 15:00",
-      "title": "fugiat id exercitation adipisicing sit dolore minim proident"
+      "author": "1",
+      "time": "To be announced",
+      "title": "Style Guides in React"
     },
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Shields Sparks",
-      "time": "14:00 - 15:00",
-      "title": "velit eiusmod dolore enim nulla dolore consequat deserunt"
+      "author": "2",
+      "time": "To be announced",
+      "title": "Style Guides in React #"
     },
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Violet Lowe",
-      "time": "14:00 - 15:00",
-      "title": "sit proident esse nulla ea minim excepteur id"
+      "author": "3",
+      "time": "To be announced",
+      "title": "Declarative state and side effects"
     },
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Sybil Baxter",
-      "time": "14:00 - 15:00",
-      "title": "in amet nisi deserunt voluptate et ex non"
+      "author": "4",
+      "time": "To be announced",
+      "title": "To be announced"
     },
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Wagner Parks",
-      "time": "14:00 - 15:00",
-      "title": "nisi labore pariatur aliqua sit do et reprehenderit"
+      "author": "5",
+      "time": "To be announced",
+      "title": "React Native Ignite"
     },
     {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Frederick Watson",
-      "time": "14:00 - 15:00",
-      "title": "ullamco sint nostrud id enim incididunt eu anim"
-    },
-    {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Dyer Gallegos",
-      "time": "14:00 - 15:00",
-      "title": "laborum enim sint velit amet occaecat duis elit"
-    },
-    {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Lou Chen",
-      "time": "14:00 - 15:00",
-      "title": "laboris sit cupidatat magna fugiat irure consectetur occaecat"
-    },
-    {
-      "picture": "https://placeimg.com/50/50/people",
-      "author": "Tracie Macias",
-      "time": "14:00 - 15:00",
-      "title": "sit consequat nostrud et sint nulla elit pariatur"
+      "author": "6",
+      "time": "To be announced",
+      "title": "To be announced "
     }
-  ]
+  ],
+  "speakers": {
+    "1": {
+      "name": "Andrey Okonetchnikov",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/dbad9c1b60d7f66c3bf2b4a32c63cb2c7234be6f/8fbac/37710e788d37eaf9d3cf7d09d1074eeb.jpg",
+      "github": "https://github.com/okonet"
+    },
+    "2": {
+      "name": "Artem Sapegin",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/d490734d29e0dcf0e7183cc3d81032e325cd2d66/31c07/c8574ad9bf5aa6dbd071933be67e001e.jpg",
+      "github": "https://github.com/okonet"
+    },
+    "3": {
+      "name": "Christian Alfoni",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/d00cd394f28f4c9d6aa9acbbb7bcc96fac85f4eb/cabd7/f66d86583205d2ae3caf1ee89d495aa7.jpg",
+      "github": "https://github.com/christianalfoni"
+    },
+    "4": {
+      "name": "David Khourshid",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/7973e9b57d854bb0a73a4ff15fdf7b334fcbd522/da583/71e2ccb5b7ebc315c249a2ae93b88ae9.jpg",
+      "github": "https://github.com/davidkpiano"
+    },
+    "5": {
+      "name": "Gant Laborde",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/5e027eeee483940f067f83631b6073ce3bc88fcc/8f64c/01cc0d71c0fdd0c37babce2bb5fd6451.png",
+      "github": "https://github.com/GantMan"
+    },
+    "6": {
+      "name": "Jani Eväkallio",      
+      "picture": "https://d33wubrfki0l68.cloudfront.net/db955740b59b240e8a3f7164dbd986bd9075f006/41f64/1f5d551f507a3210b2074ddb2750fbd4.jpg",
+      "github": "https://github.com/jevakallio"
+    }
+
+    
+  }
 }
 

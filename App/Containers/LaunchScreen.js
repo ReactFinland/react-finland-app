@@ -13,10 +13,10 @@ export default class LaunchScreen extends Component {
         <ScrollView style={styles.container}>
           <View style={styles.section} >
             <Text style={styles.sectionText}>
-              REACT 
+              REACT
               <Text style={{color: 'rgb(0,168,184)'}}>
-              {` FINLAND `}
-              </Text>            
+                {` FINLAND `}
+              </Text>
             </Text>
 
           </View>
