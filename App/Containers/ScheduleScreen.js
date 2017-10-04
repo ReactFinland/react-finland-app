@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import TalkListing from '../Components/TalkListing'
 import { Colors, Metrics } from '../Themes'
@@ -13,6 +14,12 @@ const Screen = styled.View`
 `
 
 class ScheduleScreen extends Component {
+  static navigationOptions = {
+    tabBarLabel: 'Schedule',
+    tabBarIcon: ({ tintColor }) =>
+      <Icon name='calendar' size={Metrics.icons.tiny} color={tintColor} />
+  }
+
   render () {
     let {schedule} = this.props
     return (
