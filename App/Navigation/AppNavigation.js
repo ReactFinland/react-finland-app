@@ -1,20 +1,27 @@
-import { StackNavigator } from 'react-navigation'
-import LaunchScreen from '../Containers/LaunchScreen'
+import { TabNavigator } from 'react-navigation'
+import AboutScreen from '../Containers/AboutScreen'
 import ScheduleScreen from '../Containers/ScheduleScreen'
+import { Colors } from '../Themes'
 
-import styles from './Styles/NavigationStyles'
+const routeConfig = {
+  ScheduleScreen: { screen: ScheduleScreen },
+  AboutScreen: { screen: AboutScreen }
+}
+
+const tabNavigatorConfig = {
+  // Default config for all screens
+  tabBarPosition: 'bottom',
+  animationEnabled: true,
+  tabBarOptions: {
+    activeTintColor: Colors.textDark,
+    inactiveTintColor: Colors.grey,
+    style: {
+      backgroundColor: Colors.background
+    }
+  }
+}
 
 // Manifest of possible screens
-const PrimaryNav = StackNavigator({
-  LaunchScreen: { screen: LaunchScreen },
-  ScheduleScreen: { screen: ScheduleScreen }
-}, {
-  // Default config for all screens
-  headerMode: 'none',
-  initialRouteName: 'ScheduleScreen',
-  navigationOptions: {
-    headerStyle: styles.header
-  }
-})
+const PrimaryNav = TabNavigator(routeConfig, tabNavigatorConfig)
 
 export default PrimaryNav
