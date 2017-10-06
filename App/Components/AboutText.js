@@ -1,20 +1,74 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, Dimensions } from 'react-native'
+import styled from 'styled-components/native'
+import { Fonts, Colors } from '../Themes'
 
-import { Colors } from '../Themes'
+const Container = styled.ScrollView`
+  background-color: ${Colors.background};
+`
+const DimmenBackground = styled.View`
+  flex: 1;
+  backgroundColor: 'rgba(0,0,0, 0.5)';
+`
+const BackgroundImage = styled.Image`
+  flex: 1;
+  width: ${props => props.width};
+`
 
-const AboutText = (props) => {
-  return <View>
-    <Text style={{color: Colors.text}}>
-      React Finland combines the Finnish React community with international flavor. First of its kind in Finland, the event consists of a workshop day and two days of presentations around the topic.
-    </Text>
-    <Text style={{color: Colors.text, paddingTop: 10}}>
-      In this single track event you will learn more about React and surrounding topics while meeting some of the leading talents of the community.
-    </Text>
-    <Text style={{color: Colors.text, paddingTop: 10}}>
-      The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
-    </Text>
-  </View>
+const TextArea = styled.Text`
+  color: ${Colors.ricePaper};
+  paddingLeft: 30;
+  paddingRight: 30;
+  paddingTop: 20;
+  font-size: ${Fonts.size.h5};
+  font-family: ${Fonts.type.base};
+  backgroundColor: 'rgba(0,0,0,0)';
+`
+
+const Headline = styled.Text`
+  color: ${Colors.snow};
+  paddingLeft: 30;
+  paddingRight: 30;
+  paddingTop: 20;
+  font-size: ${Fonts.size.h1};
+  font-family: ${Fonts.type.base};
+  backgroundColor: 'rgba(0,0,0,0)';
+`
+
+class AboutText extends React.Component {
+  constructor (props) {
+    super(props)
+    const { width } = Dimensions.get('window')
+    this.state = { width }
+    this.onLayout = this.onLayout.bind(this)
+  }
+  onLayout (e) {
+    const { width } = Dimensions.get('window')
+    this.setState({ width })
+  }
+  render () {
+    const { width } = this.state
+    return (
+      <Container onLayout={this.onLayout}>
+        <BackgroundImage width={width} source={require('../Images/dark-screen.jpeg')} >
+          <DimmenBackground>
+            <Headline>
+              REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
+            </Headline>
+            <TextArea>
+              React Finland combines the Finnish React community with international flavor. First of its kind in Finland, the event consists of a workshop day and two days of presentations around the topic.
+            </TextArea>
+            <TextArea>
+              In this single track event you will learn more about React and surrounding topics while meeting some of the leading talents of the community.
+            </TextArea>
+            <TextArea>
+              The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
+            </TextArea>
+          </DimmenBackground>
+        </BackgroundImage>
+      </Container>
+    )
+  }
 }
 
 AboutText.propTypes = {

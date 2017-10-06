@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native'
 import TalkCard from './TalkCard'
 
 class DefaultStory extends React.Component {
-  render() {
+  render () {
     return (
       <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'center'}}>
         <TalkCard
@@ -19,4 +19,4 @@ class DefaultStory extends React.Component {
   }
 }
 storiesOf('TalkCard')
-  .add('Default', () => <DefaultStory/>)
+  .add('Default', () => <DefaultStory />)

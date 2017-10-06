@@ -1,5 +1,6 @@
 // leave off @2x/@3x
 const images = {
+  darkScreen: require('../Images/dark-screen.jpeg'),
   logo: require('../Images/ir.png'),
   clearLogo: require('../Images/top_logo.png'),
   launch: require('../Images/launch-icon.png'),

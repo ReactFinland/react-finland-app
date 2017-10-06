@@ -16,7 +16,7 @@ const tabNavigatorConfig = {
     activeTintColor: Colors.textDark,
     inactiveTintColor: Colors.grey,
     style: {
-      backgroundColor: Colors.background
+      backgroundColor: Colors.coal
     }
   }
 }

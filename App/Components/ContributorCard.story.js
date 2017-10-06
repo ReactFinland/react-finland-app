@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native'
 import ContributorCard from './ContributorCard'
 
 class DefaultStory extends React.Component {
-  render() {
+  render () {
     return (
       <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'center'}}>
         <ContributorCard
@@ -17,4 +17,4 @@ class DefaultStory extends React.Component {
   }
 }
 storiesOf('ContributorCard')
-  .add('Default', () => <DefaultStory/>)
+  .add('Default', () => <DefaultStory />)
