@@ -14,6 +14,7 @@ const tabNavigatorConfig = {
   // Default config for all screens
   tabBarPosition: 'top',
   animationEnabled: true,
+  swipeEnabled: true,
   tabBarOptions: {
     activeTintColor: Colors.textDark,
     inactiveTintColor: Colors.grey,
