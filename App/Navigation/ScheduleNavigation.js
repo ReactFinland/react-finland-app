@@ -4,7 +4,12 @@ import TalkScreen from '../Containers/TalkScreen'
 import { Colors } from '../Themes'
 
 const routeConfig = {
-  WorkshopScreen: { screen: WorkshopScreen },
+  WorkshopScreen: {
+    screen: WorkshopScreen,
+    navigationOptions: {
+      title: 'Workshops'
+    }
+  },
   WednesdayScreen: {
     screen: TalkScreen,
     navigationOptions: {

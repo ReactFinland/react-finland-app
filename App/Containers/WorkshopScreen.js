@@ -21,10 +21,6 @@ const Text = styled.Text`
 `
 
 class WorkshopScreen extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'Workshops'
-  }
-
   render () {
     let {schedule} = this.props
     return (
