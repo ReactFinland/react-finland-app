@@ -1,11 +1,11 @@
 import { TabNavigator } from 'react-navigation'
-import WorkshopsScreen from '../Containers/WorkshopsScreen'
+import WorkshopScreen from '../Containers/WorkshopScreen'
 import WednesdayScreen from '../Containers/WednesdayScreen'
 import ThursdayScreen from '../Containers/ThursdayScreen'
 import { Colors } from '../Themes'
 
 const routeConfig = {
-  WorkshopsScreen: { screen: WorkshopsScreen },
+  WorkshopScreen: { screen: WorkshopScreen },
   WednesdayScreen: { screen: WednesdayScreen },
   ThursdayScreen: { screen: ThursdayScreen }
 }

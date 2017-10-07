@@ -20,7 +20,7 @@ const Text = styled.Text`
   color: ${Colors.text};
 `
 
-class WorkshopsScreen extends Component {
+class WorkshopScreen extends Component {
   static navigationOptions = {
     tabBarLabel: 'Workshops'
   }
@@ -39,4 +39,4 @@ const mapStateToProps = ({schedule}) => ({
   schedule: schedule.schedule
 })
 
-export default connect(mapStateToProps)(WorkshopsScreen)
+export default connect(mapStateToProps)(WorkshopScreen)
