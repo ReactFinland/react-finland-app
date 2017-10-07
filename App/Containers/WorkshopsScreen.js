@@ -3,13 +3,21 @@ import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 
 import TalkListing from '../Components/TalkListing'
-import { Colors, Metrics } from '../Themes'
+import { Colors, Fonts, Metrics } from '../Themes'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
   padding: ${Metrics.baseMargin}px;
   padding-top: ${Metrics.doubleBaseMargin}px;
   padding-bottom: 0;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`
+
+const Text = styled.Text`
+  font-size: ${Fonts.size.regular};
+  color: ${Colors.text};
 `
 
 class WorkshopsScreen extends Component {
@@ -21,7 +29,7 @@ class WorkshopsScreen extends Component {
     let {schedule} = this.props
     return (
       <Screen>
-        <TalkListing data={schedule} />
+        <Text>Placeholder for workshops</Text>
       </Screen>
     )
   }
