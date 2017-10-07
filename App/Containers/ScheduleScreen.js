@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import TalkListing from '../Components/TalkListing'
-import { Colors, Metrics } from '../Themes'
+import ScheduleNavigation from '../Navigation/ScheduleNavigation'
+import { Metrics } from '../Themes'
 
 const Screen = styled.View`
-  background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
-  padding-top: ${Metrics.doubleBaseMargin}px;
-  padding-bottom: 0;
+  flex: 1;
 `
 
 class ScheduleScreen extends Component {
@@ -21,17 +17,12 @@ class ScheduleScreen extends Component {
   }
 
   render () {
-    let {schedule} = this.props
     return (
       <Screen>
-        <TalkListing data={schedule} />
+        <ScheduleNavigation />
       </Screen>
     )
   }
 }
 
-const mapStateToProps = ({schedule}) => ({
-  schedule: schedule.schedule
-})
-
-export default connect(mapStateToProps)(ScheduleScreen)
+export default ScheduleScreen
