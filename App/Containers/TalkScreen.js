@@ -12,11 +12,7 @@ const Screen = styled.View`
   padding-bottom: 0;
 `
 
-class WednesdayScreen extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'Wednesday'
-  }
-
+class TalkScreen extends Component {
   render () {
     let {schedule} = this.props
     return (
@@ -31,4 +27,4 @@ const mapStateToProps = ({schedule}) => ({
   schedule: schedule.schedule
 })
 
-export default connect(mapStateToProps)(WednesdayScreen)
+export default connect(mapStateToProps)(TalkScreen)
