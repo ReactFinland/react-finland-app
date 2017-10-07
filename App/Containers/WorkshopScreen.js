@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 
-import TalkListing from '../Components/TalkListing'
 import { Colors, Fonts, Metrics } from '../Themes'
 
 const Screen = styled.View`
@@ -22,7 +20,6 @@ const Text = styled.Text`
 
 class WorkshopScreen extends Component {
   render () {
-    let {schedule} = this.props
     return (
       <Screen>
         <Text>Placeholder for workshops</Text>
@@ -31,8 +28,4 @@ class WorkshopScreen extends Component {
   }
 }
 
-const mapStateToProps = ({schedule}) => ({
-  schedule: schedule.schedule
-})
-
-export default connect(mapStateToProps)(WorkshopScreen)
+export default WorkshopScreen
