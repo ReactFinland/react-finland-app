@@ -8,7 +8,7 @@ const Container = styled.ScrollView`
 `
 const DimmenBackground = styled.View`
   flex: 1;
-  backgroundColor: 'rgba(0,0,0, 0.5)';
+  background-color: 'rgba(0,0,0, 0.5)';
 `
 const BackgroundImage = styled.Image`
   flex: 1;
@@ -17,22 +17,22 @@ const BackgroundImage = styled.Image`
 
 const TextArea = styled.Text`
   color: ${Colors.ricePaper};
-  paddingLeft: 30;
-  paddingRight: 30;
-  paddingTop: 20;
+  padding-left: 30;
+  padding-right: 30;
+  padding-top: 20;
   font-size: ${Fonts.size.h5};
   font-family: ${Fonts.type.base};
-  backgroundColor: 'rgba(0,0,0,0)';
+  background-color: 'rgba(0,0,0,0)';
 `
 
 const Headline = styled.Text`
   color: ${Colors.snow};
-  paddingLeft: 30;
-  paddingRight: 30;
-  paddingTop: 20;
+  padding-left: 30;
+  padding-right: 30;
+  padding-top: 20;
   font-size: ${Fonts.size.h1};
   font-family: ${Fonts.type.base};
-  backgroundColor: 'rgba(0,0,0,0)';
+  background-color: 'rgba(0,0,0,0)';
 `
 
 class AboutText extends React.Component {
