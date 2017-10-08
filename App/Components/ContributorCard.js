@@ -24,7 +24,7 @@ const About = styled.Text`
   font-size: ${Fonts.size.regular};
 `
 
-const TalkInfo = styled.View`
+const ContributorInfo = styled.View`
   flex: 7;
   justify-content: center;
   padding: 15px;
@@ -65,10 +65,10 @@ const ContributorCard = (props) => {
   return (
     <Container>
       <Row>
-        <TalkInfo>
+        <ContributorInfo>
           <Author>{ author }</Author>
           <About>{ about }</About>
-        </TalkInfo>
+        </ContributorInfo>
         <ImageContainer>
           <RoundedImage source={{uri: picture}} />
         </ImageContainer>
