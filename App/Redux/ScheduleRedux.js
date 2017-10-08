@@ -1,6 +1,7 @@
 import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
 import { NavigationActions } from 'react-navigation'
+import { isSameDay } from 'date-fns'
 
 const mapSpeakersToSchedule = (schedule, speakers) => {
   return schedule.map(s => {
@@ -13,8 +14,10 @@ const fullSchedule = mapSpeakersToSchedule(
   require('../Fixtures/schedule.json').speakers
 )
 
-const wednesdaySchedule = fullSchedule.filter((s) => true)
-const thursdaySchedule = fullSchedule.filter((s) => false)
+const wednesday = new Date('2017-04-25')
+const thursday = new Date('2017-04-26')
+const wednesdaySchedule = fullSchedule.filter((s) => isSameDay(wednesday, s.time))
+const thursdaySchedule = fullSchedule.filter((s) => isSameDay(thursday, s.time))
 
 export const INITIAL_STATE = Immutable({
   schedule: wednesdaySchedule
