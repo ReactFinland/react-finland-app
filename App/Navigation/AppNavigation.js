@@ -13,7 +13,7 @@ const routeConfig = {
 const tabNavigatorConfig = {
   // Default config for all screens
   tabBarPosition: 'bottom',
-  animationEnabled: true,
+  animationEnabled: false,
   swipeEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.textDark,
