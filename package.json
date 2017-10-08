@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "apisauce": "^0.14.0",
+    "date-fns": "^1.28.5",
     "format-json": "^1.0.3",
     "lodash": "^4.17.2",
     "prop-types": "^15.5.10",
