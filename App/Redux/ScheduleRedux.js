@@ -8,6 +8,7 @@ const mapSpeakersToSchedule = (schedule, speakers) => {
     return {...s, author: speakers[s.author]}
   })
 }
+const speakers = require('../Fixtures/schedule.json').speakers
 
 const fullSchedule = mapSpeakersToSchedule(
   require('../Fixtures/schedule.json').schedule,
@@ -20,7 +21,8 @@ const wednesdaySchedule = fullSchedule.filter((s) => isSameDay(wednesday, s.time
 const thursdaySchedule = fullSchedule.filter((s) => isSameDay(thursday, s.time))
 
 export const INITIAL_STATE = Immutable({
-  schedule: wednesdaySchedule
+  schedule: wednesdaySchedule,
+  contributors: Object.values(speakers)
 })
 
 /* ------------- Reducers ------------- */
