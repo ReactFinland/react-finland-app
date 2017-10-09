@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import ContributorListing from '../Components/ContributorListing'
+import SpeakerListing from '../Components/SpeakerListing'
 import { Colors, Metrics } from '../Themes'
 
 const Screen = styled.View`
@@ -14,25 +14,25 @@ const Screen = styled.View`
   flex: 1;
 `
 
-class ContributorScreen extends Component {
+class SpeakersScreen extends Component {
   static navigationOptions = {
-    tabBarLabel: 'Contributors',
+    tabBarLabel: 'Speakers',
     tabBarIcon: ({ tintColor }) =>
       <Icon name='users' size={Metrics.icons.tiny} color={tintColor} />
   }
 
   render () {
-    let { contributors } = this.props
+    let { speakers } = this.props
     return (
       <Screen>
-        <ContributorListing data={contributors} />
+        <SpeakerListing data={speakers} />
       </Screen>
     )
   }
 }
 
 const mapStateToProps = ({ schedule }) => ({
-  contributors: schedule.contributors
+  speakers: schedule.speakers
 })
 
-export default connect(mapStateToProps)(ContributorScreen)
+export default connect(mapStateToProps)(SpeakersScreen)
