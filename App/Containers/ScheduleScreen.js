@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import ScheduleNavigation from '../Navigation/ScheduleNavigation'
+import ReduxScheduleNavigation from '../Navigation/ReduxScheduleNavigation'
 import { Metrics } from '../Themes'
 
 const Screen = styled.View`
@@ -19,7 +19,7 @@ class ScheduleScreen extends Component {
   render () {
     return (
       <Screen>
-        <ScheduleNavigation />
+        <ReduxScheduleNavigation />
       </Screen>
     )
   }

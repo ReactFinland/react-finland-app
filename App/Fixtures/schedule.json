@@ -2,32 +2,32 @@
   "schedule": [
     {
       "author": "1",
-      "time": "To be announced",
+      "time": "2017-04-25T09:00:00+00:00",
       "title": "Style Guides in React"
     },
     {
       "author": "2",
-      "time": "To be announced",
+      "time": "2017-04-25T10:00:00+00:00",
       "title": "Style Guides in React #"
     },
     {
       "author": "3",
-      "time": "To be announced",
+      "time": "2017-04-25T11:00:00+00:00",
       "title": "Declarative state and side effects"
     },
     {
       "author": "4",
-      "time": "To be announced",
+      "time": "2017-04-26T09:00:00+00:00",
       "title": "To be announced"
     },
     {
       "author": "5",
-      "time": "To be announced",
+      "time": "2017-04-26T10:00:00+00:00",
       "title": "React Native Ignite"
     },
     {
       "author": "6",
-      "time": "To be announced",
+      "time": "2017-04-26T11:00:00+00:00",
       "title": "To be announced "
     }
   ],

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import { format as formatTime } from 'date-fns'
 
 import { Fonts, Colors, Metrics } from '../Themes'
 
@@ -75,7 +76,7 @@ const TalkCard = (props) => {
       </Row>
       <TimeInfo>
         <Icon name='clock-o' size={Metrics.icons.small} />
-        <Time>{ time }</Time>
+        <Time>{ formatTime(time, 'HH:mm') }</Time>
       </TimeInfo>
     </Container>
   )

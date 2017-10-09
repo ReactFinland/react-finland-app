@@ -10,6 +10,7 @@ const Screen = styled.View`
   padding: ${Metrics.baseMargin}px;
   padding-top: ${Metrics.doubleBaseMargin}px;
   padding-bottom: 0;
+  flex: 1;
 `
 
 class TalkScreen extends Component {
