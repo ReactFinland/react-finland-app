@@ -1,17 +1,19 @@
 import { TabNavigator } from 'react-navigation'
 import AboutScreen from '../Containers/AboutScreen'
 import ScheduleScreen from '../Containers/ScheduleScreen'
+import ContributorScreen from '../Containers/ContributorScreen'
 import { Colors } from '../Themes'
 
 const routeConfig = {
   ScheduleScreen: { screen: ScheduleScreen },
+  ContributorScreen: { screen: ContributorScreen },
   AboutScreen: { screen: AboutScreen }
 }
 
 const tabNavigatorConfig = {
   // Default config for all screens
   tabBarPosition: 'bottom',
-  animationEnabled: true,
+  animationEnabled: false,
   swipeEnabled: false,
   tabBarOptions: {
     activeTintColor: Colors.textDark,

@@ -11,6 +11,7 @@ class DefaultStory extends React.Component {
         <ContributorCard
           author={'Aleksi Pousar'}
           picture={'https://avatars0.githubusercontent.com/u/4244526?v=4&s=460'}
+          about={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet ipsum sit amet diam dictum sagittis sed at quam.'}
         />
       </View>
     )
