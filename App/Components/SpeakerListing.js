@@ -24,7 +24,7 @@ export default class SpeakerListing extends React.Component {
         keyExtractor={(item) => item.name}
         ItemSeparatorComponent={() => <Separator />}
         data={this.props.data}
-        renderItem={this.renderSpeakerCard.bind(this)}
+        renderItem={this.renderSpeakerCard}
       />
     )
   }
