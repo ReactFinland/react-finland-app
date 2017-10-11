@@ -1,12 +1,12 @@
 import { TabNavigator } from 'react-navigation'
 import AboutScreen from '../Containers/AboutScreen'
 import ScheduleScreen from '../Containers/ScheduleScreen'
-import ContributorScreen from '../Containers/ContributorScreen'
+import SpeakersScreen from '../Containers/SpeakersScreen'
 import { Colors } from '../Themes'
 
 const routeConfig = {
   ScheduleScreen: { screen: ScheduleScreen },
-  ContributorScreen: { screen: ContributorScreen },
+  SpeakersScreen: { screen: SpeakersScreen },
   AboutScreen: { screen: AboutScreen }
 }
 

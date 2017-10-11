@@ -22,7 +22,7 @@ const thursdaySchedule = fullSchedule.filter((s) => isSameDay(thursday, s.time))
 
 export const INITIAL_STATE = Immutable({
   schedule: wednesdaySchedule,
-  contributors: Object.values(speakers)
+  speakers: Object.values(speakers)
 })
 
 /* ------------- Reducers ------------- */

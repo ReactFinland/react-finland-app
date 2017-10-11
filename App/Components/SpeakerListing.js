@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-import ContributorCard from './ContributorCard'
+import SpeakerCard from './SpeakerCard'
 import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
@@ -13,9 +13,9 @@ const Separator = styled.View`
   background-color: ${Colors.background}
 `
 
-export default class ContributorListing extends React.Component {
-  renderContributorCard ({ item: { name, picture, about } }) {
-    return <ContributorCard author={name} picture={picture} about={about} />
+export default class SpeakerListing extends React.Component {
+  renderSpeakerCard ({ item: { name, picture, about } }) {
+    return <SpeakerCard author={name} picture={picture} about={about} />
   }
 
   render () {
@@ -24,7 +24,7 @@ export default class ContributorListing extends React.Component {
         keyExtractor={(item) => item.name}
         ItemSeparatorComponent={() => <Separator />}
         data={this.props.data}
-        renderItem={this.renderContributorCard.bind(this)}
+        renderItem={this.renderSpeakerCard.bind(this)}
       />
     )
   }
