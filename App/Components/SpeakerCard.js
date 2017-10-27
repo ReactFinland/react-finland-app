@@ -78,7 +78,7 @@ const SpeakerCard = (props) => {
         <Spacing />
         <Icon name='github' size={Metrics.icons.medium} />
       </Social>
-  </Container>
+    </Container>
   )
 }
 
