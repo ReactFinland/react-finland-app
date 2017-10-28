@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
-import { Fonts, Colors } from '../Themes'
+import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.ScrollView`
   background-color: ${Colors.background};
@@ -50,7 +50,7 @@ class AboutText extends React.Component {
     const { width } = this.state
     return (
       <Container onLayout={this.onLayout}>
-        <BackgroundImage width={width} source={require('../Images/dark-screen.jpeg')} >
+        <BackgroundImage width={width} source={require('../../Images/dark-screen.jpeg')} >
           <DimmenBackground>
             <Headline>
               REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
