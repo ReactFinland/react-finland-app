@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components/native'
-
-import { Colors, Fonts, Metrics } from '../Themes'
-
+import { Colors, Metrics } from '../Themes'
+import Workshops from './Workshops'
 const Screen = styled.View`
   background-color: ${Colors.background};
   padding: ${Metrics.baseMargin}px;
@@ -13,16 +12,11 @@ const Screen = styled.View`
   align-items: center;
 `
 
-const Text = styled.Text`
-  font-size: ${Fonts.size.regular};
-  color: ${Colors.text};
-`
-
 class WorkshopScreen extends Component {
   render () {
     return (
       <Screen>
-        <Text>Placeholder for workshops</Text>
+        <Workshops />
       </Screen>
     )
   }
