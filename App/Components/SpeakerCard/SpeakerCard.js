@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { Fonts, Colors, Metrics } from '../Themes'
+import { Fonts, Colors, Metrics } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
