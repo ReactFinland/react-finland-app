@@ -1,4 +1,4 @@
-import './AboutText.story'
-import './TalkCard.story'
-import './SpeakerCard.story'
-import './ReactFinlandLogo.story'
+require('./AboutText').Story
+require('./TalkCard').Story
+require('./SpeakerCard').Story
+require('./ReactFinlandLogo').Story
