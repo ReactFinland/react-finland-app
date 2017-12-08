@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, SectionList, Text } from 'react-native'
 import { connect } from 'react-redux'
-
 import styles from './Styles/WorkshopsStyle'
+import WorkshopTile from '../Components/WorkshopTile'
 
 class Workshops extends React.PureComponent {
   state = {
@@ -34,12 +34,12 @@ class Workshops extends React.PureComponent {
         data: [
           {
             title: 'Universal React',
-            description: 'Learn how to develop React in Universal way with Sia Karamalegos.',
+            description: 'How to develop React in Universal way.',
             speakers: 'Sia Karamalegos.'
           },
           {
             title: 'Webpack the good parts',
-            description: 'Learn more about webpack from one of its core developers',
+            description: 'Learn webpack from one of its core developers',
             speakers: 'Juho Vepsäläinen.'
           }
         ]
@@ -49,10 +49,7 @@ class Workshops extends React.PureComponent {
 
   renderItem ({section, item}) {
     return (
-      <View style={styles.row}>
-        <Text style={styles.boldLabel}>{item.title}</Text>
-        <Text style={styles.label}>{item.description}</Text>
-      </View>
+      <WorkshopTile section={section} item={item} />
     )
   }
 
