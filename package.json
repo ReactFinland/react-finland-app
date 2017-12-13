@@ -24,6 +24,7 @@
     "git-hook": "npm run lint -s && npm run test -s"
   },
   "dependencies": {
+    "@react-finland/content-2018": "^0.6.0",
     "apisauce": "^0.14.0",
     "date-fns": "^1.28.5",
     "format-json": "^1.0.3",
