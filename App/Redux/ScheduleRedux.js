@@ -2,13 +2,13 @@ import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
 import { NavigationActions } from 'react-navigation'
 import { isSameDay } from 'date-fns'
+import { speakers } from '@react-finland/content-2018'
 
 const mapSpeakersToSchedule = (schedule, speakers) => {
   return schedule.map(s => {
     return {...s, author: speakers[s.author]}
   })
 }
-const speakers = require('../Fixtures/schedule.json').speakers
 
 const fullSchedule = mapSpeakersToSchedule(
   require('../Fixtures/schedule.json').schedule,
