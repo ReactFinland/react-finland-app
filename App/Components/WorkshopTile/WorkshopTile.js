@@ -28,8 +28,8 @@ const Desc = styled.Text`
 
 const WorkshopTile = ({section, item}) => (
   <Row>
-    <Headline>{item.title}</Headline>
-    <Desc>{item.description}</Desc>
+    <Headline numberOfLines={2}>{item.title}</Headline>
+    <Desc numberOfLines={3}>{item.description}</Desc>
   </Row>
 )
 
