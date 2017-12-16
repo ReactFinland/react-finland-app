@@ -14,22 +14,24 @@ const Separator = styled.View`
 `
 
 export default class TalkListing extends React.Component {
-  renderTalkCard ({item: {author, title, picture, time}}) {
+  renderInterval ({item: { begin, end, sessions }}) {
+    const session = sessions[0];
     return <TalkCard
-      author={author.name}
-      picture={author.picture}
-      title={title}
-      time={time}
+      session={session}
+      title={session.title}
+      begin={begin}
+      end={end}
     />
   }
 
   render () {
+    const hasSessions = ({ sessions }) => sessions && sessions.length > 0
     return (
       <FlatList
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item, index) => index}
         ItemSeparatorComponent={() => <Separator />}
-        data={this.props.data}
-        renderItem={this.renderTalkCard}
+        data={this.props.data.filter(hasSessions)}
+        renderItem={this.renderInterval}
       />
     )
   }

@@ -1,16 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { format as formatTime } from 'date-fns'
 
-import { Fonts, Colors, Metrics } from '../Themes'
+import { Fonts, Colors, Metrics, Images } from '../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
   border-radius: 10;
 `
 
-const Author = styled.Text`
+const Speaker = styled.Text`
   color: ${Colors.text};
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
@@ -61,22 +60,29 @@ const Time = styled.Text`
   margin-left: 5px;
 `
 
+const makeSpeakersText = (speakers) =>
+  speakers && speakers.length > 0 ? speakers.map(a => a.name).join(' & ') : ''
+
+const getImage = (speakers) =>
+  speakers && speakers.length > 0 ? Images.speakers[speakers[0].photo] : null
+
 const TalkCard = (props) => {
-  const { author, title, picture, time } = props
+  const { session, begin, end } = props
+  const { speakers, title } = session
   return (
     <Container>
       <Row>
         <TalkInfo>
-          <Author>{ author }</Author>
+          <Speaker>{ makeSpeakersText(speakers) }</Speaker>
           <Title>{ title }</Title>
         </TalkInfo>
         <ImageContainer>
-          <RoundedImage source={{uri: picture}} />
+          <RoundedImage source={ getImage(speakers) } />
         </ImageContainer>
       </Row>
       <TimeInfo>
         <Icon name='clock-o' size={Metrics.icons.small} />
-        <Time>{ formatTime(time, 'HH:mm') }</Time>
+        <Time>{ begin } - { end }</Time>
       </TimeInfo>
     </Container>
   )
