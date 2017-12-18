@@ -6,6 +6,10 @@
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@hypnosphi/fuse.js/-/fuse.js-3.0.9.tgz#ea99f6121b4a8f065b4c71f85595db2714498807"
 
+"@react-finland/content-2018@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@react-finland/content-2018/-/content-2018-4.1.4.tgz#8c14d1ea34c40c02bb9a49f29e114a07ae695eeb"
+
 "@storybook/addon-actions@^3.2.10":
   version "3.2.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.10.tgz#fd713d1a9b4c61beb2e8902899406469804e1646"

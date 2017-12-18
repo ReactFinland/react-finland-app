@@ -1,27 +1,23 @@
 import { createReducer } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
+import R from 'ramda'
 import { NavigationActions } from 'react-navigation'
 import { isSameDay } from 'date-fns'
+import { speakers, schedules, workshops } from '@react-finland/content-2018'
 
 const mapSpeakersToSchedule = (schedule, speakers) => {
   return schedule.map(s => {
     return {...s, author: speakers[s.author]}
   })
 }
-const speakers = require('../Fixtures/schedule.json').speakers
 
-const fullSchedule = mapSpeakersToSchedule(
-  require('../Fixtures/schedule.json').schedule,
-  require('../Fixtures/schedule.json').speakers
-)
-
-const wednesday = new Date('2017-04-25')
-const thursday = new Date('2017-04-26')
-const wednesdaySchedule = fullSchedule.filter((s) => isSameDay(wednesday, s.time))
-const thursdaySchedule = fullSchedule.filter((s) => isSameDay(thursday, s.time))
+const workshopSchedule = R.pathOr([], ['24-04-2018', 'intervals'], schedules)
+const wednesdaySchedule = R.pathOr([], ['25-04-2018', 'intervals'], schedules)
+const thursdaySchedule = R.pathOr([], ['26-04-2018', 'intervals'], schedules)
 
 export const INITIAL_STATE = Immutable({
   schedule: wednesdaySchedule,
+  workshops: workshopSchedule,
   speakers: Object.values(speakers)
 })
 

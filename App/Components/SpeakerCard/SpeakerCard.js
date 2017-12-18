@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { Fonts, Colors, Metrics } from '../../Themes'
+import { Fonts, Colors, Metrics, Images } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
@@ -70,7 +70,7 @@ const SpeakerCard = (props) => {
           <About>{ about }</About>
         </SpeakerInfo>
         <ImageContainer>
-          <RoundedImage source={{uri: picture}} />
+          <RoundedImage source={Images.speakers[picture]} />
         </ImageContainer>
       </Row>
       <Social>
