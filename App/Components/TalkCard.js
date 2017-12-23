@@ -1,4 +1,5 @@
 import React from 'react'
+import { TouchableHighlight } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -67,24 +68,26 @@ const getImage = (speakers) =>
   speakers && speakers.length > 0 ? Images.speakers[speakers[0].photo] : null
 
 const TalkCard = (props) => {
-  const { session, begin, end } = props
+  const { session, begin, end, onPress } = props
   const { speakers, title } = session
   return (
-    <Container>
-      <Row>
-        <TalkInfo>
-          <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-          <Title>{ title }</Title>
-        </TalkInfo>
-        <ImageContainer>
-          <RoundedImage source={ getImage(speakers) } />
-        </ImageContainer>
-      </Row>
-      <TimeInfo>
-        <Icon name='clock-o' size={Metrics.icons.small} />
-        <Time>{ begin } - { end }</Time>
-      </TimeInfo>
-    </Container>
+    <TouchableHighlight onPress={onPress}>
+      <Container>
+        <Row>
+          <TalkInfo>
+            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+            <Title>{ title }</Title>
+          </TalkInfo>
+          <ImageContainer>
+            <RoundedImage source={ getImage(speakers) } />
+          </ImageContainer>
+        </Row>
+        <TimeInfo>
+          <Icon name='clock-o' size={Metrics.icons.small} />
+          <Time>{ begin } - { end }</Time>
+        </TimeInfo>
+      </Container>
+    </TouchableHighlight>
   )
 }
 
