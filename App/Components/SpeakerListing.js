@@ -14,8 +14,17 @@ const Separator = styled.View`
 `
 
 export default class SpeakerListing extends React.Component {
-  renderSpeakerCard ({ item: { name, photo, about } }) {
-    return <SpeakerCard author={name} picture={photo} about={about} />
+  renderSpeakerCard ({ item }) {
+    const { name, photo, about, homepage, twitter, github, linkedin } = item
+    return <SpeakerCard
+      author={name}
+      picture={photo}
+      about={about}
+      homepage={homepage}
+      twitter={twitter}
+      github={github}
+      linkedin={linkedin}
+    />
   }
 
   render () {

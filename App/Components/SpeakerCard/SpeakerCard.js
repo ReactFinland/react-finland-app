@@ -62,7 +62,7 @@ const Spacing = styled.View`
 `
 
 const SpeakerCard = (props) => {
-  const { author, picture, about } = props
+  const { author, picture, about, homepage, twitter, github, linkedin } = props
   return (
     <Container>
       <Row>
@@ -75,13 +75,13 @@ const SpeakerCard = (props) => {
         </ImageContainer>
       </Row>
       <Social>
-        <SocialLink icon='home' />
+        <SocialLink.Home link={homepage} />
         <Spacing />
-        <SocialLink icon='linkedin-square' />
+        <SocialLink.LinkedIn link={linkedin} />
         <Spacing />
-        <SocialLink icon='twitter' />
+        <SocialLink.Twitter link={twitter} />
         <Spacing />
-        <SocialLink icon='github' />
+        <SocialLink.GitHub link={github} />
       </Social>
     </Container>
   )
