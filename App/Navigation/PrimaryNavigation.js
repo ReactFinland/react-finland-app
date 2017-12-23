@@ -1,11 +1,21 @@
+import React from 'react'
 import { TabNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import AboutScreen from '../Containers/AboutScreen'
-import ScheduleScreen from '../Containers/ScheduleScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
-import { Colors } from '../Themes'
+import ScheduleNavigation from './ScheduleNavigation'
+import { Colors, Metrics } from '../Themes'
 
 const routeConfig = {
-  ScheduleScreen: { screen: ScheduleScreen },
+  ScheduleScreen: {
+    screen: ScheduleNavigation,
+    navigationOptions: {
+      title: 'Schedule',
+      tabBarIcon: ({ tintColor }) =>
+        <Icon name='calendar' size={Metrics.icons.tiny} color={tintColor} />
+    }
+  },
   SpeakersScreen: { screen: SpeakersScreen },
   AboutScreen: { screen: AboutScreen }
 }
