@@ -19,7 +19,7 @@ class ScheduleScreen extends Component {
   render () {
     return (
       <Screen>
-        <ReduxScheduleNavigation />
+        <ReduxScheduleNavigation navigation={this.props.navigation} />
       </Screen>
     )
   }
