@@ -57,10 +57,6 @@ const Social = styled.View`
   align-items: center;
 `
 
-const Spacing = styled.View`
-  margin-left: 20;
-`
-
 const SpeakerCard = (props) => {
   const { author, picture, about, homepage, twitter, github, linkedin } = props
   return (
@@ -76,11 +72,8 @@ const SpeakerCard = (props) => {
       </Row>
       <Social>
         <SocialLink.Home link={homepage} />
-        <Spacing />
         <SocialLink.LinkedIn link={linkedin} />
-        <Spacing />
         <SocialLink.Twitter link={twitter} />
-        <Spacing />
         <SocialLink.GitHub link={github} />
       </Social>
     </Container>
