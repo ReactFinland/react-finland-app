@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 
 import { Colors, Fonts, Metrics } from '../../Themes'
 
-const Container = styled.View`
+const Container = styled.ScrollView`
   background-color: ${Colors.snow};
   padding: ${Metrics.doubleBaseMargin}px;
 `
