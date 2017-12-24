@@ -15,12 +15,7 @@ const Screen = styled.View`
 
 class TalkDetailsScreen extends Component {
   render () {
-    if (!this.props.navigation.state.params || !this.props.navigation.state.params.session) {
-      return null;
-    }
-
-    const { session } = this.props.navigation.state.params
-
+    const { session } = this.props
     return (
       <Screen>
         <TalkDetail
@@ -33,9 +28,8 @@ class TalkDetailsScreen extends Component {
   }
 }
 
-// const mapStateToProps = ({schedule}) => ({
-//   schedule: schedule.schedule
-// })
+const mapStateToProps = ({ schedule }) => ({
+  session: schedule.selectedSession
+})
 
-// export default connect(mapStateToProps)(TalkDetailsScreen)
-export default TalkDetailsScreen
+export default connect(mapStateToProps)(TalkDetailsScreen)

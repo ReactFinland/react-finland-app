@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, SectionList, Text } from 'react-native'
-import { connect } from 'react-redux'
 import styles from './Styles/WorkshopsStyle'
 import WorkshopTile from '../Components/WorkshopTile'
 
@@ -37,6 +36,7 @@ class Workshops extends React.PureComponent {
   keyExtractor = (item, index) => index
 
   oneScreensWorth = 20
+
   render () {
     const data = this.props.workshops.map(item => ({
       ...item,
@@ -60,8 +60,4 @@ class Workshops extends React.PureComponent {
   }
 }
 
-const mapStateToProps = ({schedule}) => ({
-  workshops: schedule.workshops
-})
-
-export default connect(mapStateToProps)(Workshops)
+export default Workshops
