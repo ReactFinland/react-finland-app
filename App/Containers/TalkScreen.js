@@ -15,10 +15,15 @@ const Screen = styled.View`
 
 class TalkScreen extends Component {
   render () {
-    let {schedule} = this.props
+    let { schedule, navigation } = this.props
     return (
       <Screen>
-        <TalkListing data={schedule} />
+        <TalkListing
+          data={schedule}
+          onSessionSelected={(session) => {
+            navigation.navigate('TalkDetails', {session: session})
+          }}
+        />
       </Screen>
     )
   }
