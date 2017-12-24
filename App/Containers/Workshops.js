@@ -5,9 +5,21 @@ import styles from './Styles/WorkshopsStyle'
 import WorkshopTile from '../Components/WorkshopTile'
 
 class Workshops extends React.PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.renderItem = this.renderItem.bind(this)
+  }
+
   renderItem ({section, item}) {
     return (
-      <WorkshopTile section={section} item={item} />
+      <WorkshopTile
+        section={section}
+        item={item}
+        onPress={() => {
+          this.props.onSessionSelected(item)
+        }}
+      />
     )
   }
 

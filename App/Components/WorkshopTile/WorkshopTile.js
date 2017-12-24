@@ -1,4 +1,5 @@
 import React from 'react'
+import { TouchableHighlight } from 'react-native'
 import styled from 'styled-components/native'
 import { Fonts, Colors, Metrics } from '../../Themes'
 
@@ -26,11 +27,13 @@ const Desc = styled.Text`
   color: ${Colors.snow};
 `
 
-const WorkshopTile = ({section, item}) => (
-  <Row>
-    <Headline numberOfLines={2}>{item.title}</Headline>
-    <Desc numberOfLines={3}>{item.description}</Desc>
-  </Row>
+const WorkshopTile = ({section, item, onPress}) => (
+  <TouchableHighlight onPress={onPress}>
+    <Row>
+      <Headline numberOfLines={2}>{item.title}</Headline>
+      <Desc numberOfLines={3}>{item.description}</Desc>
+    </Row>
+  </TouchableHighlight>
 )
 
 export default WorkshopTile

@@ -16,7 +16,11 @@ class WorkshopScreen extends Component {
   render () {
     return (
       <Screen>
-        <Workshops />
+        <Workshops
+          onSessionSelected={(session) => {
+            this.props.navigation.navigate('TalkDetails', {session: session})
+          }}
+        />
       </Screen>
     )
   }
