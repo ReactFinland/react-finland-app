@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
+import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
 
 const Container = styled.ScrollView`
@@ -33,6 +34,7 @@ const TalkDetail = ({ title, description, speakers }) => (
     <Top>
       <Title>{title}</Title>
     </Top>
+    {speakers && <SpeakerList speakers={speakers} />}
     <Bottom>
       <Description>{description}</Description>
     </Bottom>
