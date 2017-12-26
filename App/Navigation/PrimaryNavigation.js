@@ -1,11 +1,22 @@
-import { TabNavigator } from 'react-navigation'
+import React from 'react'
+import { TabNavigator, StackNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import AboutScreen from '../Containers/AboutScreen'
-import ScheduleScreen from '../Containers/ScheduleScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
-import { Colors } from '../Themes'
+import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
+import ScheduleNavigation from './ScheduleNavigation'
+import { Colors, Metrics } from '../Themes'
 
 const routeConfig = {
-  ScheduleScreen: { screen: ScheduleScreen },
+  ScheduleScreen: {
+    screen: ScheduleNavigation,
+    navigationOptions: {
+      title: 'Schedule',
+      tabBarIcon: ({ tintColor }) =>
+        <Icon name='calendar' size={Metrics.icons.tiny} color={tintColor} />
+    }
+  },
   SpeakersScreen: { screen: SpeakersScreen },
   AboutScreen: { screen: AboutScreen }
 }
@@ -27,4 +38,18 @@ const tabNavigatorConfig = {
 // Manifest of possible screens
 const PrimaryNav = TabNavigator(routeConfig, tabNavigatorConfig)
 
-export default PrimaryNav
+// To get the modals work, wrap the main navigator in StackNavigator and
+// add the modals in the root navigator as well
+const RootNav = StackNavigator({
+  Main: {
+    screen: PrimaryNav
+  },
+  TalkDetails: {
+    screen: TalkDetailsScreen
+  }
+}, {
+  headerMode: 'none',
+  mode: 'modal',
+})
+
+export default RootNav

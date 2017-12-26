@@ -1,24 +1,30 @@
-import { createReducer } from 'reduxsauce'
+import { createReducer, createActions } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
 import R from 'ramda'
 import { NavigationActions } from 'react-navigation'
 import { isSameDay } from 'date-fns'
 import { speakers, schedules, workshops } from '@react-finland/content-2018'
 
-const mapSpeakersToSchedule = (schedule, speakers) => {
-  return schedule.map(s => {
-    return {...s, author: speakers[s.author]}
-  })
-}
-
 const workshopSchedule = R.pathOr([], ['24-04-2018', 'intervals'], schedules)
 const wednesdaySchedule = R.pathOr([], ['25-04-2018', 'intervals'], schedules)
 const thursdaySchedule = R.pathOr([], ['26-04-2018', 'intervals'], schedules)
 
+/* ------------- Types and Action Creators ------------- */
+
+const { Types, Creators } = createActions({
+  selectSession: ['session']
+})
+
+export const ScheduleTypes = Types
+export default Creators
+
+/* ------------- Initial State ------------- */
+
 export const INITIAL_STATE = Immutable({
   schedule: wednesdaySchedule,
   workshops: workshopSchedule,
-  speakers: Object.values(speakers)
+  speakers: Object.values(speakers),
+  selectedSession: null
 })
 
 /* ------------- Reducers ------------- */
@@ -33,8 +39,12 @@ const updateSchedule = (state, { routeName }) => {
   }
 }
 
+const selectSession = (state, { session }) =>
+  state.setIn(['selectedSession'], session)
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [NavigationActions.NAVIGATE]: updateSchedule
+  [NavigationActions.NAVIGATE]: updateSchedule,
+  [Types.SELECT_SESSION]: selectSession
 })

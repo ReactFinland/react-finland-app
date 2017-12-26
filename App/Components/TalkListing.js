@@ -14,11 +14,17 @@ const Separator = styled.View`
 `
 
 export default class TalkListing extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.renderInterval = this.renderInterval.bind(this)
+  }
+
   renderInterval ({item: { begin, end, sessions }}) {
     const session = sessions[0];
     return <TalkCard
+      onPress={() => { this.props.onSessionSelected(session) }}
       session={session}
-      title={session.title}
       begin={begin}
       end={end}
     />

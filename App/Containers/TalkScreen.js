@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 
+import ScheduleActions from '../Redux/ScheduleRedux'
 import TalkListing from '../Components/TalkListing'
 import { Colors, Metrics } from '../Themes'
 
@@ -15,17 +16,27 @@ const Screen = styled.View`
 
 class TalkScreen extends Component {
   render () {
-    let {schedule} = this.props
+    let { schedule, navigation, selectSession } = this.props
     return (
       <Screen>
-        <TalkListing data={schedule} />
+        <TalkListing
+          data={schedule}
+          onSessionSelected={(session) => {
+            selectSession(session)
+            navigation.navigate('TalkDetails')
+          }}
+        />
       </Screen>
     )
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  selectSession: (session) => dispatch(ScheduleActions.selectSession(session))
+})
+
 const mapStateToProps = ({schedule}) => ({
   schedule: schedule.schedule
 })
 
-export default connect(mapStateToProps)(TalkScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(TalkScreen)
