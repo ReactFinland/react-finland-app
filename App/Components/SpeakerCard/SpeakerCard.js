@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { Fonts, Colors, Metrics, Images } from '../../Themes'
+import SocialLink from './SocialLink'
+import { Fonts, Colors, Images } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
@@ -56,12 +57,8 @@ const Social = styled.View`
   align-items: center;
 `
 
-const Spacing = styled.View`
-  margin-left: 20;
-`
-
 const SpeakerCard = (props) => {
-  const { author, picture, about } = props
+  const { author, picture, about, homepage, twitter, github, linkedin } = props
   return (
     <Container>
       <Row>
@@ -74,9 +71,10 @@ const SpeakerCard = (props) => {
         </ImageContainer>
       </Row>
       <Social>
-        <Icon name='twitter' size={Metrics.icons.medium} />
-        <Spacing />
-        <Icon name='github' size={Metrics.icons.medium} />
+        <SocialLink.Home link={homepage} />
+        <SocialLink.LinkedIn link={linkedin} />
+        <SocialLink.Twitter link={twitter} />
+        <SocialLink.GitHub link={github} />
       </Social>
     </Container>
   )
