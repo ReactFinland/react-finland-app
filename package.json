@@ -26,8 +26,11 @@
   "dependencies": {
     "@react-finland/content-2018": "^4.1.4",
     "apisauce": "^0.14.0",
+    "apollo-client-preset": "^1.0.5",
     "date-fns": "^1.28.5",
     "format-json": "^1.0.3",
+    "graphql": "^0.12.3",
+    "graphql-tag": "^2.6.1",
     "lodash": "^4.17.2",
     "prop-types": "^15.5.10",
     "querystringify": "0.0.4",
