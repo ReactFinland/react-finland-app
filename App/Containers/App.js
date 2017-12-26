@@ -5,19 +5,63 @@ import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
 
+import ApolloClient from 'apollo-client-preset'
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import gql from 'graphql-tag';
+
 // create our store
 const store = createStore()
+const client = new ApolloClient({
+  link: new HttpLink({ uri: 'https://api.react-finland.fi/graphql-2018' }),
+  cache: new InMemoryCache()
+})
 
-/**
- * Provides an entry point into our application.  Both index.ios.js and index.android.js
- * call this component first.
- *
- * We create our Redux store here, put it into a provider and then bring in our
- * RootContainer.
- *
- * We separate like this to play nice with React Native's hot reloading.
- */
 class App extends Component {
+  componentDidMount() {
+    console.tron.log('do query')
+    client.query({
+      query: gql`
+      {
+
+        organizers {
+          name
+          location {
+            country {
+              name
+              code
+            }
+          }
+        }
+        speakers {
+          name
+          keywords
+        },
+        schedules {
+          day,
+          intervals {
+            begin
+            end
+            sessions {
+              description
+            }
+          }
+        },
+        tickets {
+          name
+          link
+        }
+      }
+      `,
+    })
+      .then(data => 
+        {
+          console.tron.log(data)
+        }
+      )
+      .catch(error => console.tron.error(error))
+
+  }
   render () {
     return (
       <Provider store={store}>
