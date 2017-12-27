@@ -6,17 +6,19 @@ import RootContainer from './RootContainer'
 import createStore from '../Redux'
 
 import ApolloClient from 'apollo-client-preset'
+import { ApolloProvider } from 'react-apollo'
 import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ReduxCache, apolloReducer } from 'apollo-cache-redux';
 import gql from 'graphql-tag';
 
 // create our store
-const store = createStore()
+
+const store = createStore(apolloReducer)
+const cache = new ReduxCache({ store });
 const client = new ApolloClient({
   link: new HttpLink({ uri: 'https://api.react-finland.fi/graphql-2018' }),
-  cache: new InMemoryCache()
+  cache
 })
-
 class App extends Component {
   componentDidMount() {
     console.tron.log('do query')
@@ -62,11 +64,15 @@ class App extends Component {
       .catch(error => console.tron.error(error))
 
   }
+
   render () {
     return (
-      <Provider store={store}>
-        <RootContainer />
-      </Provider>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <RootContainer />
+        </Provider>
+      </ApolloProvider>
+
     )
   }
 }

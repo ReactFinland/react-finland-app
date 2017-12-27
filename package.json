@@ -25,7 +25,9 @@
   },
   "dependencies": {
     "@react-finland/content-2018": "^4.1.4",
+    "@redux-offline/redux-offline": "^2.2.1",
     "apisauce": "^0.14.0",
+    "apollo-cache-redux": "0.1.0-alpha.7",
     "apollo-client-preset": "^1.0.5",
     "date-fns": "^1.28.5",
     "format-json": "^1.0.3",
@@ -36,6 +38,7 @@
     "querystringify": "0.0.4",
     "ramda": "^0.24.1",
     "react": "16.0.0-alpha.12",
+    "react-apollo": "^2.0.4",
     "react-native": "0.47.2",
     "react-native-animatable": "^1.2.4",
     "react-native-config": "^0.6.0",
