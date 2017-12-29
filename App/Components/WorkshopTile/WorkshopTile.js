@@ -10,7 +10,7 @@ const Row = styled.View`
   justifyContent: flex-start;
   alignItems: flex-start;
   margin: ${Metrics.smallMargin}px;
-  backgroundColor: ${Colors.facebook};
+  backgroundColor: ${Colors.snow};
 `
 const Headline = styled.Text`
   text-align: left;
@@ -18,13 +18,13 @@ const Headline = styled.Text`
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: ${Fonts.size.h4};
-  color: ${Colors.snow};
+  color: ${Colors.facebook};
 `
 const Desc = styled.Text`
   margin-left: 10px;
   margin-right: 10px;
   font-size: 15px;
-  color: ${Colors.snow};
+  color: ${Colors.facebook};
 `
 
 const WorkshopTile = ({section, item, onPress}) => (
