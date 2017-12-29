@@ -8,7 +8,10 @@ export default apollo => {
   const rootReducer = combineReducers({
     primaryNav: require('./PrimaryNavigationRedux').reducer,
     scheduleNav: require('./ScheduleNavigationRedux').reducer,
-    schedule: require('./ScheduleRedux').reducer
+    schedule: require('./ScheduleRedux').reducer,
+    schedules: require('./SchedulesRedux').reducer,
+    speakers: require('./SpeakersRedux').reducer,
+    organizers: require('./OrganizersRedux').reducer
   })
 
   return configureStore(rootReducer, rootSaga)

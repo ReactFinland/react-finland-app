@@ -17,20 +17,19 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   data: null,
   fetching: null,
-  payload: null,
   error: null
 })
 
 /* ------------- Reducers ------------- */
 
 // request the data from an api
-export const request = (state, { data }) =>
-  state.merge({ fetching: true, data, payload: null })
+export const request = (state) =>
+  state.merge({ fetching: true, payload: null })
 
 // successful api lookup
 export const success = (state, action) => {
-  const { payload } = action
-  return state.merge({ fetching: false, error: null, payload })
+  const {  payload: data } = action
+  return state.merge({ fetching: false, error: null, data })
 }
 
 // Something went wrong somewhere.
