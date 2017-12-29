@@ -33,6 +33,12 @@ const getAllData = {
         about
         image
         keywords
+        social {
+          twitter
+          homepage
+          github
+          linkedin
+        }
       },
       schedules {
         day,
