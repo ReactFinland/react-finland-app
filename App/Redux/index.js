@@ -1,6 +1,4 @@
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux'
-import { offline } from '@redux-offline/redux-offline'
-import offlineConfig from '@redux-offline/redux-offline/lib/defaults'
 
 import configureStore from './CreateStore'
 import rootSaga from '../Sagas/'
