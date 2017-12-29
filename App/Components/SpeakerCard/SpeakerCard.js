@@ -67,7 +67,7 @@ const SpeakerCard = (props) => {
           <About>{ about }</About>
         </SpeakerInfo>
         <ImageContainer>
-          <RoundedImage source={Images.speakers[picture]} />
+          <RoundedImage source={{uri: picture}} />
         </ImageContainer>
       </Row>
       <Social>
