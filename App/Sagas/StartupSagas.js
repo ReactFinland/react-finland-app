@@ -29,7 +29,9 @@ const getAllData = {
       }
     }
     speakers {
-      name
+        name
+        about
+        image
         keywords
       },
       schedules {

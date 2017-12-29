@@ -22,17 +22,17 @@ class SpeakersScreen extends Component {
   }
 
   render () {
-    let { speakers } = this.props
+    let { data } = this.props
     return (
       <Screen>
-        <SpeakerListing data={speakers} />
+        <SpeakerListing data={data} />
       </Screen>
     )
   }
 }
 
-const mapStateToProps = ({ schedule }) => ({
-  speakers: schedule.speakers
+const mapStateToProps = ({ speakers :{data} }) => ({
+  data
 })
 
 export default connect(mapStateToProps)(SpeakersScreen)

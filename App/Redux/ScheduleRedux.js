@@ -3,7 +3,7 @@ import Immutable from 'seamless-immutable'
 import R from 'ramda'
 import { NavigationActions } from 'react-navigation'
 import { isSameDay } from 'date-fns'
-import { speakers, schedules, workshops } from '@react-finland/content-2018'
+import { schedules, workshops } from '@react-finland/content-2018'
 
 const workshopSchedule = R.pathOr([], ['24-04-2018', 'intervals'], schedules)
 const wednesdaySchedule = R.pathOr([], ['25-04-2018', 'intervals'], schedules)
@@ -23,7 +23,6 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   schedule: wednesdaySchedule,
   workshops: workshopSchedule,
-  speakers: Object.values(speakers),
   selectedSession: null
 })
 
