@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Dimensions } from 'react-native'
+import { Text, Dimensions, TouchableHighlight } from 'react-native'
 import styled from 'styled-components/native'
 import { Fonts, Colors } from '../../Themes'
 
@@ -16,6 +16,16 @@ const BackgroundImage = styled.Image`
 `
 
 const TextArea = styled.Text`
+  color: ${Colors.ricePaper};
+  padding-left: 30;
+  padding-right: 30;
+  padding-top: 20;
+  font-size: ${Fonts.size.h5};
+  font-family: ${Fonts.type.base};
+  background-color: 'rgba(0,0,0,0)';
+`
+
+const OrgLink = styled.Text`
   color: ${Colors.ricePaper};
   padding-left: 30;
   padding-right: 30;
@@ -48,6 +58,7 @@ class AboutText extends React.Component {
   }
   render () {
     const { width } = this.state
+    let { navigation } = this.props
     return (
       <Container onLayout={this.onLayout}>
         <BackgroundImage width={width} source={require('../../Images/dark-screen.jpeg')} >
@@ -64,6 +75,13 @@ class AboutText extends React.Component {
             <TextArea>
               The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
             </TextArea>
+            <TouchableHighlight onPress={() => {
+              navigation.navigate('OrganizersScreen')
+            }}>
+              <OrgLink>
+                Click here to see the organizers
+              </OrgLink>
+            </TouchableHighlight>
           </DimmenBackground>
         </BackgroundImage>
       </Container>

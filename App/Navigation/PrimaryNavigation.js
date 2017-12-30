@@ -6,6 +6,7 @@ import AboutScreen from '../Containers/AboutScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
 import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
+import OrganizersScreen from '../Containers/OrganizersScreen'
 import { Colors, Metrics } from '../Themes'
 
 const routeConfig = {
@@ -18,6 +19,7 @@ const routeConfig = {
     }
   },
   SpeakersScreen: { screen: SpeakersScreen },
+  // OrganizersScreen: { screen: OrganizersScreen },
   AboutScreen: { screen: AboutScreen }
 }
 
@@ -46,6 +48,9 @@ const RootNav = StackNavigator({
   },
   TalkDetails: {
     screen: TalkDetailsScreen
+  },
+  OrganizersScreen: {
+    screen: OrganizersScreen
   }
 }, {
   headerMode: 'none',
