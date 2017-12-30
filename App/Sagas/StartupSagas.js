@@ -1,4 +1,4 @@
-import { put, select, call } from 'redux-saga/effects'
+import { put, call } from 'redux-saga/effects'
 import { is } from 'ramda'
 import ApolloClient from 'apollo-client-preset'
 import { HttpLink } from 'apollo-link-http';
@@ -21,11 +21,19 @@ const getAllData = {
   {
      organizers {
      name
+     about
+     image
      location {
        country {
          name
          code
        }
+      }
+      social {
+        twitter
+        homepage
+        github
+        linkedin
       }
     }
     speakers {

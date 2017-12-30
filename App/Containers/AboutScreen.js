@@ -22,7 +22,7 @@ export default class AboutScreen extends Component {
   render () {
     return (
       <Container>
-        <AboutText />
+        <AboutText navigation={this.props.navigation} />
       </Container>
     )
   }
