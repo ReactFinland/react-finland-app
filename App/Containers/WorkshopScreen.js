@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 import { Colors, Metrics } from '../Themes'
 import Workshops from './Workshops'
 import ScheduleActions from '../Redux/ScheduleRedux'
+import ScheduleRedux from '../Redux/ScheduleRedux';
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -17,11 +18,11 @@ const Screen = styled.View`
 
 class WorkshopScreen extends Component {
   render () {
-    const { workshops, selectSession, navigation } = this.props
+    const { schedule, selectSession, navigation } = this.props
     return (
       <Screen>
         <Workshops
-          workshops={workshops}
+          workshops={schedule}
           onSessionSelected={(session) => {
             selectSession(session)
             navigation.navigate('TalkDetails')
@@ -37,7 +38,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = ({schedule}) => ({
-  workshops: schedule.workshops
+  schedule: schedule.schedule
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkshopScreen)

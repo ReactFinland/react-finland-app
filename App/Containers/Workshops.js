@@ -11,6 +11,7 @@ class Workshops extends React.PureComponent {
   }
 
   renderItem ({section, item}) {
+    return null;
     return (
       <WorkshopTile
         section={section}

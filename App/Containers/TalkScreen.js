@@ -14,7 +14,7 @@ const Screen = styled.View`
   flex: 1;
 `
 
-class TalkScreen extends Component {
+class TalkScreenOld extends Component {
   render () {
     let { schedule, navigation, selectSession } = this.props
     return (
@@ -35,8 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
   selectSession: (session) => dispatch(ScheduleActions.selectSession(session))
 })
 
-const mapStateToProps = ({schedule}) => ({
+const mapStateToProps = ({schedule, schedules}) => ({
+  schedules,
   schedule: schedule.schedule
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TalkScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(TalkScreenOld)
