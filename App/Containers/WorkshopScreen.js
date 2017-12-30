@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components/native'
-import { Colors, Metrics } from '../Themes'
+import { Colors } from '../Themes'
 import Workshops from './Workshops'
 import ScheduleActions from '../Redux/ScheduleRedux'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
-  padding-top: ${Metrics.doubleBaseMargin}px;
   padding-bottom: 0;
   flex: 1;
   justify-content: center;

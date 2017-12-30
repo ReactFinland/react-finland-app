@@ -17,18 +17,16 @@ export default StyleSheet.create({
     borderRadius: Metrics.smallMargin
   },
   sectionHeader: {
-    paddingTop: Metrics.doubleBaseMargin,
+    marginTop: 0,
     width: Metrics.screenWidth,
-    alignSelf: 'center',
-
     backgroundColor: Colors.background
   },
   boldLabel: {
     fontWeight: 'bold',
-    alignSelf: 'center',
     color: Colors.snow,
     textAlign: 'center',
-    marginBottom: Metrics.smallMargin
+    marginBottom: Metrics.smallMargin,
+    marginTop: Metrics.smallMargin
   },
   label: {
     alignSelf: 'center',
@@ -36,8 +34,7 @@ export default StyleSheet.create({
     textAlign: 'center'
   },
   listContent: {
-    justifyContent: 'flex-start',
-    margin: Metrics.smallMargin,
+    justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap'
   }
