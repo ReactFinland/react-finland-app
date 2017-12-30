@@ -4,14 +4,7 @@ import styles from './Styles/WorkshopsStyle'
 import WorkshopTile from '../Components/WorkshopTile'
 
 class Workshops extends React.PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.renderItem = this.renderItem.bind(this)
-  }
-
-  renderItem ({section, item}) {
-    return null;
+  renderItem = ({section, item}) => {
     return (
       <WorkshopTile
         section={section}

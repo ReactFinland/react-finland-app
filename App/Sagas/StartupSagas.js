@@ -46,7 +46,13 @@ const getAllData = {
           begin
           end
           sessions {
+            title
             description
+            speakers {
+              name
+              about
+              image
+            }
           }
         }
       },
