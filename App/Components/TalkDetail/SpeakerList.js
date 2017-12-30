@@ -30,7 +30,7 @@ const RoundedImage = styled.Image`
 
 const SpeakerItem = ({ speaker }) => (
   <Container>
-    <RoundedImage source={Images.speakers[speaker.photo]} />
+    <RoundedImage source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />
     <Name>{speaker.name}</Name>
   </Container>
 )
