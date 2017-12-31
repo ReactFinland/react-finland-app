@@ -5,7 +5,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import gql from 'graphql-tag'
 
-import SchedulesActions from '../Redux/SchedulesRedux'
+import ScheduleActions from '../Redux/ScheduleRedux'
 import OrganizersActions from '../Redux/OrganizersRedux'
 import SpeakersActions from '../Redux/SpeakersRedux'
 // exported to make available for tests
@@ -66,16 +66,16 @@ const getAllData = {
 
 // process STARTUP actions
 export function * startup (action) {
-  yield put(SchedulesActions.schedulesRequest())
+  yield put(ScheduleActions.scheduleRequest())
   yield put(OrganizersActions.organizersRequest())
   yield put(SpeakersActions.speakersRequest())
   try {
     const {data: {schedules, organizers, speakers }} = yield call(client.query, getAllData)
-    yield put(SchedulesActions.schedulesSuccess(schedules))
+    yield put(ScheduleActions.scheduleSuccess(schedules))
     yield put(OrganizersActions.organizersSuccess(organizers))
     yield put(SpeakersActions.speakersSuccess(speakers))
   } catch (err) {
-    yield put(SchedulesActions.schedulesFailure())
+    yield put(ScheduleActions.scheduleFailure())
     yield put(OrganizersActions.organizersFailure())
     yield put(SpeakersActions.speakersFailure())
   }
