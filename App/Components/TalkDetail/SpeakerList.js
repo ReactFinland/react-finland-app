@@ -1,8 +1,7 @@
 import React from 'react'
-import { View } from 'react-native'
 import styled from 'styled-components/native'
 
-import { Colors, Fonts, Metrics, Images } from '../../Themes'
+import { Colors, Fonts } from '../../Themes'
 
 const Row = styled.View`
   flex: 1;

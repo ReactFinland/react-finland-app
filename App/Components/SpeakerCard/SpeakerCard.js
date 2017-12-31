@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import Icon from 'react-native-vector-icons/FontAwesome'
 
 import SocialLink from './SocialLink'
-import { Fonts, Colors, Images } from '../../Themes'
+import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};

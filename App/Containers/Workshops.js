@@ -25,7 +25,7 @@ class Workshops extends React.PureComponent {
     )
   }
 
-  renderEmpty = () => <Text style={styles.label}>  </Text>
+  renderEmpty = () => <Text style={styles.label} />
 
   keyExtractor = (item, index) => index
 

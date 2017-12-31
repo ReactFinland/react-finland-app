@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableHighlight, Linking } from 'react-native'
+import { Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
 
@@ -33,7 +33,7 @@ class SocialLink extends React.Component {
     icon='twitter'
   />
 
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.onPress = this.onPress.bind(this)
@@ -48,6 +48,7 @@ class SocialLink extends React.Component {
       if (supported) {
         Linking.openURL(link).catch(err => {
           console.error(`Failed to open link ${link}`)
+          console.error(err)
         })
       }
     })

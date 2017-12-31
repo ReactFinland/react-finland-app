@@ -15,7 +15,7 @@ const Separator = styled.View`
 
 export default class SpeakerListing extends React.Component {
   renderSpeakerCard ({ item }) {
-    const { name, image, about, social: {homepage, twitter, github, linkedin }} = item
+    const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
     return <SpeakerCard
       author={name}
       picture={`https://api.react-finland.fi/graphql-2018/images/${image}`}
