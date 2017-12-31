@@ -64,8 +64,11 @@ const Time = styled.Text`
 const makeSpeakersText = (speakers) =>
   speakers && speakers.length > 0 ? speakers.map(a => a.name).join(' & ') : ''
 
-const getImage = (speakers) =>
-  speakers && speakers.length > 0 ? Images.speakers[speakers[0].photo] : null
+const getImage = (speakers) => (
+  speakers && speakers.length > 0
+  ? <RoundedImage source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speakers[0].image}`}} />
+  : null
+)
 
 const TalkCard = (props) => {
   const { session, begin, end, onPress } = props
@@ -79,7 +82,7 @@ const TalkCard = (props) => {
             <Title>{ title }</Title>
           </TalkInfo>
           <ImageContainer>
-            <RoundedImage source={ getImage(speakers) } />
+            { getImage(speakers) }
           </ImageContainer>
         </Row>
         <TimeInfo>

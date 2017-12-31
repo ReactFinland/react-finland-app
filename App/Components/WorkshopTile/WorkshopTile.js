@@ -27,11 +27,11 @@ const Desc = styled.Text`
   color: ${Colors.facebook};
 `
 
-const WorkshopTile = ({section, item, onPress}) => (
+const WorkshopTile = ({item, onPress}) => (
   <TouchableHighlight onPress={onPress}>
     <Row>
-      <Headline numberOfLines={2}>{item.title}</Headline>
-      <Desc numberOfLines={3}>{item.description}</Desc>
+      <Headline numberOfLines={2}>{item && item.title}</Headline>
+      <Desc numberOfLines={3}>{item && item.description}</Desc>
     </Row>
   </TouchableHighlight>
 )

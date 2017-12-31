@@ -4,13 +4,7 @@ import styles from './Styles/WorkshopsStyle'
 import WorkshopTile from '../Components/WorkshopTile'
 
 class Workshops extends React.PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.renderItem = this.renderItem.bind(this)
-  }
-
-  renderItem ({section, item}) {
+  renderItem = ({section, item}) => {
     return (
       <WorkshopTile
         section={section}
@@ -31,7 +25,7 @@ class Workshops extends React.PureComponent {
     )
   }
 
-  renderEmpty = () => <Text style={styles.label}> - Nothing to See Here - </Text>
+  renderEmpty = () => <Text style={styles.label}>  </Text>
 
   keyExtractor = (item, index) => index
 

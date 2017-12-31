@@ -4,6 +4,8 @@ import styled from 'styled-components/native'
 import { Colors } from '../Themes'
 import Workshops from './Workshops'
 import ScheduleActions from '../Redux/ScheduleRedux'
+import ScheduleRedux from '../Redux/ScheduleRedux';
+import { pathOr } from 'ramda'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -34,8 +36,8 @@ const mapDispatchToProps = (dispatch) => ({
   selectSession: (session) => dispatch(ScheduleActions.selectSession(session))
 })
 
-const mapStateToProps = ({schedule}) => ({
-  workshops: schedule.workshops
+const mapStateToProps = ({schedule: {data}}) => ({
+  workshops: pathOr([],['0', 'intervals'], data),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkshopScreen)

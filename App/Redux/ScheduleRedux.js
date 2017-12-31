@@ -3,16 +3,18 @@ import Immutable from 'seamless-immutable'
 import R from 'ramda'
 import { NavigationActions } from 'react-navigation'
 import { isSameDay } from 'date-fns'
-import { schedules, workshops } from '@react-finland/content-2018'
 
-const workshopSchedule = R.pathOr([], ['24-04-2018', 'intervals'], schedules)
-const wednesdaySchedule = R.pathOr([], ['25-04-2018', 'intervals'], schedules)
-const thursdaySchedule = R.pathOr([], ['26-04-2018', 'intervals'], schedules)
+const workshopSchedule = []
+const wednesdaySchedule = []
+const thursdaySchedule = []
 
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
-  selectSession: ['session']
+  scheduleRequest: ['data'],
+  scheduleSuccess: ['payload'],
+  selectSession: ['session'],
+  scheduleFailure: null
 })
 
 export const ScheduleTypes = Types
@@ -21,29 +23,32 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  schedule: wednesdaySchedule,
+  data: null,
+  fetching: false,
   workshops: workshopSchedule,
   selectedSession: null
 })
 
 /* ------------- Reducers ------------- */
 
-const updateSchedule = (state, { routeName }) => {
-  if (routeName === 'WednesdayScreen') {
-    return state.setIn(['schedule'], wednesdaySchedule)
-  } else if (routeName === 'ThursdayScreen') {
-    return state.setIn(['schedule'], thursdaySchedule)
-  } else {
-    return state
-  }
-}
-
 const selectSession = (state, { session }) =>
   state.setIn(['selectedSession'], session)
 
+  export const request = (state, { data }) =>
+  state.merge({ fetching: true, data, payload: null })
+
+export const success = (state, action) => {
+  const { payload: data } = action
+  return state.merge({ fetching: false, error: null, data })
+}
+
+export const failure = state =>
+  state.merge({ fetching: false, error: true, payload: null })
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [NavigationActions.NAVIGATE]: updateSchedule,
+  [Types.SCHEDULE_REQUEST]: request,
+  [Types.SCHEDULE_SUCCESS]: success,
+  [Types.SCHEDULE_FAILURE]: failure,
   [Types.SELECT_SESSION]: selectSession
 })

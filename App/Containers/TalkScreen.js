@@ -5,6 +5,7 @@ import styled from 'styled-components/native'
 import ScheduleActions from '../Redux/ScheduleRedux'
 import TalkListing from '../Components/TalkListing'
 import { Colors, Metrics } from '../Themes'
+import { pathOr } from 'ramda'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -14,13 +15,18 @@ const Screen = styled.View`
   flex: 1;
 `
 
-class TalkScreen extends Component {
+class TalkScreenOld extends Component {
   render () {
-    let { schedule, navigation, selectSession } = this.props
+    let { data, navigation, selectSession } = this.props
+    const {state : {routeName}} = navigation
+    const mapping = {
+      'WednesdayScreen' : pathOr([],['1', 'intervals'], data),
+      'ThursdayScreen' : pathOr([],['2', 'intervals'], data)
+    }
     return (
       <Screen>
         <TalkListing
-          data={schedule}
+          data={pathOr([],[routeName], mapping)}
           onSessionSelected={(session) => {
             selectSession(session)
             navigation.navigate('TalkDetails')
@@ -36,7 +42,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = ({schedule}) => ({
-  schedule: schedule.schedule
+  data: schedule.data,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TalkScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(TalkScreenOld)
