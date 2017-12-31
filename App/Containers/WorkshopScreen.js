@@ -5,6 +5,7 @@ import { Colors, Metrics } from '../Themes'
 import Workshops from './Workshops'
 import ScheduleActions from '../Redux/ScheduleRedux'
 import ScheduleRedux from '../Redux/ScheduleRedux';
+import { pathOr } from 'ramda'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -18,11 +19,11 @@ const Screen = styled.View`
 
 class WorkshopScreen extends Component {
   render () {
-    const { schedule, selectSession, navigation } = this.props
+    const { data, schedule, selectSession, navigation } = this.props
     return (
       <Screen>
         <Workshops
-          workshops={schedule}
+          workshops={pathOr([],['0', 'intervals'], data)}
           onSessionSelected={(session) => {
             selectSession(session)
             navigation.navigate('TalkDetails')
@@ -38,6 +39,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = ({schedule}) => ({
+  data: schedule.data,
   schedule: schedule.schedule
 })
 
