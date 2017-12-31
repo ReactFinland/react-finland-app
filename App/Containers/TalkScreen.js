@@ -17,7 +17,8 @@ const Screen = styled.View`
 
 class TalkScreenOld extends Component {
   render () {
-    let { data, navigation: {state : {routeName}}, schedule, selectSession } = this.props
+    let { data, navigation, selectSession } = this.props
+    const {state : {routeName}} = navigation
     const mapping = {
       'WednesdayScreen' : pathOr([],['1', 'intervals'], data),
       'ThursdayScreen' : pathOr([],['2', 'intervals'], data)
@@ -42,7 +43,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = ({schedule}) => ({
   data: schedule.data,
-  schedule: schedule.schedule
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TalkScreenOld)

@@ -22,22 +22,11 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   data: null,
   fetching: false,
-  schedule: [],
   workshops: workshopSchedule,
   selectedSession: null
 })
 
 /* ------------- Reducers ------------- */
-
-const updateSchedule = (state, { routeName }) => {
-  if (routeName === 'WednesdayScreen') {
-    return state.setIn(['schedule'], R.pathOr([], ['intervals'], state.data[1]))
-  } else if (routeName === 'ThursdayScreen') {
-    return state.setIn(['schedule'], R.pathOr([], ['intervals'], state.data[2]))
-  } else {
-    return state.setIn(['schedule'], R.pathOr([], ['intervals'], state.data[0]))
-  }
-}
 
 const selectSession = (state, { session }) =>
   state.setIn(['selectedSession'], session)
@@ -49,7 +38,6 @@ export const success = (state, action) => {
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [NavigationActions.NAVIGATE]: updateSchedule,
   ['SCHEDULES_SUCCESS']: success,
   [Types.SELECT_SESSION]: selectSession
 })

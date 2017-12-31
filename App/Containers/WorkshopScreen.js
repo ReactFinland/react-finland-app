@@ -19,11 +19,11 @@ const Screen = styled.View`
 
 class WorkshopScreen extends Component {
   render () {
-    const { data, schedule, selectSession, navigation } = this.props
+    const { workshops, selectSession, navigation } = this.props
     return (
       <Screen>
         <Workshops
-          workshops={pathOr([],['0', 'intervals'], data)}
+          workshops={workshops}
           onSessionSelected={(session) => {
             selectSession(session)
             navigation.navigate('TalkDetails')
@@ -38,9 +38,8 @@ const mapDispatchToProps = (dispatch) => ({
   selectSession: (session) => dispatch(ScheduleActions.selectSession(session))
 })
 
-const mapStateToProps = ({schedule}) => ({
-  data: schedule.data,
-  schedule: schedule.schedule
+const mapStateToProps = ({schedule: {data}}) => ({
+  workshops: pathOr([],['0', 'intervals'], data),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkshopScreen)
