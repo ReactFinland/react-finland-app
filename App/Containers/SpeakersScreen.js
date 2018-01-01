@@ -31,7 +31,7 @@ class SpeakersScreen extends Component {
   }
 }
 
-const mapStateToProps = ({ speakers :{data} }) => ({
+const mapStateToProps = ({ speakers: {data} }) => ({
   data
 })
 

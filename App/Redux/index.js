@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore, combineReducers, compose } from 'redux'
+import { combineReducers } from 'redux'
 
 import configureStore from './CreateStore'
 import rootSaga from '../Sagas/'

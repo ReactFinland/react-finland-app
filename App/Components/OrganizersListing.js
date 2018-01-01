@@ -14,7 +14,7 @@ const Separator = styled.View`
 
 export default class OrganizersListing extends React.Component {
   renderOrganizerCard ({ item }) {
-    const { name, image, about, social: {homepage, twitter, github, linkedin }} = item
+    const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
     return <OrganizerCard
       author={name}
       picture={`https://api.react-finland.fi/graphql-2018/images/${image}`}

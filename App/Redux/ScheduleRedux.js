@@ -1,12 +1,5 @@
 import { createReducer, createActions } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-import R from 'ramda'
-import { NavigationActions } from 'react-navigation'
-import { isSameDay } from 'date-fns'
-
-const workshopSchedule = []
-const wednesdaySchedule = []
-const thursdaySchedule = []
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -25,7 +18,6 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   data: null,
   fetching: false,
-  workshops: workshopSchedule,
   selectedSession: null
 })
 
@@ -34,7 +26,7 @@ export const INITIAL_STATE = Immutable({
 const selectSession = (state, { session }) =>
   state.setIn(['selectedSession'], session)
 
-  export const request = (state, { data }) =>
+export const request = (state, { data }) =>
   state.merge({ fetching: true, data, payload: null })
 
 export const success = (state, action) => {

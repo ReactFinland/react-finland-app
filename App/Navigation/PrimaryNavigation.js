@@ -54,7 +54,7 @@ const RootNav = StackNavigator({
   }
 }, {
   headerMode: 'none',
-  mode: 'modal',
+  mode: 'modal'
 })
 
 export default RootNav
