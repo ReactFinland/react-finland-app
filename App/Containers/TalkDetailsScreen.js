@@ -15,11 +15,12 @@ const Screen = styled.View`
 
 class TalkDetailsScreen extends Component {
   render () {
-    const { session } = this.props
+    const { session, navigation } = this.props
     return (
       <Screen>
         <TalkDetail
           title={session.title}
+          navigation={navigation}
           description={session.description}
           speakers={session.speakers}
         />
