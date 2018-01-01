@@ -24,7 +24,6 @@
     "git-hook": "npm run lint -s && npm run test -s"
   },
   "dependencies": {
-    "@react-finland/content-2018": "^4.1.4",
     "apisauce": "^0.14.0",
     "apollo-cache-redux": "0.1.0-alpha.7",
     "apollo-client-preset": "^1.0.5",
