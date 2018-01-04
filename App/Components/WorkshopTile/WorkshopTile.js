@@ -5,8 +5,8 @@ import { Fonts, Colors, Metrics } from '../../Themes'
 
 const Row = styled.View`
   border-radius: 10px;
-  width: 160;
-  height: 160;
+  padding-bottom: 10px;
+  padding-right: 10px;
   justifyContent: flex-start;
   alignItems: flex-start;
   margin: ${Metrics.smallMargin}px;

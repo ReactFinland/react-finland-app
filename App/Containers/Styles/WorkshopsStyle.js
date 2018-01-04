@@ -35,7 +35,6 @@ export default StyleSheet.create({
   },
   listContent: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexDirection: 'column'
   }
 })
