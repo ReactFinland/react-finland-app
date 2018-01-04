@@ -42,7 +42,6 @@ class Workshops extends React.PureComponent {
         <SectionList
           renderSectionHeader={this.renderSectionHeader}
           sections={data}
-          numColumns={2}
           contentContainerStyle={styles.listContent}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
