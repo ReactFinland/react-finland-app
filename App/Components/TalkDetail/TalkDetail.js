@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { TouchableOpacity } from 'react-native'
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { BackRow } from './BackRow'
 
 const Container = styled.ScrollView`
   background-color: ${Colors.snow};
@@ -23,32 +23,15 @@ const Title = styled.Text`
   font-family: ${Fonts.type.bold};
   text-align: center;
 `
-const Back = styled.Text`
-color: ${Colors.text};
-font-size: ${Fonts.size.h5};
-`
+
 const Description = styled.Text`
   color: ${Colors.text};
   font-size: ${Fonts.size.regular};
 `
-const TopRow = styled.View`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-start;
-`
-
-const BackRow = () => (
-  <TopRow>
-    <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name='ios-arrow-round-back' />
-    <Back>Back</Back>
-  </TopRow>
-)
 
 const TalkDetail = ({ title, description, speakers, navigation }) => (
   <Container>
-    <TouchableOpacity onPress={() => navigation.goBack()}>
-      <BackRow />
-    </TouchableOpacity>
+    <BackRow onBack={navigation.goBack} />
     <Top>
       <Title>{title}</Title>
     </Top>
