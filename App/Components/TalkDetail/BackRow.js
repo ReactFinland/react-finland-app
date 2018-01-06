@@ -1,8 +1,10 @@
 import React from 'react'
-import { TouchableOpacity, Linking } from 'react-native'
+import { Platform, TouchableOpacity, Linking } from 'react-native'
 import styled from 'styled-components/native'
 import { Colors, Fonts } from '../../Themes'
 import Icon from 'react-native-vector-icons/Ionicons'
+
+const backIcon = Platform.OS === 'ios' ? 'ios-arrow-back' : 'ios-arrow-round-back'
 
 const Back = styled.Text`
   color: ${Colors.text};
@@ -20,7 +22,7 @@ const openUrl = link => Linking.openURL(link).catch(err => {
 export const BackRow = ({onBack}) => (
   <TopRow>
     <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'flex-start'}} onPress={() => onBack()}>
-      <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name='ios-arrow-round-back' />
+      <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name={backIcon} />
       <Back>Back</Back>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => openUrl('https://ti.to/react-finland/2018')}>
