@@ -1,7 +1,7 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Linking } from 'react-native'
 import styled from 'styled-components/native'
-import { Colors, Fonts, Metrics } from '../../Themes'
+import { Colors, Fonts } from '../../Themes'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 const Back = styled.Text`
@@ -11,13 +11,20 @@ const Back = styled.Text`
 const TopRow = styled.View`
   flex: 1;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
 `
+const openUrl = link => Linking.openURL(link).catch(err => {
+  console.tron.log(`Failed to open link ${link}`)
+  console.tron.log(err)
+})
 export const BackRow = ({onBack}) => (
-    <TouchableOpacity onPress={() => onBack()}>
-      <TopRow>
-        <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name='ios-arrow-round-back' />
-        <Back>Back</Back>
-      </TopRow>
+  <TopRow>
+    <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'flex-start'}} onPress={() => onBack()}>
+      <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name='ios-arrow-round-back' />
+      <Back>Back</Back>
     </TouchableOpacity>
-  )
+    <TouchableOpacity onPress={() => openUrl('https://ti.to/react-finland/2018')}>
+      <Back>Buy Tickets</Back>
+    </TouchableOpacity>
+  </TopRow>
+)
