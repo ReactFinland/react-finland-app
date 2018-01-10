@@ -7,7 +7,8 @@ import { Colors, Metrics } from '../Themes'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
+  padding-top: ${Metrics.baseMargin}px;
+  margin-top: ${Metrics.doubleBaseMargin}px;
   padding-top: ${Metrics.doubleBaseMargin}px;
   flex: 1;
   flex-direction: row;

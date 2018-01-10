@@ -7,6 +7,7 @@ import { BackRow } from './BackRow'
 const Container = styled.ScrollView`
   background-color: ${Colors.snow};
   padding: ${Metrics.doubleBaseMargin}px;
+  border-radius: 10;
 `
 
 const Top = styled.View`
