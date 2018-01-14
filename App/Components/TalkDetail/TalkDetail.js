@@ -6,7 +6,7 @@ import { BackRow } from './BackRow'
 
 const Container = styled.ScrollView`
   background-color: ${Colors.snow};
-  padding: ${Metrics.doubleBaseMargin}px;
+  padding: ${Metrics.baseMargin}px;
   border-radius: 10;
 `
 
@@ -27,6 +27,8 @@ const Title = styled.Text`
 const Description = styled.Text`
   color: ${Colors.text};
   font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
+  color: ${Colors.charcoal};
 `
 
 const TalkDetail = ({ title, description, speakers, navigation }) => (
