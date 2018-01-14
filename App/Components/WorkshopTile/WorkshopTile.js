@@ -17,16 +17,20 @@ const Row = styled.View`
 const Headline = styled.Text`
   text-align: left;
   margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+  padding-right: 65px;
   font-size: ${Fonts.size.h4};
+  font-family: ${Fonts.type.bold};
   color: ${Colors.facebook};
 `
 const Desc = styled.Text`
+  font-family: ${Fonts.type.base};
   margin-left: 10px;
   margin-right: 10px;
   font-size: 15px;
-  color: ${Colors.facebook};
+  color: ${Colors.charcoal};
+  padding-bottom: 10px;
 `
 const ImageContainer = styled.View`
   position: absolute;
