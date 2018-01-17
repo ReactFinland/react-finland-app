@@ -1,7 +1,8 @@
 import React from 'react'
-import { TouchableHighlight } from 'react-native'
+import { TouchableWithoutFeedback } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import * as Animatable from 'react-native-animatable'
 
 import { Fonts, Colors, Metrics } from '../Themes'
 
@@ -70,28 +71,36 @@ const getImage = (speakers) => (
   : null
 )
 
-const TalkCard = (props) => {
-  const { session, begin, end, onPress } = props
-  const { speakers, title } = session
-  return (
-    <TouchableHighlight onPress={onPress}>
-      <Container>
-        <Row>
-          <TalkInfo>
-            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-            <Title>{ title }</Title>
-          </TalkInfo>
-          <ImageContainer>
-            { getImage(speakers) }
-          </ImageContainer>
-        </Row>
-        <TimeInfo>
-          <Icon name='clock-o' size={Metrics.icons.small} />
-          <Time>{ begin } - { end }</Time>
-        </TimeInfo>
-      </Container>
-    </TouchableHighlight>
-  )
+const StyledContainer = Animatable.createAnimatableComponent(Container)
+
+class TalkCard extends React.Component {
+  onPress = () => {
+    const { onPress } = this.props
+    this.refs.container.pulse(300).then((endState) => onPress && onPress())
+  }
+  render () {
+    const { session, begin, end } = this.props
+    const { speakers, title } = session
+    return (
+      <TouchableWithoutFeedback onPress={this.onPress}>
+        <StyledContainer ref='container'>
+          <Row>
+            <TalkInfo>
+              <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+              <Title>{ title }</Title>
+            </TalkInfo>
+            <ImageContainer>
+              { getImage(speakers) }
+            </ImageContainer>
+          </Row>
+          <TimeInfo>
+            <Icon name='clock-o' size={Metrics.icons.small} />
+            <Time>{ begin } - { end }</Time>
+          </TimeInfo>
+        </StyledContainer>
+      </TouchableWithoutFeedback>
+    )
+  }
 }
 
 export default TalkCard
