@@ -22,7 +22,7 @@ const data = {
 class DefaultStory extends React.Component {
   render () {
     return (
-      <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'center'}}>
+      <View>
         <TalkDetail
           title={data.title}
           description={data.description}
