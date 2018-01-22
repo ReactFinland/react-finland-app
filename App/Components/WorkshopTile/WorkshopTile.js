@@ -52,15 +52,19 @@ const getImage = (speakers) => (
 
 const StyledRow = Animatable.createAnimatableComponent(Row)
 class WorkshopTile extends React.Component {
-  onPress = () => {
-    const { onPress } = this.props
-    this.refs.view.pulse(300).then((endState) => onPress && onPress())
+  onPressIn = () => {
+    this.container.transition({ scale: 1.0 }, { scale: 1.03 }, 300)
   }
+
+  onPressOut = () => {
+    this.container.transitionTo({ scale: 1.0 }, 300)
+  }
+
   render () {
-    const {item} = this.props
+    const { item, onPress } = this.props
     return (
-      <TouchableWithoutFeedback onPress={this.onPress}>
-        <StyledRow ref='view'>
+      <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+        <StyledRow ref={ref => { this.container = ref }}>
           <Headline numberOfLines={2}>{item && item.title}</Headline>
           <Desc numberOfLines={3}>{item && item.description}</Desc>
           <ImageContainer>

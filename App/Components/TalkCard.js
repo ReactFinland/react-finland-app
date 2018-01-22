@@ -74,16 +74,20 @@ const getImage = (speakers) => (
 const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
-  onPress = () => {
-    const { onPress } = this.props
-    this.refs.container.pulse(300).then((endState) => onPress && onPress())
+  onPressIn = () => {
+    this.container.transition({ scale: 1.0 }, { scale: 1.03 }, 300)
   }
+
+  onPressOut = () => {
+    this.container.transitionTo({ scale: 1.0 }, 300)
+  }
+
   render () {
-    const { session, begin, end } = this.props
+    const { session, begin, end, onPress } = this.props
     const { speakers, title } = session
     return (
-      <TouchableWithoutFeedback onPress={this.onPress}>
-        <StyledContainer ref='container'>
+      <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+        <StyledContainer ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
               <Speaker>{ makeSpeakersText(speakers) }</Speaker>
