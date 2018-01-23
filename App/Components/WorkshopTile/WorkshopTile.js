@@ -53,7 +53,7 @@ const getImage = (speakers) => (
 const StyledRow = Animatable.createAnimatableComponent(Row)
 class WorkshopTile extends React.Component {
   onPressIn = () => {
-    this.container.transition({ scale: 1.0 }, { scale: 1.03 }, 300)
+    this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
   }
 
   onPressOut = () => {

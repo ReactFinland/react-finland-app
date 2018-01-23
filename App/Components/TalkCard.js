@@ -75,7 +75,7 @@ const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
   onPressIn = () => {
-    this.container.transition({ scale: 1.0 }, { scale: 1.03 }, 300)
+    this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
   }
 
   onPressOut = () => {
