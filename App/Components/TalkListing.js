@@ -9,7 +9,7 @@ const FlatList = styled.FlatList`
 `
 
 const Separator = styled.View`
-  margin: 5px;
+  margin: 2px;
   background-color: ${Colors.background}
 `
 
