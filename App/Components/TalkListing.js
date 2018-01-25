@@ -9,8 +9,8 @@ const FlatList = styled.FlatList`
 `
 
 const Separator = styled.View`
-  margin: 2px;
-  background-color: ${Colors.background}
+  height: 1px;
+  background-color: ${Colors.grey};
 `
 
 export default class TalkListing extends React.Component {
