@@ -10,6 +10,11 @@ const Container = styled.View`
   background-color: ${Colors.snow};
 `
 
+const AlignRight = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+`
+
 const Speaker = styled.Text`
   color: ${Colors.charcoal};
   font-size: ${Fonts.size.small};
@@ -27,16 +32,15 @@ const Title = styled.Text`
 `
 
 const TalkInfo = styled.View`
-  flex: 7;
+  flex: 1;
   padding: 15px;
 `
 
 const ImageContainer = styled.View`
-  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  padding: 15px;
-  padding-top: 5px;
+  padding: 5px 0;
 `
 
 const TimeInfo = styled.View`
@@ -50,8 +54,6 @@ const RoundedImage = styled.Image`
   width: 50;
   height: 50;
   border-radius: 25px;
-  border-width: 1px;
-  border-color: ${Colors.grey}
 `
 
 const Time = styled.Text`
@@ -90,11 +92,13 @@ class TalkCard extends React.Component {
           <Row>
             <TalkInfo>
               <Title>{ title ? title : 'To be announced' }</Title>
-              <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+              <ImageContainer>
+                { getImage(speakers) }
+              </ImageContainer>
+              <AlignRight>
+                <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+              </AlignRight>
             </TalkInfo>
-            <ImageContainer>
-              { getImage(speakers) }
-            </ImageContainer>
           </Row>
           <TimeInfo>
             <Icon name='clock-o' size={Metrics.icons.tiny} color={Colors.charcoal} />
