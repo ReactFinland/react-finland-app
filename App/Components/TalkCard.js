@@ -13,6 +13,8 @@ const Container = styled.View`
 const AlignRight = styled.View`
   flex-direction: row;
   justify-content: flex-end;
+  padding: 0 5px;
+  padding-bottom: 5px;
 `
 
 const Speaker = styled.Text`
@@ -39,8 +41,7 @@ const TalkInfo = styled.View`
 const ImageContainer = styled.View`
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
-  padding: 5px 0;
+  padding: 15px 5px;
 `
 
 const TimeInfo = styled.View`
@@ -54,6 +55,7 @@ const RoundedImage = styled.Image`
   width: 50;
   height: 50;
   border-radius: 25px;
+  margin-left: -15px;
 `
 
 const Time = styled.Text`
@@ -64,7 +66,7 @@ const Time = styled.Text`
 `
 
 const makeSpeakersText = (speakers) =>
-  speakers && speakers.length > 0 ? speakers.map(a => a.name).join(' & ') : ''
+  speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
@@ -92,14 +94,14 @@ class TalkCard extends React.Component {
           <Row>
             <TalkInfo>
               <Title>{ title ? title : 'To be announced' }</Title>
-              <ImageContainer>
-                { getImage(speakers) }
-              </ImageContainer>
-              <AlignRight>
-                <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-              </AlignRight>
             </TalkInfo>
+            <ImageContainer>
+              { getImage(speakers) }
+            </ImageContainer>
           </Row>
+          <AlignRight>
+            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+          </AlignRight>
           <TimeInfo>
             <Icon name='clock-o' size={Metrics.icons.tiny} color={Colors.charcoal} />
             <Time>{ begin } - { end }</Time>

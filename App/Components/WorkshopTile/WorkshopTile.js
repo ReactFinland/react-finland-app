@@ -12,12 +12,15 @@ const Container = styled.View`
 const AlignRight = styled.View`
   flex-direction: row;
   justify-content: flex-end;
+  padding: 0 5px;
+  padding-bottom: 5px;
 `
 
 const Speaker = styled.Text`
   color: ${Colors.charcoal};
   font-size: ${Fonts.size.small};
   font-family: ${Fonts.type.base};
+  text-align: right;
 `
 
 const Row = styled.View`
@@ -38,18 +41,18 @@ const TalkInfo = styled.View`
 const ImageContainer = styled.View`
   flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
-  padding: 5px 0;
+  padding: 15px 5px;
 `
 
 const RoundedImage = styled.Image`
   width: 50;
   height: 50;
   border-radius: 25px;
+  margin-left: -15px;
 `
 
 const makeSpeakersText = (speakers) =>
-  speakers && speakers.length > 0 ? speakers.map(a => a.name).join(' & ') : ''
+  speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
@@ -77,14 +80,14 @@ class WorkshopTile extends React.Component {
           <Row>
             <TalkInfo>
               <Title>{ title ? title : 'To be announced' }</Title>
-              <ImageContainer>
-                { getImage(speakers) }
-              </ImageContainer>
-              <AlignRight>
-                <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-              </AlignRight>
             </TalkInfo>
+            <ImageContainer>
+              { getImage(speakers) }
+            </ImageContainer>
           </Row>
+          <AlignRight>
+            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+          </AlignRight>
         </StyledRow>
       </TouchableWithoutFeedback>
     )
