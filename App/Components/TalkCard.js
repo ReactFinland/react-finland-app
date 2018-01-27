@@ -11,7 +11,7 @@ const Container = styled.View`
 `
 
 const Speaker = styled.Text`
-  color: black;
+  color: ${Colors.charcoal};
   font-size: ${Fonts.size.small};
   font-family: ${Fonts.type.base};
 `
@@ -66,8 +66,8 @@ const makeSpeakersText = (speakers) =>
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
-  ? <RoundedImage source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speakers[0].image}`}} />
-  : null
+    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />)
+    : null
 )
 
 const StyledContainer = Animatable.createAnimatableComponent(Container)
