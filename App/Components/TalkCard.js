@@ -84,7 +84,7 @@ class TalkCard extends React.Component {
 
   render () {
     const { session, begin, end, onPress } = this.props
-    const { speakers, title } = session
+    const { speakers = [], title } = session
     return (
       <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
         <StyledContainer ref={ref => { this.container = ref }}>
