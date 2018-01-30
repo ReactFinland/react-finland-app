@@ -1,7 +1,9 @@
 import { TabNavigator } from 'react-navigation'
+import { Platform } from 'react-native'
 import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
 import { Colors } from '../Themes'
+
 
 const routeConfig = {
   WorkshopScreen: {
@@ -23,13 +25,17 @@ const routeConfig = {
     }
   }
 }
+// not working property on android
+const swipe = Platform.OS === 'ios' ? true : false
 
 const tabNavigatorConfig = {
   // Default config for all screens
   tabBarPosition: 'top',
-  animationEnabled: true,
-  swipeEnabled: true,
+  animationEnabled: swipe,
+  swipeEnabled: swipe,
   tabBarOptions: {
+    animationEnabled: true,
+    swipeEnabled: false,
     activeTintColor: Colors.textDark,
     inactiveTintColor: Colors.grey,
     style: {
