@@ -4,7 +4,6 @@ import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
 import { Colors } from '../Themes'
 
-
 const routeConfig = {
   WorkshopScreen: {
     screen: WorkshopScreen,
@@ -26,7 +25,7 @@ const routeConfig = {
   }
 }
 // not working property on android
-const swipe = Platform.OS === 'ios' ? true : false
+const swipe = Platform.OS === 'ios'
 
 const tabNavigatorConfig = {
   // Default config for all screens
