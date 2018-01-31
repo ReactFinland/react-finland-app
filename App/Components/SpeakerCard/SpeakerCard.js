@@ -69,35 +69,36 @@ class SpeakerCard extends React.Component {
   onPressOut = () => {
     this.container.transitionTo({ scale: 1.0 }, 300)
   }
-  render() {
-  const { author, picture, about, homepage, twitter, github, linkedin } = this.props
-  const { expanded } = this.state
-  return (
-    <TouchableWithoutFeedback onPress={() => this.setState({expanded: !this.state.expanded})} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
-      <StyledContainer ref={ref => { this.container = ref }}>
-        <Row>
-          <SpeakerInfo>
-            <Author>{ author }</Author>
-            { expanded
+  render () {
+    const { author, picture, about, homepage, twitter, github, linkedin } = this.props
+    const { expanded } = this.state
+    return (
+      <TouchableWithoutFeedback onPress={() => this.setState({expanded: !this.state.expanded})} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+        <StyledContainer ref={ref => { this.container = ref }}>
+          <Row>
+            <SpeakerInfo>
+              <Author>{ author }</Author>
+              { expanded
               ? <About>{ about }</About>
               : <About ellipsizeMode='tail' numberOfLines={2}>{ about }</About>
 
             }
-            
-          </SpeakerInfo>
-          <ImageContainer>
-            <RoundedImage source={{uri: picture}} />
-          </ImageContainer>
-        </Row>
-        <Social>
-          <SocialLink.Home link={homepage} />
-          <SocialLink.LinkedIn link={linkedin} />
-          <SocialLink.Twitter link={twitter} />
-          <SocialLink.GitHub link={github} />
-        </Social>
-      </StyledContainer>
-    </TouchableWithoutFeedback>
-  )}
+
+            </SpeakerInfo>
+            <ImageContainer>
+              <RoundedImage source={{uri: picture}} />
+            </ImageContainer>
+          </Row>
+          <Social>
+            <SocialLink.Home link={homepage} />
+            <SocialLink.LinkedIn link={linkedin} />
+            <SocialLink.Twitter link={twitter} />
+            <SocialLink.GitHub link={github} />
+          </Social>
+        </StyledContainer>
+      </TouchableWithoutFeedback>
+    )
+  }
 }
 
 export default SpeakerCard
