@@ -4,7 +4,8 @@ import styled from 'styled-components/native'
 import OrganizerCard from './OrganizerCard'
 
 const FlatList = styled.FlatList`
-  background-color: transparent
+  margin-top: 10px;
+  background-color: transparent;
 `
 
 const Separator = styled.View`
