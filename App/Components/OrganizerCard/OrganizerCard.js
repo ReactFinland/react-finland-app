@@ -20,7 +20,7 @@ const Author = styled.Text`
 `
 
 const About = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.coal};
   font-size: ${Fonts.size.regular};
 `
 

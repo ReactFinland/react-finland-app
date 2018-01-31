@@ -8,7 +8,7 @@ const Container = styled.ScrollView`
 `
 const DimmenBackground = styled.View`
   flex: 1;
-  background-color: 'rgba(0,0,0, 0.5)';
+  background-color: 'rgba(0,0,0, 0.2)';
 `
 const BackgroundImage = styled.Image`
   flex: 1;
@@ -61,7 +61,7 @@ class AboutText extends React.Component {
     let { navigation } = this.props
     return (
       <Container onLayout={this.onLayout}>
-        <BackgroundImage width={width} source={require('../../Images/dark-screen.jpeg')} >
+        <BackgroundImage width={width} source={require('../../Images/react-finland-background.png')} >
           <DimmenBackground>
             <Headline>
               REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
