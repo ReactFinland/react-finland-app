@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableWithoutFeedback } from 'react-native'
+import { TouchableWithoutFeedback, View } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import * as Animatable from 'react-native-animatable'
@@ -84,7 +84,16 @@ class TalkCard extends React.Component {
 
   render () {
     const { session, begin, end, onPress } = this.props
-    const { speakers = [], title } = session
+    const { speakers = [], title='' } = session
+    if(title.toLowerCase().indexOf('breakfast') > -1) {
+      return <View />
+    }
+    if(title.toLowerCase().indexOf('lunch') > -1) {
+      return <View />
+    }
+    if(title.toLowerCase().indexOf('coffee break') > -1) {
+      return <View />
+    }
     return (
       <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
         <StyledContainer ref={ref => { this.container = ref }}>
