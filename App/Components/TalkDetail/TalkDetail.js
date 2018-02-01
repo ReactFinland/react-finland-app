@@ -1,12 +1,21 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
 import { BackRow } from './BackRow'
 
+const BackgroundImage = styled.Image`
+  flex: 1;
+  width: ${props => props.width};
+  height: ${props => props.height};
+`
 const Container = styled.ScrollView`
+  flex: 1;
   background-color: ${Colors.snow};
   padding: ${Metrics.baseMargin}px;
+  background-color: 'rgba(0,0,0,0)';
   border-radius: 10;
 `
 
@@ -22,26 +31,46 @@ const Title = styled.Text`
   font-size: ${Fonts.size.h3};
   font-family: ${Fonts.type.bold};
   text-align: center;
+  background-color: 'rgba(0,0,0,0)';
 `
 
 const Description = styled.Text`
   color: ${Colors.text};
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
-  color: ${Colors.charcoal};
+  color: ${Colors.snow};
+  background-color: 'rgba(0,0,0,0)';
 `
 
-const TalkDetail = ({ title, description, speakers, navigation }) => (
-  <Container>
-    <BackRow onBack={navigation.goBack} />
-    <Top>
-      <Title>{title}</Title>
-    </Top>
-    {speakers && <SpeakerList speakers={speakers} />}
-    <Bottom>
-      <Description>{description}</Description>
-    </Bottom>
-  </Container>
-)
+class TalkDetail extends React.Component {
+  constructor (props) {
+    super(props)
+    const { width, height } = Dimensions.get('window')
+    this.state = { width, height }
+    this.onLayout = this.onLayout.bind(this)
+  }
+  onLayout (e) {
+    const { width } = Dimensions.get('window')
+    this.setState({ width })
+  }
+  render () {
+    const { width, height } = this.state
+    const { title, description, speakers, navigation } = this.props
+    return (
+      <BackgroundImage height={height} width={width} source={require('../../Images/react-finland-background.png')} >
+        <Container>
+          <BackRow onBack={navigation.goBack} />
+          <Top>
+            <Title>{title}</Title>
+          </Top>
+          {speakers && <SpeakerList speakers={speakers} />}
+          <Bottom>
+            <Description>{description}</Description>
+          </Bottom>
+        </Container>
+      </BackgroundImage>
+    )
+  }
+}
 
 export default TalkDetail
