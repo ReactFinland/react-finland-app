@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
 import { Colors, Fonts, Metrics } from '../Themes'
 import OrganizersListing from '../Components/OrganizersListing'
 
-import { Platform, TouchableOpacity, Linking, StatusBar } from 'react-native'
+import { Platform, TouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -29,10 +28,6 @@ const TopRow = styled.View`
   padding-right: 10px;
   justify-content: flex-start;
 `
-const openUrl = link => Linking.openURL(link).catch(err => {
-  console.tron.log(`Failed to open link ${link}`)
-  console.tron.log(err)
-})
 export const BackRow = ({onBack}) => (
   <TopRow>
     <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'flex-start', backgroundColor: '#ffffff'}} onPress={() => onBack()}>
