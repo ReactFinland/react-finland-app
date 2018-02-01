@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 const backIcon = Platform.OS === 'ios' ? 'ios-arrow-back' : 'ios-arrow-round-back'
 
 const Back = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.snow};
   font-size: ${Fonts.size.h5};
   background-color: 'rgba(0,0,0,0)';
 `
