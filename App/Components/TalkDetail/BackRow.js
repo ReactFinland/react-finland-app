@@ -23,8 +23,8 @@ const openUrl = link => Linking.openURL(link).catch(err => {
 })
 export const BackRow = ({onBack}) => (
   <TopRow>
-    <TouchableOpacity style={{height: 20, flexDirection: 'row', justifyContent: 'flex-start'}} onPress={() => onBack()}>
-      <Icon style={{paddingRight: 10, paddingBottom: 10, backgroundColor: 'rgba(0,0,0,0)'}} size={28} name={backIcon} />
+    <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'flex-start'}} onPress={() => onBack()}>
+      <Icon style={{paddingRight: 10,color: Colors.snow, paddingBottom: 10, backgroundColor: 'rgba(0,0,0,0)'}} size={28} name={backIcon} />
       <Back>Back</Back>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => openUrl('https://ti.to/react-finland/2018')}>
