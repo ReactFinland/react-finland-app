@@ -22,6 +22,7 @@ const Author = styled.Text`
 const About = styled.Text`
   color: ${Colors.coal};
   font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
 `
 
 const SpeakerInfo = styled.View`

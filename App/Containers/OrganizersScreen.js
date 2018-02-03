@@ -13,12 +13,14 @@ const backIcon = Platform.OS === 'ios' ? 'ios-arrow-back' : 'ios-arrow-round-bac
 const Back = styled.Text`
   color: ${Colors.text};
   font-size: ${Fonts.size.h5};
+  font-family: ${Fonts.type.base};
 `
 const Headline = styled.Text`
   margin-left: 25px;
   color: ${Colors.coal};
   font-weight: 600;
   font-size: ${Fonts.size.h5};
+  font-family: ${Fonts.type.base};
 `
 const TopRow = styled.View`
   padding-top: 10px;
