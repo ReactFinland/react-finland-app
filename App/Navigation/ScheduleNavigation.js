@@ -2,7 +2,7 @@ import { TabNavigator } from 'react-navigation'
 import { Platform } from 'react-native'
 import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
-import { Colors } from '../Themes'
+import { Colors, Fonts } from '../Themes'
 
 const routeConfig = {
   WorkshopScreen: {
@@ -39,6 +39,10 @@ const tabNavigatorConfig = {
     inactiveTintColor: Colors.grey,
     style: {
       backgroundColor: Colors.background
+    },
+    labelStyle: {
+      fontFamily: Fonts.type.base,
+      fontSize: Fonts.size.small
     }
   }
 }
