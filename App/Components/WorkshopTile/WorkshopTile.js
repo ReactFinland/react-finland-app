@@ -7,6 +7,8 @@ import R from 'ramda'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
+  border-left-width: 5px;
+  border-left-color: ${Colors.charcoal};
 `
 
 const AlignRight = styled.View`
