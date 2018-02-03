@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
-
 import SocialLink from './SocialLink'
 import { Fonts, Colors } from '../../Themes'
+import * as Animatable from 'react-native-animatable'
+import { TouchableWithoutFeedback } from 'react-native'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
@@ -20,7 +21,7 @@ const Author = styled.Text`
 `
 
 const About = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.coal};
   font-size: ${Fonts.size.regular};
 `
 
@@ -55,28 +56,49 @@ const Social = styled.View`
   justify-content: flex-end;
   align-items: center;
 `
+const StyledContainer = Animatable.createAnimatableComponent(Container)
 
-const SpeakerCard = (props) => {
-  const { author, picture, about, homepage, twitter, github, linkedin } = props
-  return (
-    <Container>
-      <Row>
-        <SpeakerInfo>
-          <Author>{ author }</Author>
-          <About>{ about }</About>
-        </SpeakerInfo>
-        <ImageContainer>
-          <RoundedImage source={{uri: picture}} />
-        </ImageContainer>
-      </Row>
-      <Social>
-        <SocialLink.Home link={homepage} />
-        <SocialLink.LinkedIn link={linkedin} />
-        <SocialLink.Twitter link={twitter} />
-        <SocialLink.GitHub link={github} />
-      </Social>
-    </Container>
-  )
+class SpeakerCard extends React.Component {
+  state = {
+    expanded: false
+  }
+  onPressIn = () => {
+    this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
+  }
+
+  onPressOut = () => {
+    this.container.transitionTo({ scale: 1.0 }, 300)
+  }
+  render () {
+    const { author, picture, about, homepage, twitter, github, linkedin } = this.props
+    const { expanded } = this.state
+    return (
+      <TouchableWithoutFeedback onPress={() => this.setState({expanded: !this.state.expanded})} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+        <StyledContainer ref={ref => { this.container = ref }}>
+          <Row>
+            <SpeakerInfo>
+              <Author>{ author }</Author>
+              { expanded
+              ? <About>{ about }</About>
+              : <About ellipsizeMode='tail' numberOfLines={2}>{ about }</About>
+
+            }
+
+            </SpeakerInfo>
+            <ImageContainer>
+              <RoundedImage source={{uri: picture}} />
+            </ImageContainer>
+          </Row>
+          <Social>
+            <SocialLink.Home link={homepage} />
+            <SocialLink.LinkedIn link={linkedin} />
+            <SocialLink.Twitter link={twitter} />
+            <SocialLink.GitHub link={github} />
+          </Social>
+        </StyledContainer>
+      </TouchableWithoutFeedback>
+    )
+  }
 }
 
 export default SpeakerCard

@@ -9,7 +9,7 @@ const Row = styled.View`
 `
 
 const Name = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.snow};
   font-size: ${Fonts.size.regular};
   text-align: center;
 `
@@ -17,6 +17,7 @@ const Name = styled.Text`
 const Container = styled.View`
   flex: 1;
   align-items: center;
+  background-color: 'rgba(0,0,0,0)';
 `
 
 const RoundedImage = styled.Image`

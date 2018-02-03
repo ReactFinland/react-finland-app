@@ -11,7 +11,7 @@ const data = {
     {
       'name': 'Christian Alfoni',
       'about': 'Christian has been crunching JavaScript for about 8 years. In the recent years open source and writing articles has become a passion. Throwing bad and not so bad ideas out there to see what is valuable to people. Author of Cerebral, created Webpackbin and JSBlog... amongst other things.',
-      'photo': 'christian.jpg',
+      'image': 'christian.jpg',
       'homepage': 'http://www.christianalfoni.com/',
       'twitter': 'christianalfoni',
       'github': 'christianalfoni'
@@ -19,7 +19,7 @@ const data = {
     {
       'name': 'Christian Alfoni',
       'about': 'Christian has been crunching JavaScript for about 8 years. In the recent years open source and writing articles has become a passion. Throwing bad and not so bad ideas out there to see what is valuable to people. Author of Cerebral, created Webpackbin and JSBlog... amongst other things.',
-      'photo': 'christian.jpg',
+      'image': 'christian.jpg',
       'homepage': 'http://www.christianalfoni.com/',
       'twitter': 'christianalfoni',
       'github': 'christianalfoni'
@@ -34,8 +34,7 @@ class DefaultStory extends React.Component {
     return (
       <View style={{backgroundColor: 'black', flex: 1, justifyContent: 'center'}}>
         <TalkCard
-          speakers={data.speakers}
-          picture={'https://avatars3.githubusercontent.com/u/538833?v=4&s=460'}
+          session={data}
           title={data.title}
           begin={data.begin}
           end={data.end}

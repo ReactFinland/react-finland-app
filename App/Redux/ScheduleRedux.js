@@ -4,6 +4,7 @@ import Immutable from 'seamless-immutable'
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
+  scheduleUpdate: null,
   scheduleRequest: ['data'],
   scheduleSuccess: ['payload'],
   selectSession: ['session'],
@@ -26,8 +27,8 @@ export const INITIAL_STATE = Immutable({
 const selectSession = (state, { session }) =>
   state.setIn(['selectedSession'], session)
 
-export const request = (state, { data }) =>
-  state.merge({ fetching: true, data, payload: null })
+export const request = (state) =>
+  state.merge({ fetching: true, payload: null })
 
 export const success = (state, action) => {
   const { payload: data } = action
