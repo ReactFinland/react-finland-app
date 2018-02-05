@@ -9,6 +9,7 @@ const backIcon = Platform.OS === 'ios' ? 'ios-arrow-back' : 'ios-arrow-round-bac
 const Back = styled.Text`
   color: ${Colors.snow};
   font-size: ${Fonts.size.h5};
+  font-family: ${Fonts.type.base};
   background-color: 'rgba(0,0,0,0)';
 `
 const TopRow = styled.View`
