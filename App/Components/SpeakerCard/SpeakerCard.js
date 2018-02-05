@@ -22,6 +22,7 @@ const Author = styled.Text`
 
 const About = styled.Text`
   color: ${Colors.coal};
+  font-family: ${Fonts.type.base};
   font-size: ${Fonts.size.regular};
 `
 

@@ -7,7 +7,7 @@ import SpeakersScreen from '../Containers/SpeakersScreen'
 import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
-import { Colors, Metrics } from '../Themes'
+import { Colors, Fonts, Metrics } from '../Themes'
 
 const routeConfig = {
   ScheduleScreen: {
@@ -33,6 +33,10 @@ const tabNavigatorConfig = {
     inactiveTintColor: Colors.grey,
     style: {
       backgroundColor: Colors.coal
+    },
+    labelStyle: {
+      fontFamily: Fonts.type.base,
+      fontSize: Fonts.size.small
     }
   }
 }

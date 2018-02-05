@@ -36,14 +36,17 @@
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* ReactFinlandAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactFinlandAppTests.m */; };
 		33F062DE3D664E6E90EF1527 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94ACB49D07954CF6941E6A65 /* Octicons.ttf */; };
+		367229399B1048D1AD61C4DC /* Finlandica-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 186B30A1A3F547869FB7BFBD /* Finlandica-Bold.otf */; };
 		440F65E28432411B87E3630B /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62C6A55B44064FB0894DD33C /* Ionicons.ttf */; };
 		4686A215A2714F53A33CEFE9 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA77FDCD800426F8ADEB8C7 /* libRNVectorIcons.a */; };
 		54E86CB7E415428EBBE2F781 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 805805D9A1554303802B7216 /* MaterialCommunityIcons.ttf */; };
 		5A96CB43875E4E63B3417A58 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A75EA4CEBFFF4984BA12B92D /* libyoga.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		603BEB64BF8E432288BFA94F /* Finlandica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C3536C73BEC4426BB4C02C1C /* Finlandica-Regular.otf */; };
 		727C9D3864444A90B6B22BAE /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D18508D8A4D34C7690FC2D78 /* Zocial.ttf */; };
 		77D9BCB870C84A4B935026AA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAC5ABC92B6F4D9080A99477 /* FontAwesome.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8C004F6907DD4EC2BFC398FF /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B01E9D86E747069602C9CD /* libReactNativeConfig.a */; };
 		A6527198DA2E4546AF70873D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4A95460CBFF4691BD00A9A1 /* SimpleLineIcons.ttf */; };
 		B11190AB397A454D94FD5FBF /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F975DA4214114488BCB44218 /* MaterialIcons.ttf */; };
 		CE91B71798DB42CBBFB77870 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D6862BC9E094632B78B1B48 /* Entypo.ttf */; };
@@ -214,6 +217,13 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
+		44CA0C4D20260F0700D2805D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87A3A40CFE9448A59FAF086D /* ReactNativeConfig.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB2648DF1C7BE17A00B8F155;
+			remoteInfo = ReactNativeConfig;
+		};
 		5D89413B20009CCB00BA557B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -313,6 +323,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactFinlandApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactFinlandApp/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		186B30A1A3F547869FB7BFBD /* Finlandica-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Finlandica-Bold.otf"; path = "../assets/fonts/Finlandica-Bold.otf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ReactFinlandApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactFinlandApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ReactFinlandApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactFinlandApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB0D53DA52E4B6796EA5180 /* libjschelpers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libjschelpers.a; sourceTree = "<group>"; };
@@ -324,14 +335,17 @@
 		805805D9A1554303802B7216 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		80E2A31FCAC64AA4A7FA80F5 /* libcxxreact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libcxxreact.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		87A3A40CFE9448A59FAF086D /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		8D6862BC9E094632B78B1B48 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		91DEB39CA34E48B28E3ECF2F /* libReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReact.a; sourceTree = "<group>"; };
 		94ACB49D07954CF6941E6A65 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		962F4D26BA664E27B09753C6 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		A75EA4CEBFFF4984BA12B92D /* libyoga.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libyoga.a; sourceTree = "<group>"; };
 		AAC5ABC92B6F4D9080A99477 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		C3536C73BEC4426BB4C02C1C /* Finlandica-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Finlandica-Regular.otf"; path = "../assets/fonts/Finlandica-Regular.otf"; sourceTree = "<group>"; };
 		D08AC70AB3004463A2126696 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		D18508D8A4D34C7690FC2D78 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		F3B01E9D86E747069602C9CD /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		F4A95460CBFF4691BD00A9A1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		F975DA4214114488BCB44218 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,6 +379,7 @@
 				5A96CB43875E4E63B3417A58 /* libyoga.a in Frameworks */,
 				E2DDE505AA254014BE1053D3 /* libcxxreact.a in Frameworks */,
 				18088F79C27143B6B39284B5 /* libjschelpers.a in Frameworks */,
+				8C004F6907DD4EC2BFC398FF /* libReactNativeConfig.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +480,8 @@
 				94ACB49D07954CF6941E6A65 /* Octicons.ttf */,
 				F4A95460CBFF4691BD00A9A1 /* SimpleLineIcons.ttf */,
 				D18508D8A4D34C7690FC2D78 /* Zocial.ttf */,
+				186B30A1A3F547869FB7BFBD /* Finlandica-Bold.otf */,
+				C3536C73BEC4426BB4C02C1C /* Finlandica-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -519,6 +536,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		44CA0C4A20260F0700D2805D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44CA0C4E20260F0700D2805D /* libReactNativeConfig.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5D89411C20009CC900BA557B /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +552,7 @@
 				A75EA4CEBFFF4984BA12B92D /* libyoga.a */,
 				80E2A31FCAC64AA4A7FA80F5 /* libcxxreact.a */,
 				2FB0D53DA52E4B6796EA5180 /* libjschelpers.a */,
+				F3B01E9D86E747069602C9CD /* libReactNativeConfig.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -582,6 +608,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				10F9EFF6F685415484D0B9F6 /* RNVectorIcons.xcodeproj */,
 				962F4D26BA664E27B09753C6 /* RNI18n.xcodeproj */,
+				87A3A40CFE9448A59FAF086D /* ReactNativeConfig.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -776,6 +803,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 44CA0C4A20260F0700D2805D /* Products */;
+					ProjectRef = 87A3A40CFE9448A59FAF086D /* ReactNativeConfig.xcodeproj */;
+				},
+				{
 					ProductGroup = 5D89414520009CCB00BA557B /* Products */;
 					ProjectRef = 962F4D26BA664E27B09753C6 /* RNI18n.xcodeproj */;
 				},
@@ -942,6 +973,13 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		44CA0C4E20260F0700D2805D /* libReactNativeConfig.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeConfig.a;
+			remoteRef = 44CA0C4D20260F0700D2805D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5D89413C20009CCB00BA557B /* libthird-party.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1044,6 +1082,8 @@
 				33F062DE3D664E6E90EF1527 /* Octicons.ttf in Resources */,
 				A6527198DA2E4546AF70873D /* SimpleLineIcons.ttf in Resources */,
 				727C9D3864444A90B6B22BAE /* Zocial.ttf in Resources */,
+				367229399B1048D1AD61C4DC /* Finlandica-Bold.otf in Resources */,
+				603BEB64BF8E432288BFA94F /* Finlandica-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,12 +1198,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = ReactFinlandAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1188,12 +1230,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = ReactFinlandAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1220,6 +1264,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = ReactFinlandApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1243,6 +1288,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = ReactFinlandApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1272,11 +1318,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = "ReactFinlandApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1311,11 +1359,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+					"$(SRCROOT)/../node_modules/react-native-config/ios/ReactNativeConfig",
 				);
 				INFOPLIST_FILE = "ReactFinlandApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1354,6 +1404,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ReactFinlandApp-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1378,6 +1429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

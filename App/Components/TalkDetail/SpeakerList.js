@@ -10,6 +10,7 @@ const Row = styled.View`
 
 const Name = styled.Text`
   color: ${Colors.snow};
+  font-family: ${Fonts.type.base};
   font-size: ${Fonts.size.regular};
   text-align: center;
 `
