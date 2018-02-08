@@ -25,16 +25,6 @@ const TextArea = styled.Text`
   background-color: 'rgba(0,0,0,0)';
 `
 
-const OrgLink = styled.Text`
-  color: ${Colors.ricePaper};
-  padding-left: 30;
-  padding-right: 30;
-  padding-top: 20;
-  font-size: ${Fonts.size.h5};
-  font-family: ${Fonts.type.base};
-  background-color: 'rgba(0,0,0,0)';
-`
-
 const Headline = styled.Text`
   color: ${Colors.snow};
   padding-left: 30;
@@ -75,13 +65,6 @@ class AboutText extends React.Component {
             <TextArea>
               The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
             </TextArea>
-            <TouchableHighlight onPress={() => {
-              navigation.navigate('OrganizersScreen')
-            }}>
-              <OrgLink>
-                Click here to see the organizers
-              </OrgLink>
-            </TouchableHighlight>
           </DimmenBackground>
         </BackgroundImage>
       </Container>

@@ -1,3 +1,7 @@
+import React from 'react'
+import {View} from 'react-native'
+import { DrawerNavigator, StackNavigator } from 'react-navigation'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import { TabNavigator } from 'react-navigation'
 import { Platform } from 'react-native'
 import WorkshopScreen from '../Containers/WorkshopScreen'
@@ -6,10 +10,12 @@ import { Colors, Fonts } from '../Themes'
 
 const routeConfig = {
   WorkshopScreen: {
+    headerMode: 'none',
     screen: WorkshopScreen,
-    navigationOptions: {
-      title: 'Workshops'
-    }
+    navigationOptions: ({ navigation }) => ({
+      title: 'Tuesday',
+      headerLeft: <View style={{paddingLeft: 10}}><Icon name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>
+    })
   },
   WednesdayScreen: {
     screen: TalkScreen,
@@ -29,9 +35,9 @@ const swipe = Platform.OS === 'ios'
 
 const tabNavigatorConfig = {
   // Default config for all screens
-  tabBarPosition: 'top',
-  animationEnabled: swipe,
-  swipeEnabled: swipe,
+  tabBarPosition: 'bottom',
+  animationEnabled: true,
+  swipeEnabled: true,
   tabBarOptions: {
     animationEnabled: true,
     swipeEnabled: false,

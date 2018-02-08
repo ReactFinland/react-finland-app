@@ -30,19 +30,8 @@ const TopRow = styled.View`
   padding-right: 10px;
   justify-content: flex-start;
 `
-export const BackRow = ({onBack}) => (
-  <TopRow>
-    <TouchableOpacity style={{flexDirection: 'row', justifyContent: 'flex-start', backgroundColor: '#ffffff'}} onPress={() => onBack()}>
-      <Icon style={{paddingRight: 10, paddingBottom: 10}} size={28} name={backIcon} />
-      <Back>Back</Back>
-      <Headline>Organizers</Headline>
-    </TouchableOpacity>
-  </TopRow>
-)
 const Screen = styled.View`
   background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
-  margin-top: 20px;
   padding-bottom: 0;
   flex: 1;
 `
@@ -52,7 +41,6 @@ class OrganizersScreen extends Component {
     let { data, navigation } = this.props
     return (
       <Screen>
-        <BackRow onBack={navigation.goBack} />
         <OrganizersListing data={data} />
       </Screen>
     )
