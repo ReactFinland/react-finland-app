@@ -14,7 +14,7 @@ const routeConfig = {
     screen: WorkshopScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'Tuesday',
-      headerLeft: <View style={{paddingLeft: 10}}><Icon name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>
+      headerLeft: <View style={{paddingLeft: 15}}><Icon name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>
     })
   },
   WednesdayScreen: {
@@ -44,7 +44,8 @@ const tabNavigatorConfig = {
     activeTintColor: Colors.textDark,
     inactiveTintColor: Colors.grey,
     style: {
-      backgroundColor: Colors.background
+      backgroundColor: Colors.background,
+      paddingBottom: 15
     },
     labelStyle: {
       fontFamily: Fonts.type.base,
