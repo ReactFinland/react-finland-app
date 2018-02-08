@@ -1,6 +1,6 @@
 import React from 'react'
-import {View} from 'react-native'
-import { DrawerNavigator, StackNavigator } from 'react-navigation'
+import { View , Text } from 'react-native'
+import { DrawerNavigator, DrawerItems, StackNavigator } from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import AboutScreen from '../Containers/AboutScreen'
@@ -9,11 +9,12 @@ import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
 import { Colors, Fonts, Metrics } from '../Themes'
-
+import SideMenu from './SideMenu'
 const routeConfig = {
   ScheduleScreen: {
-   headerMode: 'none',
-   title: 'Schedule',
+   navigationOptions: {
+    title: 'Schedule',
+   },
    screen: ScheduleNavigation,
   },
   OrganizersScreen: {
@@ -48,7 +49,17 @@ const routeConfig = {
 }
 
 const drawerNavigatorConfig = {
-  
+  drawerWidth: 250,
+  headerStyle: {
+    display: 'none',
+  },
+  contentOptions: {
+    activeTintColor: Colors.snow,
+    labelStyle: Fonts.style.h5
+  },
+  contentComponent: props => (
+      <SideMenu {...props} />
+  ),
   navigationOptions: ({ navigation }) => ({
     headerLeft: <View style={{marginLeft: 10}}><Icon  name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>,
     headerStyle: {backgroundColor: '#018DD0'}
