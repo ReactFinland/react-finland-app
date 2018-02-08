@@ -8,12 +8,20 @@ import { Fonts, Colors, Metrics } from '../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
-  border-radius: 10;
+  border-left-width: 5px;
+  border-left-color: ${Colors.charcoal};
+`
+
+const AlignRight = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 5px;
+  padding-bottom: 5px;
 `
 
 const Speaker = styled.Text`
-  color: ${Colors.text};
-  font-size: ${Fonts.size.regular};
+  color: ${Colors.charcoal};
+  font-size: ${Fonts.size.small};
   font-family: ${Fonts.type.base};
 `
 
@@ -22,28 +30,28 @@ const Row = styled.View`
 `
 
 const Title = styled.Text`
-  color: ${Colors.text};
-  font-size: ${Fonts.size.h6};
-  font-family: ${Fonts.type.bold}
+  color: black;
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base}
 `
 
 const TalkInfo = styled.View`
-  flex: 7;
+  flex: 1;
   padding: 15px;
 `
 
 const ImageContainer = styled.View`
-  flex: 1;
-  align-items: center;
-  padding: 15px;
-  padding-top: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px 5px;
 `
 
 const TimeInfo = styled.View`
-  background-color: ${Colors.grey};
-  padding: 15px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  background-color: ${Colors.snow};
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
   flex-direction: row;
   align-items: center;
 `
@@ -52,23 +60,23 @@ const RoundedImage = styled.Image`
   width: 50;
   height: 50;
   border-radius: 25px;
-  border-width: 1px;
-  border-color: ${Colors.grey}
+  margin-left: -15px;
 `
 
 const Time = styled.Text`
-  font-size: ${Fonts.size.medium};
+  color: ${Colors.charcoal};
+  font-size: ${Fonts.size.tiny};
   font-family: ${Fonts.type.base};
   margin-left: 5px;
 `
 
 const makeSpeakersText = (speakers) =>
-  speakers && speakers.length > 0 ? speakers.map(a => a.name).join(' & ') : ''
+  speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
-  ? <RoundedImage source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speakers[0].image}`}} />
-  : null
+    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />)
+    : null
 )
 
 const StyledContainer = Animatable.createAnimatableComponent(Container)
@@ -99,15 +107,17 @@ class TalkCard extends React.Component {
         <StyledContainer ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
-              <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-              <Title>{ title }</Title>
+              <Title>{ title ? title : 'To be announced' }</Title>
             </TalkInfo>
             <ImageContainer>
               { getImage(speakers) }
             </ImageContainer>
           </Row>
+          <AlignRight>
+            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+          </AlignRight>
           <TimeInfo>
-            <Icon name='clock-o' size={Metrics.icons.small} />
+            <Icon name='clock-o' size={Metrics.icons.tiny} color={Colors.charcoal} />
             <Time>{ begin } - { end }</Time>
           </TimeInfo>
         </StyledContainer>

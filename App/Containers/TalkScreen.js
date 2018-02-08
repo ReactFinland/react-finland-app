@@ -9,9 +9,7 @@ import { pathOr } from 'ramda'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
-  padding-top: ${Metrics.doubleBaseMargin}px;
-  padding-bottom: 0;
+  padding-top: ${Metrics.baseMargin}px;
   flex: 1;
 `
 

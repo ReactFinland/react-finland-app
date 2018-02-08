@@ -5,52 +5,65 @@ import styled from 'styled-components/native'
 import { Fonts, Colors, Metrics } from '../../Themes'
 import R from 'ramda'
 
-const Row = styled.View`
-  border-radius: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  justifyContent: flex-start;
-  alignItems: flex-start;
-  margin: ${Metrics.smallMargin}px;
-  backgroundColor: ${Colors.snow};
+const Container = styled.View`
+  background-color: ${Colors.snow};
+  border-left-width: 5px;
+  border-left-color: ${Colors.charcoal};
 `
-const Headline = styled.Text`
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 5px;
-  padding-bottom: 15px;
-  padding-right: 65px;
-  font-size: ${Fonts.size.h4};
-  font-family: ${Fonts.type.bold};
-  color: ${Colors.facebook};
+
+const AlignRight = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 5px;
+  padding-bottom: 5px;
 `
-const Desc = styled.Text`
-  font-family: ${Fonts.type.base};
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 15px;
+
+const Speaker = styled.Text`
   color: ${Colors.charcoal};
-  padding-bottom: 10px;
+  font-size: ${Fonts.size.small};
+  font-family: ${Fonts.type.base};
+  text-align: right;
 `
+
+const Row = styled.View`
+  flex-direction: row;
+`
+
+const Title = styled.Text`
+  color: black;
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base}
+`
+
+const TalkInfo = styled.View`
+  flex: 1;
+  padding: 15px;
+`
+
 const ImageContainer = styled.View`
-  position: absolute;
-  right: 5px;
-  top: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15px 5px;
 `
+
 const RoundedImage = styled.Image`
   width: 50;
   height: 50;
   border-radius: 25px;
-  border-width: 1px;
-  border-color: ${Colors.grey}
+  margin-left: -15px;
 `
+
+const makeSpeakersText = (speakers) =>
+  speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
+
 const getImage = (speakers) => (
   speakers && speakers.length > 0
-  ? <RoundedImage source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speakers[0].image}`}} />
-  : null
+    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />)
+    : null
 )
 
-const StyledRow = Animatable.createAnimatableComponent(Row)
+const StyledRow = Animatable.createAnimatableComponent(Container)
+
 class WorkshopTile extends React.Component {
   onPressIn = () => {
     this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
@@ -62,14 +75,21 @@ class WorkshopTile extends React.Component {
 
   render () {
     const { item, onPress } = this.props
+    const { speakers, title } = item
     return (
       <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
         <StyledRow ref={ref => { this.container = ref }}>
-          <Headline numberOfLines={2}>{item && item.title}</Headline>
-          <Desc numberOfLines={3}>{item && item.description}</Desc>
-          <ImageContainer>
-            {getImage(R.pathOr([], ['speakers'], item))}
-          </ImageContainer>
+          <Row>
+            <TalkInfo>
+              <Title>{ title ? title : 'To be announced' }</Title>
+            </TalkInfo>
+            <ImageContainer>
+              { getImage(speakers) }
+            </ImageContainer>
+          </Row>
+          <AlignRight>
+            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
+          </AlignRight>
         </StyledRow>
       </TouchableWithoutFeedback>
     )

@@ -1,7 +1,17 @@
 import React from 'react'
 import { View, SectionList, Text } from 'react-native'
+import styled from 'styled-components/native'
+
 import styles from './Styles/WorkshopsStyle'
 import WorkshopTile from '../Components/WorkshopTile'
+import { Colors } from '../Themes'
+
+const Separator = styled.View`
+  height: 1px;
+  background-color: ${Colors.grey};
+  border-left-width: 5px;
+  border-left-color: ${Colors.charcoal};
+`
 
 class Workshops extends React.PureComponent {
   renderItem = ({section, item}) => {
@@ -42,6 +52,7 @@ class Workshops extends React.PureComponent {
         <SectionList
           renderSectionHeader={this.renderSectionHeader}
           sections={data}
+          ItemSeparatorComponent={() => <Separator />}
           contentContainerStyle={styles.listContent}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
