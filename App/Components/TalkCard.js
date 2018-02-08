@@ -48,7 +48,10 @@ const ImageContainer = styled.View`
 
 const TimeInfo = styled.View`
   background-color: ${Colors.snow};
-  padding: 10px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
   flex-direction: row;
   align-items: center;
 `
