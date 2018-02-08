@@ -7,7 +7,6 @@ import { Metrics, Colors } from '../Themes'
 
 const Container = styled.View`
   flex: 1;
-  paddingTop: 30;
   background-color: ${Colors.background};
   align-items: center;
 `

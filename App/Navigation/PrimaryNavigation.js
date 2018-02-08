@@ -19,23 +19,10 @@ const routeConfig = {
   },
   OrganizersScreen: {
     headerMode: 'none',
-    navigationOptions: {
-      title: 'Organizers',
-      headerMode: 'none',
-      headerStyle: {
-        display: 'none',
-      }
-    },
     screen: OrganizersScreen,
   },
   SpeakersScreen: {    
     screen: SpeakersScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Speakers',
-      headerStyle: {
-        display: 'none',
-      }
-    })
   },
   AboutScreen: {
    screen: AboutScreen,
@@ -60,10 +47,6 @@ const drawerNavigatorConfig = {
   contentComponent: props => (
       <SideMenu {...props} />
   ),
-  navigationOptions: ({ navigation }) => ({
-    headerLeft: <View style={{marginLeft: 10}}><Icon  name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>,
-    headerStyle: {backgroundColor: '#018DD0'}
-  })
 }
 
 // Manifest of possible screens
@@ -76,19 +59,13 @@ const RootNav = StackNavigator({
     screen: PrimaryNav
   },
   TalkDetails: {
-    navigationOptions: {
-      headerStyle: {
-        display: 'none',
-      }
-    },
     screen: TalkDetailsScreen
   },
   OrganizersScreen: {
     screen: OrganizersScreen
   }
 }, {
-  headerStyle: {backgroundColor: '#E73536'},
-  headerTintColor: 'red'
+  headerMode: 'none'
 })
 
 export default RootNav

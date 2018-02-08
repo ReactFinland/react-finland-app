@@ -10,11 +10,9 @@ import { Colors, Fonts } from '../Themes'
 
 const routeConfig = {
   WorkshopScreen: {
-    headerMode: 'none',
     screen: WorkshopScreen,
     navigationOptions: ({ navigation }) => ({
       title: 'Tuesday',
-      headerLeft: <View style={{paddingLeft: 15}}><Icon name="bars" size={15} onPress={ () => navigation.navigate('DrawerOpen') } /></View>
     })
   },
   WednesdayScreen: {
