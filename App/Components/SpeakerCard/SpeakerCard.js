@@ -7,7 +7,6 @@ import { TouchableWithoutFeedback } from 'react-native'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
-  border-radius: 10;
 `
 
 const Row = styled.View`
