@@ -11,10 +11,11 @@ const BackgroundImage = styled.Image`
 `
 const Headline = styled.Text`
   color: ${Colors.snow};
-  padding-left: 30;
+  padding-left: 15;
   padding-right: 30;
   padding-top: 20;
-  font-size: ${Fonts.size.h4};
+  padding-bottom: 20;
+  font-size: ${Fonts.size.h5};
   font-family: ${Fonts.type.bold};
   background-color: 'rgba(0,0,0,0)';
 `
@@ -27,9 +28,9 @@ export default class SideMenu extends Component {
       <BackgroundImage width={250} source={require('../Images/react-finland-background.png')} >
         <ScrollView style={{backgroundColor: 'transparent'}}>
             <Headline>
-              REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
+              React<Text style={{color: Colors.reactFinlandBlue}}>Finland</Text>
             </Headline>
-          <DrawerItems style={{color: 'white'}} {...props} />
+          <DrawerItems {...props} />
         </ScrollView>
       </BackgroundImage>
     )
