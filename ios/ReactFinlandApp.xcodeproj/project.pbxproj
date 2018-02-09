@@ -1273,6 +1273,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactfinlandapp;
 				PRODUCT_NAME = ReactFinlandApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1297,6 +1298,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactfinlandapp;
 				PRODUCT_NAME = ReactFinlandApp;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
