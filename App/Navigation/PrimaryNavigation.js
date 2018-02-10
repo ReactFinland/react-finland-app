@@ -47,7 +47,7 @@ const drawerNavigatorConfig = {
     display: 'none',
   },
   contentOptions: {
-    inactiveTintColor: Colors.snow,
+    inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
     activeTintColor: Colors.reactFinlandBlue,
     labelStyle: Fonts.style.h5
   },

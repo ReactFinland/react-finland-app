@@ -39,15 +39,15 @@ const tabNavigatorConfig = {
   tabBarOptions: {
     animationEnabled: true,
     swipeEnabled: false,
-    activeTintColor: Colors.textDark,
-    inactiveTintColor: Colors.grey,
+    activeTintColor: Colors.snow,
+    inactiveTintColor: Colors.coal,
     style: {
-      backgroundColor: Colors.background,
+      backgroundColor: Colors.reactFinlandBlue,
       paddingBottom: 15
     },
     labelStyle: {
       fontFamily: Fonts.type.base,
-      fontSize: Fonts.size.small
+      fontSize: Fonts.size.medium
     }
   }
 }
