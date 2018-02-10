@@ -7,6 +7,7 @@ import OrganizersListing from '../Components/OrganizersListing'
 import { Platform, TouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MenuBar from '../Components/MenuBar'
 
 const backIcon = Platform.OS === 'ios' ? 'ios-arrow-back' : 'ios-arrow-round-back'
 
@@ -31,16 +32,19 @@ const TopRow = styled.View`
   justify-content: flex-start;
 `
 const Screen = styled.View`
-  background-color: ${Colors.background};
+  background-color: ${Colors.reactFinlandBlue};
   padding-bottom: 0;
   flex: 1;
 `
-
+const onMenuOpen = navigation => {
+  navigation.navigate('OpenDrawer')
+}
 class OrganizersScreen extends Component {
   render () {
     let { data, navigation } = this.props
     return (
       <Screen>
+        <MenuBar navigateDrawer={navigation => {this.props.navigation.navigate('DrawerOpen')}} />
         <OrganizersListing data={data} />
       </Screen>
     )

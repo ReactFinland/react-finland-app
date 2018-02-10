@@ -8,8 +8,6 @@ import { Colors } from '../Themes'
 
 const Separator = styled.View`
   height: 1px;
-  background-color: ${Colors.grey};
-  border-left-width: 5px;
   border-left-color: ${Colors.charcoal};
 `
 
@@ -42,6 +40,7 @@ class Workshops extends React.PureComponent {
   oneScreensWorth = 20
 
   render () {
+    const {openDrawer} = this.props
     const data = this.props.workshops.map(item => ({
       ...item,
       data: item.sessions
@@ -49,16 +48,16 @@ class Workshops extends React.PureComponent {
 
     return (
       <View style={styles.container}>
-        <SectionList
-          renderSectionHeader={this.renderSectionHeader}
-          sections={data}
-          ItemSeparatorComponent={() => <Separator />}
-          contentContainerStyle={styles.listContent}
-          renderItem={this.renderItem}
-          keyExtractor={this.keyExtractor}
-          initialNumToRender={this.oneScreensWorth}
-          ListEmptyComponent={this.renderEmpty}
-        />
+          <SectionList
+            renderSectionHeader={this.renderSectionHeader}
+            sections={data}
+            ItemSeparatorComponent={() => <Separator />}
+            contentContainerStyle={styles.listContent}
+            renderItem={this.renderItem}
+            keyExtractor={this.keyExtractor}
+            initialNumToRender={this.oneScreensWorth}
+            ListEmptyComponent={this.renderEmpty}
+          />
       </View>
     )
   }

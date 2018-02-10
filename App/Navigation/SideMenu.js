@@ -7,11 +7,11 @@ import { Fonts, Colors, Metrics } from '../Themes'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
-const BackgroundImage = styled.Image`
+const BackgroundImage = styled.ImageBackground`
   flex: 1;
   width: ${props => props.width};
 `
-const LogoImage = styled.Image`
+const LogoImage = styled.ImageBackground`
   flex: 1;
   margin-bottom: 0px;
   margin-top: -10px;
