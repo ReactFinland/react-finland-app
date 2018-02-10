@@ -19,9 +19,15 @@ const routeConfig = {
   },
   OrganizersScreen: {
     headerMode: 'none',
+    navigationOptions: {
+      title: 'Organizers',
+     },
     screen: OrganizersScreen,
   },
-  SpeakersScreen: {    
+  SpeakersScreen: {
+    navigationOptions: {
+      title: 'Speakers',
+    },
     screen: SpeakersScreen,
   },
   AboutScreen: {
