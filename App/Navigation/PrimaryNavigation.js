@@ -1,48 +1,61 @@
 import React from 'react'
-import { TabNavigator, StackNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import { DrawerNavigator, StackNavigator } from 'react-navigation'
 
 import AboutScreen from '../Containers/AboutScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
 import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
-import { Colors, Fonts, Metrics } from '../Themes'
-
+import { Colors, Fonts } from '../Themes'
+import SideMenu from './SideMenu'
 const routeConfig = {
   ScheduleScreen: {
-    screen: ScheduleNavigation,
     navigationOptions: {
-      title: 'Schedule',
-      tabBarIcon: ({ tintColor }) =>
-        <Icon name='calendar' size={Metrics.icons.tiny} color={tintColor} />
-    }
-  },
-  SpeakersScreen: { screen: SpeakersScreen },
-  // OrganizersScreen: { screen: OrganizersScreen },
-  AboutScreen: { screen: AboutScreen }
-}
-
-const tabNavigatorConfig = {
-  // Default config for all screens
-  tabBarPosition: 'bottom',
-  animationEnabled: false,
-  swipeEnabled: false,
-  tabBarOptions: {
-    activeTintColor: Colors.textDark,
-    inactiveTintColor: Colors.grey,
-    style: {
-      backgroundColor: Colors.coal
+      title: 'Schedule'
     },
-    labelStyle: {
-      fontFamily: Fonts.type.base,
-      fontSize: Fonts.size.small
-    }
+    screen: ScheduleNavigation
+  },
+  OrganizersScreen: {
+    headerMode: 'none',
+    navigationOptions: {
+      title: 'Organizers'
+    },
+    screen: OrganizersScreen
+  },
+  SpeakersScreen: {
+    navigationOptions: {
+      title: 'Speakers'
+    },
+    screen: SpeakersScreen
+  },
+  AboutScreen: {
+    screen: AboutScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'About',
+      headerStyle: {
+        display: 'none'
+      }
+    })
   }
 }
 
+const drawerNavigatorConfig = {
+  drawerWidth: 250,
+  headerStyle: {
+    display: 'none'
+  },
+  contentOptions: {
+    inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
+    activeTintColor: Colors.reactFinlandBlue,
+    labelStyle: Fonts.style.h5
+  },
+  contentComponent: props => (
+    <SideMenu {...props} />
+  )
+}
+
 // Manifest of possible screens
-const PrimaryNav = TabNavigator(routeConfig, tabNavigatorConfig)
+const PrimaryNav = DrawerNavigator(routeConfig, drawerNavigatorConfig)
 
 // To get the modals work, wrap the main navigator in StackNavigator and
 // add the modals in the root navigator as well
@@ -57,8 +70,7 @@ const RootNav = StackNavigator({
     screen: OrganizersScreen
   }
 }, {
-  headerMode: 'none',
-  mode: 'modal'
+  headerMode: 'none'
 })
 
 export default RootNav

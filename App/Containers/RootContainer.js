@@ -10,7 +10,8 @@ import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
   componentDidMount () {
-    // if redux persist is not active fire startup action
+    StatusBar.setHidden(true)
+
     if (!ReduxPersist.active) {
       this.props.startup()
     }
@@ -19,7 +20,6 @@ class RootContainer extends Component {
   render () {
     return (
       <View style={styles.applicationView}>
-        <StatusBar barStyle='light-content' />
         <ReduxPrimaryNavigation />
       </View>
     )

@@ -4,12 +4,12 @@ import styled from 'styled-components/native'
 
 import ScheduleActions from '../Redux/ScheduleRedux'
 import TalkListing from '../Components/TalkListing'
-import { Colors, Metrics } from '../Themes'
+import { Colors } from '../Themes'
 import { pathOr } from 'ramda'
+import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
-  background-color: ${Colors.background};
-  padding-top: ${Metrics.baseMargin}px;
+  background-color: ${Colors.reactFinlandBlue};
   flex: 1;
 `
 
@@ -23,6 +23,7 @@ class TalkScreenOld extends Component {
     }
     return (
       <Screen>
+        <MenuBar navigateDrawer={() => { this.props.navigation.navigate('DrawerOpen') }} />
         <TalkListing
           data={pathOr([], [routeName], mapping)}
           onSessionSelected={(session) => {

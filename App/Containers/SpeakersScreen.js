@@ -5,11 +5,10 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import SpeakerListing from '../Components/SpeakerListing'
 import { Colors, Metrics } from '../Themes'
+import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
-  padding: ${Metrics.baseMargin}px;
-  padding-top: ${Metrics.doubleBaseMargin}px;
   padding-bottom: 0;
   flex: 1;
 `
@@ -22,9 +21,10 @@ class SpeakersScreen extends Component {
   }
 
   render () {
-    let { data } = this.props
+    let { data, navigation } = this.props
     return (
       <Screen>
+        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <SpeakerListing data={data} />
       </Screen>
     )

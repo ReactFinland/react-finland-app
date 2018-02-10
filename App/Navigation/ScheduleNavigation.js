@@ -1,5 +1,4 @@
 import { TabNavigator } from 'react-navigation'
-import { Platform } from 'react-native'
 import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
 import { Colors, Fonts } from '../Themes'
@@ -7,9 +6,9 @@ import { Colors, Fonts } from '../Themes'
 const routeConfig = {
   WorkshopScreen: {
     screen: WorkshopScreen,
-    navigationOptions: {
-      title: 'Workshops'
-    }
+    navigationOptions: ({ navigation }) => ({
+      title: 'Tuesday'
+    })
   },
   WednesdayScreen: {
     screen: TalkScreen,
@@ -24,25 +23,24 @@ const routeConfig = {
     }
   }
 }
-// not working property on android
-const swipe = Platform.OS === 'ios'
 
 const tabNavigatorConfig = {
   // Default config for all screens
-  tabBarPosition: 'top',
-  animationEnabled: swipe,
-  swipeEnabled: swipe,
+  tabBarPosition: 'bottom',
+  animationEnabled: true,
+  swipeEnabled: true,
   tabBarOptions: {
     animationEnabled: true,
     swipeEnabled: false,
-    activeTintColor: Colors.textDark,
-    inactiveTintColor: Colors.grey,
+    activeTintColor: Colors.snow,
+    inactiveTintColor: Colors.coal,
     style: {
-      backgroundColor: Colors.background
+      backgroundColor: Colors.reactFinlandBlue,
+      paddingBottom: 15
     },
     labelStyle: {
       fontFamily: Fonts.type.base,
-      fontSize: Fonts.size.small
+      fontSize: Fonts.size.medium
     }
   }
 }

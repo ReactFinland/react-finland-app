@@ -6,7 +6,6 @@ import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
-  border-radius: 10;
 `
 
 const Row = styled.View`

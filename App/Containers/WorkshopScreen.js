@@ -5,6 +5,7 @@ import { Colors } from '../Themes'
 import Workshops from './Workshops'
 import ScheduleActions from '../Redux/ScheduleRedux'
 import { pathOr } from 'ramda'
+import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -13,14 +14,17 @@ const Screen = styled.View`
   justify-content: center;
   align-items: center;
 `
-
 class WorkshopScreen extends Component {
   render () {
     const { workshops, selectSession, navigation } = this.props
     return (
       <Screen>
+        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <Workshops
           workshops={workshops}
+          onMenuOpen={() => {
+            navigation.navigate('OpenDrawer')
+          }}
           onSessionSelected={(session) => {
             selectSession(session)
             navigation.navigate('TalkDetails')

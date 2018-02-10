@@ -8,8 +8,6 @@ import { Colors } from '../Themes'
 
 const Separator = styled.View`
   height: 1px;
-  background-color: ${Colors.grey};
-  border-left-width: 5px;
   border-left-color: ${Colors.charcoal};
 `
 
@@ -58,7 +56,7 @@ class Workshops extends React.PureComponent {
           keyExtractor={this.keyExtractor}
           initialNumToRender={this.oneScreensWorth}
           ListEmptyComponent={this.renderEmpty}
-        />
+          />
       </View>
     )
   }

@@ -1,6 +1,6 @@
 const colors = {
   reactFinlandBlue: '#5397E9',
-  background: '#2d2d2d',
+  background: '#5397E9',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',

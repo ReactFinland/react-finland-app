@@ -5,7 +5,7 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.reactFinlandBlue
   },
   row: {
     width: 160,
@@ -19,7 +19,7 @@ export default StyleSheet.create({
   sectionHeader: {
     marginTop: 0,
     width: Metrics.screenWidth,
-    backgroundColor: Colors.background
+    backgroundColor: Colors.reactFinlandBlue
   },
   boldLabel: {
     fontWeight: 'bold',
