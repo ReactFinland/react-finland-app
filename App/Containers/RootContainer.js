@@ -10,7 +10,7 @@ import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
   componentDidMount () {
-    StatusBar.setHidden(true);
+    StatusBar.setHidden(true)
 
     if (!ReduxPersist.active) {
       this.props.startup()

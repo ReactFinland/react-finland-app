@@ -2,8 +2,7 @@ import React from 'react'
 import { TouchableWithoutFeedback } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import styled from 'styled-components/native'
-import { Fonts, Colors, Metrics } from '../../Themes'
-import R from 'ramda'
+import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
@@ -81,7 +80,7 @@ class WorkshopTile extends React.Component {
         <StyledRow ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
-              <Title>{ title ? title : 'To be announced' }</Title>
+              <Title>{ title || 'To be announced' }</Title>
             </TalkInfo>
             <ImageContainer>
               { getImage(speakers) }

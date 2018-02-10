@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components/native'
 
 import TalkDetail from '../Components/TalkDetail'
-import { Colors, Metrics } from '../Themes'
+import { Colors } from '../Themes'
 
 const Screen = styled.View`
   background-color: ${Colors.background};

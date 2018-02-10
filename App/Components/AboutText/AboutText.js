@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Dimensions, TouchableHighlight } from 'react-native'
+import { Text, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 import { Fonts, Colors } from '../../Themes'
 
@@ -48,7 +48,6 @@ class AboutText extends React.Component {
   }
   render () {
     const { width } = this.state
-    let { navigation } = this.props
     return (
       <Container onLayout={this.onLayout}>
         <BackgroundImage width={width} source={require('../../Images/react-finland-background.png')} >

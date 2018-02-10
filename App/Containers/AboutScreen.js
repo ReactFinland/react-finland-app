@@ -11,9 +11,6 @@ const Container = styled.View`
   background-color: ${Colors.background};
   align-items: center;
 `
-const onMenuOpen = navigation => {
-  navigation.navigate('OpenDrawer')
-}
 
 export default class AboutScreen extends Component {
   static navigationOptions = {
@@ -25,7 +22,7 @@ export default class AboutScreen extends Component {
   render () {
     return (
       <Container>
-        <MenuBar navigateDrawer={navigation => {this.props.navigation.navigate('DrawerOpen')}} />
+        <MenuBar navigateDrawer={() => { this.props.navigation.navigate('DrawerOpen') }} />
         <AboutText navigation={this.props.navigation} />
       </Container>
     )

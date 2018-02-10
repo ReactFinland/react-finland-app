@@ -1,50 +1,48 @@
 import React from 'react'
-import { View , Text } from 'react-native'
-import { DrawerNavigator, DrawerItems, StackNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import { DrawerNavigator, StackNavigator } from 'react-navigation'
 
 import AboutScreen from '../Containers/AboutScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
 import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
-import { Colors, Fonts, Metrics } from '../Themes'
+import { Colors, Fonts } from '../Themes'
 import SideMenu from './SideMenu'
 const routeConfig = {
   ScheduleScreen: {
-   navigationOptions: {
-    title: 'Schedule',
-   },
-   screen: ScheduleNavigation,
+    navigationOptions: {
+      title: 'Schedule'
+    },
+    screen: ScheduleNavigation
   },
   OrganizersScreen: {
     headerMode: 'none',
     navigationOptions: {
-      title: 'Organizers',
-     },
-    screen: OrganizersScreen,
+      title: 'Organizers'
+    },
+    screen: OrganizersScreen
   },
   SpeakersScreen: {
     navigationOptions: {
-      title: 'Speakers',
+      title: 'Speakers'
     },
-    screen: SpeakersScreen,
+    screen: SpeakersScreen
   },
   AboutScreen: {
-   screen: AboutScreen,
-   navigationOptions: ({ navigation }) => ({
-     title: 'About',
-     headerStyle: {
-       display: 'none',
-     }
-   })
+    screen: AboutScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'About',
+      headerStyle: {
+        display: 'none'
+      }
+    })
   }
 }
 
 const drawerNavigatorConfig = {
   drawerWidth: 250,
   headerStyle: {
-    display: 'none',
+    display: 'none'
   },
   contentOptions: {
     inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
@@ -52,8 +50,8 @@ const drawerNavigatorConfig = {
     labelStyle: Fonts.style.h5
   },
   contentComponent: props => (
-      <SideMenu {...props} />
-  ),
+    <SideMenu {...props} />
+  )
 }
 
 // Manifest of possible screens

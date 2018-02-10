@@ -12,9 +12,6 @@ const Screen = styled.View`
   padding-bottom: 0;
   flex: 1;
 `
-const onMenuOpen = navigation => {
-  navigation.navigate('OpenDrawer')
-}
 
 class SpeakersScreen extends Component {
   static navigationOptions = {
@@ -24,10 +21,10 @@ class SpeakersScreen extends Component {
   }
 
   render () {
-    let { data } = this.props
+    let { data, navigation } = this.props
     return (
       <Screen>
-        <MenuBar navigateDrawer={navigation => {this.props.navigation.navigate('DrawerOpen')}} />
+        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <SpeakerListing data={data} />
       </Screen>
     )

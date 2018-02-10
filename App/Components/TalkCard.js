@@ -93,14 +93,14 @@ class TalkCard extends React.Component {
 
   render () {
     const { session, begin, end, onPress } = this.props
-    const { speakers = [], title='' } = session
-    if(title.toLowerCase().indexOf('breakfast') > -1) {
+    const { speakers = [], title = '' } = session
+    if (title.toLowerCase().indexOf('breakfast') > -1) {
       return <View />
     }
-    if(title.toLowerCase().indexOf('lunch') > -1) {
+    if (title.toLowerCase().indexOf('lunch') > -1) {
       return <View />
     }
-    if(title.toLowerCase().indexOf('coffee break') > -1) {
+    if (title.toLowerCase().indexOf('coffee break') > -1) {
       return <View />
     }
     return (
@@ -108,7 +108,7 @@ class TalkCard extends React.Component {
         <StyledContainer ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
-              <Title>{ title ? title : 'To be announced' }</Title>
+              <Title>{ title || 'To be announced' }</Title>
             </TalkInfo>
             <ImageContainer>
               { getImage(speakers) }

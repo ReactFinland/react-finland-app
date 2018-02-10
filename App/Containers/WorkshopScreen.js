@@ -14,19 +14,15 @@ const Screen = styled.View`
   justify-content: center;
   align-items: center;
 `
-const onMenuOpen = navigation => {
-  navigation.navigate('OpenDrawer')
-}
 class WorkshopScreen extends Component {
   render () {
     const { workshops, selectSession, navigation } = this.props
     return (
       <Screen>
-        <MenuBar navigateDrawer={navigation => {this.props.navigation.navigate('DrawerOpen')}} />
+        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <Workshops
           workshops={workshops}
           onMenuOpen={() => {
-            selectSession(session)
             navigation.navigate('OpenDrawer')
           }}
           onSessionSelected={(session) => {

@@ -40,7 +40,6 @@ class Workshops extends React.PureComponent {
   oneScreensWorth = 20
 
   render () {
-    const {openDrawer} = this.props
     const data = this.props.workshops.map(item => ({
       ...item,
       data: item.sessions
@@ -48,15 +47,15 @@ class Workshops extends React.PureComponent {
 
     return (
       <View style={styles.container}>
-          <SectionList
-            renderSectionHeader={this.renderSectionHeader}
-            sections={data}
-            ItemSeparatorComponent={() => <Separator />}
-            contentContainerStyle={styles.listContent}
-            renderItem={this.renderItem}
-            keyExtractor={this.keyExtractor}
-            initialNumToRender={this.oneScreensWorth}
-            ListEmptyComponent={this.renderEmpty}
+        <SectionList
+          renderSectionHeader={this.renderSectionHeader}
+          sections={data}
+          ItemSeparatorComponent={() => <Separator />}
+          contentContainerStyle={styles.listContent}
+          renderItem={this.renderItem}
+          keyExtractor={this.keyExtractor}
+          initialNumToRender={this.oneScreensWorth}
+          ListEmptyComponent={this.renderEmpty}
           />
       </View>
     )

@@ -29,13 +29,10 @@ const openUrl = link => Linking.openURL(link).catch(err => {
   console.tron.log(`Failed to open link ${link}`)
   console.tron.log(err)
 })
-const navigateDrawer = navigate => {
-  console.tron.log('open drawer')
-}
 const MenuBar = ({navigateDrawer}) => (
   <TopRow width={width}>
     <TouchableOpacity style={{height: 30, flexDirection: 'row', justifyContent: 'flex-start'}} onPress={() => navigateDrawer()}>
-      <Icon style={{paddingRight: 10,paddingTop: 2, color: Colors.snow, paddingBottom: 10, backgroundColor: 'rgba(0,0,0,0)'}} size={20} name={backIcon} />
+      <Icon style={{paddingRight: 10, paddingTop: 2, color: Colors.snow, paddingBottom: 10, backgroundColor: 'rgba(0,0,0,0)'}} size={20} name={backIcon} />
       <Back>Menu</Back>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => openUrl('https://ti.to/react-finland/2018')}>
@@ -44,4 +41,3 @@ const MenuBar = ({navigateDrawer}) => (
   </TopRow>
 )
 export default MenuBar
-
