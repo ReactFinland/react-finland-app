@@ -11,21 +11,6 @@ import SideMenu from './SideMenu'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
 
-// const drawerNavigatorConfig = {
-//   drawerWidth: 250,
-//   headerStyle: {
-//     display: 'none'
-//   },
-//   contentOptions: {
-//     inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
-//     activeTintColor: Colors.reactFinlandBlue,
-//     labelStyle: Fonts.style.h5
-//   },
-//   contentComponent: props => (
-//     <SideMenu {...props} />
-//   )
-// }
-
 const OrganizersStack = StackNavigator({
   OrganizerScreen: {
     screen: OrganizersScreen,
@@ -82,6 +67,15 @@ const DrawerNav = DrawerNavigator({
     screen: AboutStack
   }
 }, {
+  drawerWidth: 250,
+  contentOptions: {
+    inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
+    activeTintColor: Colors.reactFinlandBlue,
+    labelStyle: Fonts.style.h5
+  },
+  contentComponent: props => (
+    <SideMenu {...props} />
+  ),
   drawerOpenRoute: 'DrawerOpen',
   drawerCloseRoute: 'DrawerClose',
   drawerToggleRoute: 'DrawerToggle'
