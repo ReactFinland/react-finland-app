@@ -5,7 +5,6 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import SpeakerListing from '../Components/SpeakerListing'
 import { Colors, Metrics } from '../Themes'
-import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
   background-color: ${Colors.background};
@@ -24,7 +23,6 @@ class SpeakersScreen extends Component {
     let { data, navigation } = this.props
     return (
       <Screen>
-        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <SpeakerListing data={data} />
       </Screen>
     )

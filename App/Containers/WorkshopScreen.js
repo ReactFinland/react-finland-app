@@ -19,7 +19,6 @@ class WorkshopScreen extends Component {
     const { workshops, selectSession, navigation } = this.props
     return (
       <Screen>
-        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <Workshops
           workshops={workshops}
           onMenuOpen={() => {

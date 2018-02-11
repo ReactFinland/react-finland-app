@@ -6,7 +6,6 @@ import ScheduleActions from '../Redux/ScheduleRedux'
 import TalkListing from '../Components/TalkListing'
 import { Colors } from '../Themes'
 import { pathOr } from 'ramda'
-import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
   background-color: ${Colors.reactFinlandBlue};
@@ -23,7 +22,6 @@ class TalkScreenOld extends Component {
     }
     return (
       <Screen>
-        <MenuBar navigateDrawer={() => { this.props.navigation.navigate('DrawerOpen') }} />
         <TalkListing
           data={pathOr([], [routeName], mapping)}
           onSessionSelected={(session) => {

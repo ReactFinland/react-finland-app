@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { Colors } from '../Themes'
 import OrganizersListing from '../Components/OrganizersListing'
 import styled from 'styled-components/native'
-import MenuBar from '../Components/MenuBar'
 
 const Screen = styled.View`
   background-color: ${Colors.reactFinlandBlue};
@@ -16,7 +15,6 @@ class OrganizersScreen extends Component {
     let { data, navigation } = this.props
     return (
       <Screen>
-        <MenuBar navigateDrawer={() => { navigation.navigate('DrawerOpen') }} />
         <OrganizersListing data={data} />
       </Screen>
     )
