@@ -10,6 +10,7 @@ import { Colors, Fonts } from '../Themes'
 import SideMenu from './SideMenu'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
+import { headerTitleStyle } from './styles'
 
 const OrganizersStack = StackNavigator({
   OrganizerScreen: {
@@ -18,7 +19,8 @@ const OrganizersStack = StackNavigator({
       return {
         headerRight: <BuyTicketsLink />,
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
-        title: 'Organizers'
+        title: 'Organizers',
+        headerTitleStyle
       }
     }
   }
@@ -31,7 +33,8 @@ const SpeakersStack = StackNavigator({
       return {
         headerRight: <BuyTicketsLink />,
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
-        title: 'Speakers'
+        title: 'Speakers',
+        headerTitleStyle
       }
     }
   }
@@ -44,7 +47,8 @@ const AboutStack = StackNavigator({
       return {
         headerRight: <BuyTicketsLink />,
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
-        title: 'About'
+        title: 'About',
+        headerTitleStyle
       }
     }
   }

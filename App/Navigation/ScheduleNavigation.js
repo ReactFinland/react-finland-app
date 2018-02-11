@@ -7,6 +7,7 @@ import TalkDetails from '../Containers/TalkDetailsScreen'
 import { Colors, Fonts } from '../Themes'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
+import { headerTitleStyle } from './styles'
 
 const routeConfig = {
   WorkshopScreen: {
@@ -61,12 +62,7 @@ const ScheduleStack = StackNavigator({
         headerRight: <BuyTicketsLink />,
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
         title: 'Schedule',
-        headerTitleStyle: {
-          fontFamily: Fonts.type.base,
-          fontSize: Fonts.size.regular,
-          fontWeight: 'normal',
-          color: Colors.coal
-        }
+        headerTitleStyle
       }
     }
   },
