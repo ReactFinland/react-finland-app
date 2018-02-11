@@ -5,15 +5,12 @@ import TalkCard from './TalkCard'
 import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
-  margin-top: 26px;
   background-color: ${Colors.reactFinlandBlue}
 `
 
 const Separator = styled.View`
   height: 1px;
   background-color: ${Colors.grey};
-  border-left-width: 5px;
-  border-left-color: ${Colors.charcoal};
 `
 
 export default class TalkListing extends React.Component {

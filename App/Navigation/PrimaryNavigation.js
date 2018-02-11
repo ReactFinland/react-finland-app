@@ -8,42 +8,70 @@ import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
 import { Colors, Fonts } from '../Themes'
 import SideMenu from './SideMenu'
-const routeConfig = {
-  ScheduleScreen: {
-    navigationOptions: {
-      title: 'Schedule'
-    },
-    screen: ScheduleNavigation
-  },
-  OrganizersScreen: {
-    headerMode: 'none',
-    navigationOptions: {
-      title: 'Organizers'
-    },
-    screen: OrganizersScreen
-  },
+import BuyTicketsLink from './BuyTicketsLink'
+import MenuButton from './MenuButton'
+import { headerTitleStyle } from './styles'
+
+const OrganizersStack = StackNavigator({
+  OrganizerScreen: {
+    screen: OrganizersScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerRight: <BuyTicketsLink />,
+        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
+        title: 'Organizers',
+        headerTitleStyle
+      }
+    }
+  }
+})
+
+const SpeakersStack = StackNavigator({
   SpeakersScreen: {
-    navigationOptions: {
-      title: 'Speakers'
-    },
-    screen: SpeakersScreen
-  },
+    screen: SpeakersScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerRight: <BuyTicketsLink />,
+        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
+        title: 'Speakers',
+        headerTitleStyle
+      }
+    }
+  }
+})
+
+const AboutStack = StackNavigator({
   AboutScreen: {
     screen: AboutScreen,
-    navigationOptions: ({ navigation }) => ({
-      title: 'About',
-      headerStyle: {
-        display: 'none'
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerRight: <BuyTicketsLink />,
+        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
+        title: 'About',
+        headerTitleStyle
       }
-    })
+    }
   }
-}
+})
 
-const drawerNavigatorConfig = {
-  drawerWidth: 250,
-  headerStyle: {
-    display: 'none'
+const DrawerNav = DrawerNavigator({
+  Schedule: {
+    screen: ScheduleNavigation,
+    navigationOptions: {
+      title: 'Schedule',
+    }
   },
+  Organizers: {
+    screen: OrganizersStack
+  },
+  Speakers: {
+    screen: SpeakersStack
+  },
+  About: {
+    screen: AboutStack
+  }
+}, {
+  drawerWidth: 250,
   contentOptions: {
     inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
     activeTintColor: Colors.reactFinlandBlue,
@@ -51,26 +79,10 @@ const drawerNavigatorConfig = {
   },
   contentComponent: props => (
     <SideMenu {...props} />
-  )
-}
-
-// Manifest of possible screens
-const PrimaryNav = DrawerNavigator(routeConfig, drawerNavigatorConfig)
-
-// To get the modals work, wrap the main navigator in StackNavigator and
-// add the modals in the root navigator as well
-const RootNav = StackNavigator({
-  Main: {
-    screen: PrimaryNav
-  },
-  TalkDetails: {
-    screen: TalkDetailsScreen
-  },
-  OrganizersScreen: {
-    screen: OrganizersScreen
-  }
-}, {
-  headerMode: 'none'
+  ),
+  drawerOpenRoute: 'DrawerOpen',
+  drawerCloseRoute: 'DrawerClose',
+  drawerToggleRoute: 'DrawerToggle'
 })
 
-export default RootNav
+export default DrawerNav

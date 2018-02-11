@@ -4,7 +4,6 @@ import styled from 'styled-components/native'
 import OrganizerCard from './OrganizerCard'
 
 const FlatList = styled.FlatList`
-  margin-top: 10px;
   background-color: transparent;
 `
 

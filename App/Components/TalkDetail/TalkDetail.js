@@ -4,7 +4,6 @@ import { Dimensions } from 'react-native'
 
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
-import { BackRow } from './BackRow'
 
 const BackgroundImage = styled.Image`
   flex: 1;
@@ -55,11 +54,10 @@ class TalkDetail extends React.Component {
   }
   render () {
     const { width, height } = this.state
-    const { title, description, speakers, navigation } = this.props
+    const { title, description, speakers } = this.props
     return (
       <BackgroundImage height={height} width={width} source={require('../../Images/react-finland-background.png')} >
         <Container>
-          <BackRow onBack={navigation.goBack} />
           <Top>
             <Title>{title}</Title>
           </Top>

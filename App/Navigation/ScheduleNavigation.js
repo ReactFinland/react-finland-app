@@ -1,14 +1,20 @@
-import { TabNavigator } from 'react-navigation'
+import React from 'react'
+import { TabNavigator, StackNavigator } from 'react-navigation'
+
 import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
+import TalkDetails from '../Containers/TalkDetailsScreen'
 import { Colors, Fonts } from '../Themes'
+import BuyTicketsLink from './BuyTicketsLink'
+import MenuButton from './MenuButton'
+import { headerTitleStyle } from './styles'
 
 const routeConfig = {
   WorkshopScreen: {
     screen: WorkshopScreen,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: {
       title: 'Tuesday'
-    })
+    }
   },
   WednesdayScreen: {
     screen: TalkScreen,
@@ -48,4 +54,29 @@ const tabNavigatorConfig = {
 // Manifest of possible screens
 const ScheduleNav = TabNavigator(routeConfig, tabNavigatorConfig)
 
-export default ScheduleNav
+const ScheduleStack = StackNavigator({
+  Schedule: {
+    screen: ScheduleNav,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerRight: <BuyTicketsLink />,
+        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
+        title: 'Schedule',
+        headerTitleStyle
+      }
+    }
+  },
+  TalkDetails: {
+    screen: TalkDetails,
+    navigationOptions: {
+      headerRight: <BuyTicketsLink />,
+      headerBackTitleStyle: {
+        fontFamily: Fonts.type.base,
+        fontSize: Fonts.size.regular,
+        color: Colors.reactFinlandBlue
+      }
+    }
+  }
+})
+
+export default ScheduleStack
