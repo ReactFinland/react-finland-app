@@ -6,8 +6,6 @@ import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.View`
   background-color: ${Colors.snow};
-  border-left-width: 5px;
-  border-left-color: ${Colors.reactFinlandBlue};
 `
 
 const AlignRight = styled.View`

@@ -8,7 +8,7 @@ import { Colors } from '../Themes'
 
 const Separator = styled.View`
   height: 1px;
-  border-left-color: ${Colors.charcoal};
+  background-color: ${Colors.grey};
 `
 
 class Workshops extends React.PureComponent {
