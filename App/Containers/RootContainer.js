@@ -10,8 +10,6 @@ import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
   componentDidMount () {
-    StatusBar.setHidden(true)
-
     if (!ReduxPersist.active) {
       this.props.startup()
     }
@@ -20,6 +18,7 @@ class RootContainer extends Component {
   render () {
     return (
       <View style={styles.applicationView}>
+        <StatusBar barStyle='dark-content' />
         <ReduxPrimaryNavigation />
       </View>
     )
