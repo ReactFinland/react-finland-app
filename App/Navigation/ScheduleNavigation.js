@@ -60,14 +60,25 @@ const ScheduleStack = StackNavigator({
       return {
         headerRight: <BuyTicketsLink />,
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
-        title: 'Schedule'
+        title: 'Schedule',
+        headerTitleStyle: {
+          fontFamily: Fonts.type.base,
+          fontSize: Fonts.size.regular,
+          fontWeight: 'normal',
+          color: Colors.coal
+        }
       }
     }
   },
   TalkDetails: {
     screen: TalkDetails,
     navigationOptions: {
-      headerRight: <BuyTicketsLink />
+      headerRight: <BuyTicketsLink />,
+      headerBackTitleStyle: {
+        fontFamily: Fonts.type.base,
+        fontSize: Fonts.size.regular,
+        color: Colors.reactFinlandBlue
+      }
     }
   }
 })

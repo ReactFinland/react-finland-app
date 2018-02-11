@@ -1,5 +1,14 @@
 import React from 'react'
-import { TouchableHighlight, Text, Linking } from 'react-native'
+import { TouchableOpacity, Linking } from 'react-native'
+import styled from 'styled-components/native'
+
+import { Colors, Fonts } from '../Themes'
+
+const Link = styled.Text`
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
+  color: ${Colors.reactFinlandBlue}
+`
 
 const openUrl = link => Linking.openURL(link).catch(err => {
   console.tron.log(`Failed to open link ${link}`)
@@ -7,9 +16,9 @@ const openUrl = link => Linking.openURL(link).catch(err => {
 })
 
 const BuyTicketsLink = () => (
-  <TouchableHighlight onPress={() => openUrl('https://ti.to/react-finland/2018')}>
-    <Text>Buy Tickets</Text>
-  </TouchableHighlight>
+  <TouchableOpacity style={{ marginRight: 10 }} onPress={() => openUrl('https://ti.to/react-finland/2018')}>
+    <Link>Buy Tickets</Link>
+  </TouchableOpacity>
 )
 
 export default BuyTicketsLink

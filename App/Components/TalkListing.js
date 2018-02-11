@@ -5,7 +5,6 @@ import TalkCard from './TalkCard'
 import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
-  margin-top: 26px;
   background-color: ${Colors.reactFinlandBlue}
 `
 
