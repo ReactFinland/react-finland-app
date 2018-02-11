@@ -8,8 +8,6 @@ export default StyleSheet.create({
     backgroundColor: Colors.reactFinlandBlue
   },
   row: {
-    width: 160,
-    height: 160,
     justifyContent: 'center',
     alignItems: 'center',
     margin: Metrics.smallMargin,
@@ -17,8 +15,9 @@ export default StyleSheet.create({
     borderRadius: Metrics.smallMargin
   },
   sectionHeader: {
+    flex: 1,
     marginTop: 0,
-    width: Metrics.screenWidth,
+    width: Metrics.screenHeight,
     backgroundColor: Colors.reactFinlandBlue
   },
   boldLabel: {

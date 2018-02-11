@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, SectionList, Text } from 'react-native'
+import { View, SectionList, Text, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
 import styles from './Styles/WorkshopsStyle'
@@ -26,8 +26,9 @@ class Workshops extends React.PureComponent {
 
   renderSectionHeader ({section}) {
     const title = `${section.begin} - ${section.end}`
+    const { width } = Dimensions.get('window')
     return (
-      <View style={styles.sectionHeader}>
+      <View style={[{width}, styles.sectionHeader]}>
         <Text style={styles.boldLabel}>{title}</Text>
       </View>
     )
