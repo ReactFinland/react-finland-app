@@ -17,7 +17,7 @@ export default StyleSheet.create({
   sectionHeader: {
     flex: 1,
     marginTop: 0,
-    width: Metrics.screenHeight,
+    width: Metrics.screenWidth,
     backgroundColor: Colors.reactFinlandBlue
   },
   boldLabel: {
