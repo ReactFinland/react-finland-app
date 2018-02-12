@@ -75,7 +75,10 @@ const DrawerNav = DrawerNavigator({
   contentOptions: {
     inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
     activeTintColor: Colors.reactFinlandBlue,
-    labelStyle: Fonts.style.h5
+    labelStyle: {
+      fontSize: Fonts.size.h5,
+      fontFamily: Fonts.type.base
+    }
   },
   contentComponent: props => (
     <SideMenu {...props} />
