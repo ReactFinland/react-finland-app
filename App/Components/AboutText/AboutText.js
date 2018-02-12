@@ -1,18 +1,10 @@
 import React from 'react'
-import { Text, Dimensions } from 'react-native'
+import { Text, Dimensions, ImageBackground } from 'react-native'
 import styled from 'styled-components/native'
 import { Fonts, Colors } from '../../Themes'
 
 const Container = styled.ScrollView`
   background-color: ${Colors.background};
-`
-const DimmenBackground = styled.View`
-  flex: 1;
-  background-color: 'rgba(0,0,0, 0.2)';
-`
-const BackgroundImage = styled.Image`
-  flex: 1;
-  width: ${props => props.width};
 `
 
 const TextArea = styled.Text`
@@ -50,22 +42,20 @@ class AboutText extends React.Component {
     const { width } = this.state
     return (
       <Container onLayout={this.onLayout}>
-        <BackgroundImage width={width} source={require('../../Images/react-finland-background.png')} >
-          <DimmenBackground>
-            <Headline>
-              REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
-            </Headline>
-            <TextArea>
-              React Finland combines the Finnish React community with international flavor. First of its kind in Finland, the event consists of a workshop day and two days of presentations around the topic.
-            </TextArea>
-            <TextArea>
-              In this single track event you will learn more about React and surrounding topics while meeting some of the leading talents of the community.
-            </TextArea>
-            <TextArea>
-              The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
-            </TextArea>
-          </DimmenBackground>
-        </BackgroundImage>
+        <ImageBackground style={{ width }} source={require('../../Images/react-finland-background.png')} >
+          <Headline>
+            REACT<Text style={{color: Colors.reactFinlandBlue}}>FINLAND</Text>
+          </Headline>
+          <TextArea>
+            React Finland combines the Finnish React community with international flavor. First of its kind in Finland, the event consists of a workshop day and two days of presentations around the topic.
+          </TextArea>
+          <TextArea>
+            In this single track event you will learn more about React and surrounding topics while meeting some of the leading talents of the community.
+          </TextArea>
+          <TextArea>
+            The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
+          </TextArea>
+        </ImageBackground>
       </Container>
     )
   }
