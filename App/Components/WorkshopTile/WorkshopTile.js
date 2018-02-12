@@ -1,54 +1,7 @@
 import React from 'react'
 import { TouchableWithoutFeedback } from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import styled from 'styled-components/native'
-import { Fonts, Colors } from '../../Themes'
-
-const Container = styled.View`
-  background-color: ${Colors.snow};
-`
-
-const AlignRight = styled.View`
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 0 5px;
-  padding-bottom: 5px;
-`
-
-const Speaker = styled.Text`
-  color: ${Colors.charcoal};
-  font-size: ${Fonts.size.small};
-  font-family: ${Fonts.type.base};
-  text-align: right;
-`
-
-const Row = styled.View`
-  flex-direction: row;
-`
-
-const Title = styled.Text`
-  color: black;
-  font-size: ${Fonts.size.regular};
-  font-family: ${Fonts.type.base}
-`
-
-const TalkInfo = styled.View`
-  flex: 1;
-  padding: 15px;
-`
-
-const ImageContainer = styled.View`
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 15px 5px;
-`
-
-const RoundedImage = styled.Image`
-  width: 50;
-  height: 50;
-  border-radius: 25px;
-  margin-left: -15px;
-`
+import {Container, AlignRight, Speaker, Row, Title, TalkInfo, ImageContainer, RoundedImage} from '../CardCommon'
 
 const makeSpeakersText = (speakers) =>
   speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
@@ -73,6 +26,7 @@ class WorkshopTile extends React.Component {
   render () {
     const { item, onPress } = this.props
     const { speakers, title } = item
+    const image = getImage(speakers)
     return (
       <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
         <StyledRow ref={ref => { this.container = ref }}>
@@ -80,9 +34,7 @@ class WorkshopTile extends React.Component {
             <TalkInfo>
               <Title>{ title || 'To be announced' }</Title>
             </TalkInfo>
-            <ImageContainer>
-              { getImage(speakers) }
-            </ImageContainer>
+            { image ? <ImageContainer>{ image }</ImageContainer> : null }
           </Row>
           <AlignRight>
             <Speaker>{ makeSpeakersText(speakers) }</Speaker>

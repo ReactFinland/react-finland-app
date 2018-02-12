@@ -5,7 +5,7 @@ import TalkCard from './TalkCard'
 import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
-  background-color: ${Colors.reactFinlandBlue}
+  background-color: ${Colors.reactFinlandBlue};
 `
 
 const Separator = styled.View`
