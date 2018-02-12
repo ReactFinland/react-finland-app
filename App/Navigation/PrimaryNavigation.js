@@ -74,6 +74,7 @@ const DrawerNav = DrawerNavigator({
   contentOptions: {
     inactiveTintColor: 'rgba(255, 255, 255, 0.8)',
     activeTintColor: Colors.reactFinlandBlue,
+    activeBackgroundColor: null,
     labelStyle: {
       fontSize: Fonts.size.h5,
       fontFamily: Fonts.type.base
