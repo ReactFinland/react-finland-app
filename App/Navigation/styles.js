@@ -4,5 +4,6 @@ export const headerTitleStyle = {
   fontFamily: Fonts.type.base,
   fontSize: Fonts.size.regular,
   fontWeight: 'normal',
-  color: Colors.coal
+  color: Colors.coal,
+  alignSelf: 'center'
 }
