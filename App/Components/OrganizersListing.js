@@ -7,7 +7,6 @@ const FlatList = styled.FlatList`
   background-color: transparent;
 `
 
-
 export default class OrganizersListing extends React.Component {
   renderOrganizerCard ({ item }) {
     const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
