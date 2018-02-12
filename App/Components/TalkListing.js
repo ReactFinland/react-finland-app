@@ -8,11 +8,6 @@ const FlatList = styled.FlatList`
   background-color: ${Colors.reactFinlandBlue};
 `
 
-const Separator = styled.View`
-  height: 1px;
-  background-color: ${Colors.grey};
-`
-
 export default class TalkListing extends React.Component {
   constructor (props) {
     super(props)
@@ -35,7 +30,6 @@ export default class TalkListing extends React.Component {
     return (
       <FlatList
         keyExtractor={(item, index) => index}
-        ItemSeparatorComponent={() => <Separator />}
         data={this.props.data.filter(hasSessions)}
         renderItem={this.renderInterval}
       />

@@ -1,10 +1,11 @@
 import styled from 'styled-components/native'
 import { Fonts, Colors } from '../Themes'
 
-
 export const Container = styled.View`
 background-color: ${Colors.snow};
 padding: 10px;
+border-bottom-color: ${Colors.grey};
+border-bottom-width: 1px;
 `
 
 export const AlignRight = styled.View`
