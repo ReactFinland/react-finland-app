@@ -20,7 +20,7 @@ class SpeakersScreen extends Component {
   }
 
   render () {
-    let { data, navigation } = this.props
+    let { data } = this.props
     return (
       <Screen>
         <SpeakerListing data={data} />

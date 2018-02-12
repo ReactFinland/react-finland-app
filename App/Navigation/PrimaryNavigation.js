@@ -3,7 +3,6 @@ import { DrawerNavigator, StackNavigator } from 'react-navigation'
 
 import AboutScreen from '../Containers/AboutScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
-import TalkDetailsScreen from '../Containers/TalkDetailsScreen'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
 import { Colors, Fonts } from '../Themes'
@@ -58,7 +57,7 @@ const DrawerNav = DrawerNavigator({
   Schedule: {
     screen: ScheduleNavigation,
     navigationOptions: {
-      title: 'Schedule',
+      title: 'Schedule'
     }
   },
   Organizers: {

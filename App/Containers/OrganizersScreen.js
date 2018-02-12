@@ -12,7 +12,7 @@ const Screen = styled.View`
 `
 class OrganizersScreen extends Component {
   render () {
-    let { data, navigation } = this.props
+    let { data } = this.props
     return (
       <Screen>
         <OrganizersListing data={data} />
