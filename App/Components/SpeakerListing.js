@@ -8,11 +8,6 @@ const FlatList = styled.FlatList`
   background-color: ${Colors.background}
 `
 
-const Separator = styled.View`
-  margin: 1px;
-  background-color: ${Colors.background}
-`
-
 export default class SpeakerListing extends React.Component {
   renderSpeakerCard ({ item }) {
     const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
@@ -31,7 +26,6 @@ export default class SpeakerListing extends React.Component {
     return (
       <FlatList
         keyExtractor={(item) => item.name}
-        ItemSeparatorComponent={() => <Separator />}
         data={this.props.data}
         renderItem={this.renderSpeakerCard}
       />

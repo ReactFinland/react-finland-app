@@ -7,11 +7,6 @@ const FlatList = styled.FlatList`
   background-color: transparent;
 `
 
-const Separator = styled.View`
-  margin: 1px;
-  background-color: transparent
-`
-
 export default class OrganizersListing extends React.Component {
   renderOrganizerCard ({ item }) {
     const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
@@ -30,7 +25,6 @@ export default class OrganizersListing extends React.Component {
     return (
       <FlatList
         keyExtractor={(item) => item.name}
-        ItemSeparatorComponent={() => <Separator />}
         data={this.props.data}
         renderItem={this.renderOrganizerCard}
       />

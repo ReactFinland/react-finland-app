@@ -5,12 +5,7 @@ import TalkCard from './TalkCard'
 import { Colors } from '../Themes'
 
 const FlatList = styled.FlatList`
-  background-color: ${Colors.reactFinlandBlue}
-`
-
-const Separator = styled.View`
-  height: 1px;
-  background-color: ${Colors.grey};
+  background-color: ${Colors.reactFinlandBlue};
 `
 
 export default class TalkListing extends React.Component {
@@ -35,7 +30,6 @@ export default class TalkListing extends React.Component {
     return (
       <FlatList
         keyExtractor={(item, index) => index}
-        ItemSeparatorComponent={() => <Separator />}
         data={this.props.data.filter(hasSessions)}
         renderItem={this.renderInterval}
       />
