@@ -10,7 +10,7 @@ const DimmenBackground = styled.View`
   flex: 1;
   background-color: 'rgba(0,0,0, 0.2)';
 `
-const BackgroundImage = styled.Image`
+const BackgroundImage = styled.ImageBackground`
   flex: 1;
   width: ${props => props.width};
 `
