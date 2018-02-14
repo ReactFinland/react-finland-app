@@ -5,7 +5,7 @@ import { Dimensions } from 'react-native'
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
 
-const BackgroundImage = styled.Image`
+const BackgroundImage = styled.ImageBackground`
   flex: 1;
   width: ${props => props.width};
   height: ${props => props.height};

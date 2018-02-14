@@ -29,7 +29,7 @@ export default class TalkListing extends React.Component {
     const hasSessions = ({ sessions }) => sessions && sessions.length > 0
     return (
       <FlatList
-        keyExtractor={(item, index) => index}
+        keyExtractor={(item, index) => `${index}`}
         data={this.props.data.filter(hasSessions)}
         renderItem={this.renderInterval}
       />
