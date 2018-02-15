@@ -1,4 +1,5 @@
 import React from 'react'
+import { Platform } from 'react-native'
 import { DrawerNavigator, StackNavigator } from 'react-navigation'
 
 import AboutScreen from '../Containers/AboutScreen'
@@ -77,7 +78,13 @@ const DrawerNav = DrawerNavigator({
     activeBackgroundColor: null,
     labelStyle: {
       fontSize: Fonts.size.h5,
-      fontFamily: Fonts.type.base
+      fontFamily: Fonts.type.bold,
+
+      // For some reason, Android needs fontWeight: 'normal' here to display
+      // Finlandica font. fontFamily: 'Finlandica-Bold' makes it bold.
+      // With those settings, iOS does not display the font bolded but requires
+      // fontWeight: 'bold'.
+      fontWeight: Platform.OS === 'ios' ? 'bold' : 'normal'
     }
   },
   contentComponent: props => (
