@@ -8,7 +8,6 @@ import { Colors, Fonts, Metrics } from '../../Themes'
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
   width: ${props => props.width};
-  height: ${props => props.height};
 `
 const Container = styled.ScrollView`
   flex: 1;
@@ -38,6 +37,7 @@ const Description = styled.Text`
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
   color: ${Colors.snow};
+  padding-bottom: ${2 * Metrics.doubleBaseMargin}px;
   background-color: 'rgba(0,0,0,0)';
 `
 
@@ -56,7 +56,7 @@ class TalkDetail extends React.Component {
     const { width, height } = this.state
     const { title, description, speakers } = this.props
     return (
-      <BackgroundImage height={height} width={width} source={require('../../Images/react-finland-background.png')} >
+      <BackgroundImage resizeMode='cover' width={width} source={require('../../Images/react-finland-background.png')} >
         <Container>
           <Top>
             <Title>{title}</Title>
