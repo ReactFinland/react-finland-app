@@ -12,22 +12,22 @@ import styles from './Styles/RootContainerStyles'
 // https://github.com/react-navigation/react-navigation/issues/1349#issuecomment-304692012
 const isRootScreen = (navigator) => {
   if (navigator.index == null) {
-    return true;
+    return true
   }
 
   if (navigator.index > 0) {
-    return false;
+    return false
   }
 
-  return !navigator.routes || !navigator.routes.find(route => !isRootScreen(route));
+  return !navigator.routes || !navigator.routes.find(route => !isRootScreen(route))
 }
 
 class RootContainer extends Component {
-  componentWillMount() {
+  componentWillMount () {
     BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressed)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressed)
   }
 
