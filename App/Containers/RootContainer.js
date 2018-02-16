@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { View, StatusBar, BackHandler } from 'react-native'
+import { View, StatusBar, BackHandler, Platform } from 'react-native'
 import ReduxPrimaryNavigation from '../Navigation/ReduxPrimaryNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 import { NavigationActions } from 'react-navigation'
-
-// Styles
+import { Colors } from '../Themes'
 import styles from './Styles/RootContainerStyles'
 
 // https://github.com/react-navigation/react-navigation/issues/1349#issuecomment-304692012
@@ -50,7 +49,10 @@ class RootContainer extends Component {
   render () {
     return (
       <View style={styles.applicationView}>
-        <StatusBar barStyle='dark-content' />
+        <StatusBar
+          barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
+          backgroundColor={Colors.reactFinlandBlue}
+        />
         <ReduxPrimaryNavigation />
       </View>
     )
