@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-import { Colors, Fonts } from '../../Themes'
+import { Colors, Fonts, Metrics } from '../../Themes'
 
 const Row = styled.View`
   flex: 1;
@@ -9,6 +9,7 @@ const Row = styled.View`
 `
 
 const Name = styled.Text`
+  padding-top: ${Metrics.smallMargin}px;
   color: ${Colors.snow};
   font-family: ${Fonts.type.base};
   font-size: ${Fonts.size.regular};
@@ -18,7 +19,7 @@ const Name = styled.Text`
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  background-color: 'rgba(0,0,0,0)';
+  background-color: rgba(0,0,0,0);
 `
 
 const RoundedImage = styled.Image`
