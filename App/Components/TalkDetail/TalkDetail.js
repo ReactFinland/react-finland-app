@@ -7,14 +7,12 @@ import { Colors, Fonts, Metrics } from '../../Themes'
 
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
-  width: ${props => props.width};
-  height: ${props => props.height};
 `
 const Container = styled.ScrollView`
   flex: 1;
   background-color: ${Colors.snow};
   padding: ${Metrics.baseMargin}px;
-  background-color: 'rgba(0,0,0,0)';
+  background-color: rgba(0,0,0,0);
   border-radius: 10;
 `
 
@@ -30,7 +28,7 @@ const Title = styled.Text`
   font-size: ${Fonts.size.h3};
   font-family: ${Fonts.type.bold};
   text-align: center;
-  background-color: 'rgba(0,0,0,0)';
+  background-color: rgba(0,0,0,0);
 `
 
 const Description = styled.Text`
@@ -38,25 +36,15 @@ const Description = styled.Text`
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
   color: ${Colors.snow};
-  background-color: 'rgba(0,0,0,0)';
+  padding-bottom: ${2 * Metrics.doubleBaseMargin}px;
+  background-color: rgba(0,0,0,0);
 `
 
 class TalkDetail extends React.Component {
-  constructor (props) {
-    super(props)
-    const { width, height } = Dimensions.get('window')
-    this.state = { width, height }
-    this.onLayout = this.onLayout.bind(this)
-  }
-  onLayout (e) {
-    const { width } = Dimensions.get('window')
-    this.setState({ width })
-  }
   render () {
-    const { width, height } = this.state
     const { title, description, speakers } = this.props
     return (
-      <BackgroundImage height={height} width={width} source={require('../../Images/react-finland-background.png')} >
+      <BackgroundImage resizeMode='cover' source={require('../../Images/react-finland-background.png')} >
         <Container>
           <Top>
             <Title>{title}</Title>
