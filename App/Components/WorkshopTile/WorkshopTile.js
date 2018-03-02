@@ -15,6 +15,9 @@ const getImage = (speakers) => (
 const StyledRow = Animatable.createAnimatableComponent(Container)
 
 class WorkshopTile extends React.Component {
+  state = {
+    opening: false
+  }
   onPressIn = () => {
     this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
   }
@@ -22,13 +25,24 @@ class WorkshopTile extends React.Component {
   onPressOut = () => {
     this.container.transitionTo({ scale: 1.0 }, 300)
   }
+  onPress = () => {
+    const { opening } = this.state
+    const { onPress } = this.props
+    if (opening) return
+
+    this.setState({opening: true})
+
+    setTimeout(() => onPress(), 200)
+
+    setTimeout(() => this.setState({opening: false}), 600)
+  }
 
   render () {
-    const { item, onPress } = this.props
+    const { item } = this.props
     const { speakers, title } = item
     const image = getImage(speakers)
     return (
-      <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+      <TouchableWithoutFeedback onPress={this.onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
         <StyledRow ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
