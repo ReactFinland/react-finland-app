@@ -61,11 +61,11 @@ const DrawerNav = DrawerNavigator({
       title: 'Schedule'
     }
   },
-  Organizers: {
-    screen: OrganizersStack
-  },
   Speakers: {
     screen: SpeakersStack
+  },
+  Organizers: {
+    screen: OrganizersStack
   },
   About: {
     screen: AboutStack
