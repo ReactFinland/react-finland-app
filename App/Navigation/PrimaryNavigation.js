@@ -11,6 +11,7 @@ import SideMenu from './SideMenu'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
 import { headerTitleStyle } from './styles'
+import SponsorListScreen from '../Containers/SponsorListScreen'
 
 const OrganizersStack = StackNavigator({
   OrganizerScreen: {
@@ -25,7 +26,19 @@ const OrganizersStack = StackNavigator({
     }
   }
 })
-
+const SponsorListStack = StackNavigator({
+  SponsorListScreen: {
+    screen: SponsorListScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerRight: <BuyTicketsLink />,
+        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
+        title: 'Sponsors',
+        headerTitleStyle
+      }
+    }
+  }
+})
 const SpeakersStack = StackNavigator({
   SpeakersScreen: {
     screen: SpeakersScreen,
@@ -69,6 +82,9 @@ const DrawerNav = DrawerNavigator({
   },
   About: {
     screen: AboutStack
+  },
+  Sponsors: {
+    screen: SponsorListStack
   }
 }, {
   drawerWidth: 250,
