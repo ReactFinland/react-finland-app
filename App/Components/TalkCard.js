@@ -6,6 +6,7 @@ import * as Animatable from 'react-native-animatable'
 import {Container, AlignRight, Speaker, Row, Title, TalkInfo, ImageContainer, TimeInfo, RoundedImage, Time} from './CardCommon'
 
 import { Metrics, Colors } from '../Themes'
+import {scaleOnPress} from './ScaleOnPress'
 
 const makeSpeakersText = (speakers) =>
   speakers && speakers.length > 0 ? speakers.map(a => a.name).join('\n') : ''
@@ -19,16 +20,9 @@ const getImage = (speakers) => (
 const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
-  onPressIn = () => {
-    this.container.transition({ scale: 1.0 }, { scale: 0.95 }, 300)
-  }
-
-  onPressOut = () => {
-    this.container.transitionTo({ scale: 1.0 }, 300)
-  }
-
   render () {
-    const { session, begin, end, onPress } = this.props
+    const { onPress, onPressIn, onPressOut } = this.props
+    const { session, begin, end } = this.props
     const { speakers = [], title = '' } = session
     if (title.toLowerCase().indexOf('breakfast') > -1) {
       return <View />
@@ -41,7 +35,7 @@ class TalkCard extends React.Component {
     }
     const image = getImage(speakers)
     return (
-      <TouchableWithoutFeedback onPress={onPress} onPressIn={this.onPressIn} onPressOut={this.onPressOut}>
+      <TouchableWithoutFeedback onPress={() => onPress()} onPressIn={() => onPressIn(this.container)} onPressOut={() => onPressOut(this.container)}>
         <StyledContainer ref={ref => { this.container = ref }}>
           <Row>
             <TalkInfo>
@@ -62,4 +56,4 @@ class TalkCard extends React.Component {
   }
 }
 
-export default TalkCard
+export default scaleOnPress()(TalkCard)
