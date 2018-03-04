@@ -1,9 +1,4 @@
 import React from 'react'
-import { TouchableWithoutFeedback, Fragment } from 'react-native'
-import * as Animatable from 'react-native-animatable'
-import {Container } from './CardCommon'
-
-const StyledRow = Animatable.createAnimatableComponent(Container)
 
 export const scaleOnPress = () => {
   return WrappedComponent => {
@@ -26,7 +21,7 @@ export const scaleOnPress = () => {
         }
 
         this.setState({opening: true})
-        setTimeout(() => this.props.onPress(), 200)
+        setTimeout(() => onPress(), 200)
         setTimeout(() => this.setState({opening: false}), 600)
       }
       render () {

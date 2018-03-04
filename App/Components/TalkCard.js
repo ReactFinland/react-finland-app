@@ -21,7 +21,7 @@ const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
   render () {
-    const { item, onPress, onPressIn, onPressOut } = this.props
+    const { onPress, onPressIn, onPressOut } = this.props
     const { session, begin, end } = this.props
     const { speakers = [], title = '' } = session
     if (title.toLowerCase().indexOf('breakfast') > -1) {
