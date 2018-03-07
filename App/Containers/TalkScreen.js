@@ -12,7 +12,7 @@ const Screen = styled.View`
   flex: 1;
 `
 
-class TalkScreenOld extends Component {
+class TalkScreen extends Component {
   render () {
     let { data, navigation, selectSession } = this.props
     const {state: {routeName}} = navigation
@@ -42,4 +42,4 @@ const mapStateToProps = ({schedule}) => ({
   data: schedule.data
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TalkScreenOld)
+export default connect(mapStateToProps, mapDispatchToProps)(TalkScreen)
