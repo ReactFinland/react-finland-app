@@ -24,15 +24,7 @@ class TalkCard extends React.Component {
     const { onPress, onPressIn, onPressOut } = this.props
     const { session, begin, end } = this.props
     const { speakers = [], title = '' } = session
-    if (title.toLowerCase().indexOf('breakfast') > -1) {
-      return <View />
-    }
-    if (title.toLowerCase().indexOf('lunch') > -1) {
-      return <View />
-    }
-    if (title.toLowerCase().indexOf('coffee break') > -1) {
-      return <View />
-    }
+
     const image = getImage(speakers)
     return (
       <TouchableWithoutFeedback onPress={() => onPress()} onPressIn={() => onPressIn(this.container)} onPressOut={() => onPressOut(this.container)}>
