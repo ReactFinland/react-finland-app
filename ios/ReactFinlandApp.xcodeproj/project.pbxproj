@@ -781,11 +781,12 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = VU8T77JEXU;
+						ProvisioningStyle = Manual;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = VU8T77JEXU;
+						DevelopmentTeam = 5QX4BHNLZX;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1284,7 +1285,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = VU8T77JEXU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1312,6 +1314,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactFinlandApp.app/ReactFinlandApp";
 			};
 			name = Debug;
@@ -1320,8 +1323,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = VU8T77JEXU;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1345,6 +1349,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactFinlandApp.app/ReactFinlandApp";
 			};
 			name = Release;
@@ -1354,9 +1359,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CURRENT_PROJECT_VERSION = 1;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = VU8T77JEXU;
+				DEVELOPMENT_TEAM = 5QX4BHNLZX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1372,6 +1379,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reactfinland.app;
 				PRODUCT_NAME = ReactFinlandApp;
+				PROVISIONING_PROFILE = "bdd9d663-3307-4c51-8808-cb8b4548cd35";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.reactfinland.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1381,8 +1390,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VU8T77JEXU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 5QX4BHNLZX;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1398,6 +1409,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reactfinland.app;
 				PRODUCT_NAME = ReactFinlandApp;
+				PROVISIONING_PROFILE = "bdd9d663-3307-4c51-8808-cb8b4548cd35";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.reactfinland.app";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

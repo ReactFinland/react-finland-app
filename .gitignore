@@ -60,3 +60,6 @@ jsconfig.json
 .classpath
 .settings
 .project
+
+*.zip
+
