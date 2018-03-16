@@ -48,7 +48,6 @@ class TalkCard extends React.Component {
       <TouchableWithoutFeedback onPress={() => onPress()} onPressIn={() => onPressIn(this.container)} onPressOut={() => onPressOut(this.container)}>
         <StyledContainer ref={ref => { this.container = ref }}>
           <Row>
-            {this.icon}
             <TalkInfo>
               <Title>{ title || 'To be announced' }</Title>
             </TalkInfo>

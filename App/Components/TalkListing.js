@@ -27,32 +27,6 @@ export default class TalkListing extends React.Component {
     />
   }
 
-  renderSectionHeader = ({ section }) => {
-    if (!section.title) {
-      return null
-    }
-
-    const { width } = Dimensions.get('window')
-    return (
-      <SectionHeader width={width}>
-        <SectionHeaderText>{section.title}</SectionHeaderText>
-      </SectionHeader>
-    )
-  }
-
-  renderSectionFooter = ({ section }) => {
-    if (!section.title) {
-      return null
-    }
-
-    const { width } = Dimensions.get('window')
-    return (
-      <SectionHeader width={width}>
-        <SectionHeaderText>{`End of ${section.title}`}</SectionHeaderText>
-      </SectionHeader>
-    )
-  }
-
   render () {
     const dataWithSections = this.props.data.map((interval, index) => {
       const title = interval.sessions.length > 1
@@ -77,8 +51,6 @@ export default class TalkListing extends React.Component {
         sections={dataWithSections}
         renderItem={this.renderSingleSession}
         keyExtractor={(item, index) => `list-${index}`}
-        renderSectionHeader={this.renderSectionHeader}
-        renderSectionFooter={this.renderSectionFooter}
       />
     )
   }
