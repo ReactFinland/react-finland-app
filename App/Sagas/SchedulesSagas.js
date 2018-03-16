@@ -5,7 +5,7 @@ import ScheduleActions from '../Redux/ScheduleRedux'
 
 const getSchedules = {
   query: gql`
-  { 
+  {
     schedules {
     day,
        intervals {
@@ -14,6 +14,7 @@ const getSchedules = {
          sessions {
            title
            description
+           type
            speakers {
              name
              about

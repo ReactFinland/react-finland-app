@@ -1,37 +1,56 @@
 import React from 'react'
+import { SectionList, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
 import TalkCard from './TalkCard'
-import { Colors } from '../Themes'
+import { Colors, Fonts, Metrics } from '../Themes'
 
-const FlatList = styled.FlatList`
-  background-color: ${Colors.reactFinlandBlue};
+const SectionHeaderText = styled.Text`
+  color: ${Colors.snow};
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
+`
+
+const SectionHeader = styled.View`
+  padding: 10px;
+  width: ${props => props.width}
+  backgroundColor: ${Colors.reactFinlandBlue}
 `
 
 export default class TalkListing extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.renderInterval = this.renderInterval.bind(this)
-  }
-
-  renderInterval ({item: { begin, end, sessions }}) {
-    const session = sessions[0]
+  renderSingleSession = ({ item: session }) => {
     return <TalkCard
       onPress={() => { this.props.onSessionSelected(session) }}
       session={session}
-      begin={begin}
-      end={end}
+      begin={session.begin}
+      end={session.end}
     />
   }
 
   render () {
-    const hasSessions = ({ sessions }) => sessions && sessions.length > 0
+    const dataWithSections = this.props.data.map((interval, index) => {
+      const title = interval.sessions.length > 1
+        ? interval.sessions[0].title
+        : null
+      const sessions = interval.sessions.length > 1
+        ? interval.sessions.slice(1)
+        : interval.sessions
+
+      return {
+        data: sessions.map(session => ({
+          ...session,
+          begin: interval.begin,
+          end: interval.end
+        })),
+        title
+      }
+    })
+
     return (
-      <FlatList
-        keyExtractor={(item, index) => `${index}`}
-        data={this.props.data.filter(hasSessions)}
-        renderItem={this.renderInterval}
+      <SectionList
+        sections={dataWithSections}
+        renderItem={this.renderSingleSession}
+        keyExtractor={(item, index) => `list-${index}`}
       />
     )
   }
