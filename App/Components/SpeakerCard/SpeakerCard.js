@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialLink from './SocialLink'
+import SocialLink from '../SocialLink'
 import * as Animatable from 'react-native-animatable'
 import { TouchableWithoutFeedback } from 'react-native'
 
