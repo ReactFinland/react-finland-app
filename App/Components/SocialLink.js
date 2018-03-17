@@ -14,24 +14,9 @@ const TouchableWithMargin = styled.TouchableOpacity`
 
 class SocialLink extends React.Component {
   static Home = (props) => <SocialLink {...props} icon='home' />
-
-  static LinkedIn = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://www.linkedin.com/in/${props.link}`}
-    icon='linkedin-square'
-  />
-
-  static GitHub = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://github.com/${props.link}`}
-    icon='github'
-  />
-
-  static Twitter = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://twitter.com/${props.link}`}
-    icon='twitter'
-  />
+  static LinkedIn = (props) => <SocialLink {...props} icon='linkedin-square' />
+  static GitHub = (props) => <SocialLink {...props} icon='github' />
+  static Twitter = (props) => <SocialLink {...props} icon='twitter' />
 
   constructor (props) {
     super(props)
