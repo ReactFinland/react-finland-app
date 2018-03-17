@@ -12,15 +12,16 @@ export const Row = styled.View`
 `
 
 export const Author = styled.Text`
-  color: ${Colors.text};
-  font-size: ${Fonts.size.h6};
-  font-family: ${Fonts.type.bold};
+  color: black;
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
 `
 
 export const About = styled.Text`
-  color: ${Colors.coal};
-  font-size: ${Fonts.size.regular};
+  color: ${Colors.charcoal};
+  font-size: ${Fonts.size.medium};
   font-family: ${Fonts.type.base};
+  padding-top: 5px;
 `
 
 export const SpeakerInfo = styled.View`
