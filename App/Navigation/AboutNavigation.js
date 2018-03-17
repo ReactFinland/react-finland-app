@@ -3,20 +3,21 @@ import { TabNavigator, StackNavigator } from 'react-navigation'
 
 import WorkshopScreen from '../Containers/WorkshopScreen'
 import AboutScreen from '../Containers/AboutScreen'
+import LocationScreen from '../Containers/LocationScreen'
 import { Colors, Fonts } from '../Themes'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
 import { headerTitleStyle } from './styles'
 
 const routeConfig = {
-  AboutScreenTODO: {
+  AboutScreen: {
     screen: AboutScreen,
     navigationOptions: {
       title: 'General info'
     }
   },
   LocationScreen: {
-    screen: AboutScreen,
+    screen: LocationScreen,
     navigationOptions: {
       title: 'Location'
     }
