@@ -1,9 +1,10 @@
 import React from 'react'
 import { Platform } from 'react-native'
-import { DrawerNavigator, StackNavigator } from 'react-navigation'
+import { DrawerNavigator, StackNavigator, TabNavigator } from 'react-navigation'
 
 import AboutScreen from '../Containers/AboutScreen'
 import SpeakersScreen from '../Containers/SpeakersScreen'
+import AboutNavigation from './AboutNavigation'
 import ScheduleNavigation from './ScheduleNavigation'
 import OrganizersScreen from '../Containers/OrganizersScreen'
 import { Colors, Fonts } from '../Themes'
@@ -53,20 +54,6 @@ const SpeakersStack = StackNavigator({
   }
 })
 
-const AboutStack = StackNavigator({
-  AboutScreen: {
-    screen: AboutScreen,
-    navigationOptions: ({ navigation }) => {
-      return {
-        headerRight: <BuyTicketsLink />,
-        headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
-        title: 'About',
-        headerTitleStyle
-      }
-    }
-  }
-})
-
 const DrawerNav = DrawerNavigator({
   Schedule: {
     screen: ScheduleNavigation,
@@ -81,7 +68,7 @@ const DrawerNav = DrawerNavigator({
     screen: OrganizersStack
   },
   About: {
-    screen: AboutStack
+    screen: AboutNavigation
   },
   Sponsors: {
     screen: SponsorListStack
