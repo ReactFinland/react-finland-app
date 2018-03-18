@@ -18,10 +18,15 @@ export const SilverImage = styled.Image`
  width: 80;
 `
 export const BronzeImage = styled.Image`
- margin-left: 20px;
  height: 35px;
  width: 65;
 `
+export const BronzeWrapper = styled.View`
+ padding-left: 10px;
+ padding-right: 10px;
+ background-color: black;
+`
+
 export const VerkkokauppaImage = styled.Image`
  margin-top: 15px;
  height: 20px;
@@ -70,7 +75,9 @@ class AboutText extends React.Component {
             <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
               <AlmaImage resizeMode='contain' source={require('../../Images/alma.png')} />
               <BronzeImage resizeMode='contain' source={require('../../Images/geniem.png')} />
-              <BronzeImage resizeMode='contain' source={require('../../Images/rohea.png')} />
+              <BronzeWrapper>
+                <BronzeImage resizeMode='contain' source={require('../../Images/rohea.png')} />
+              </BronzeWrapper>
             </View>
             <View style={{justifyContent: 'center', flexDirection: 'row'}}>
               <VerkkokauppaImage resizeMode='contain' source={require('../../Images/verkkokauppa.png')} />
