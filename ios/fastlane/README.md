@@ -16,6 +16,11 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
+### ios metadata
+```
+fastlane ios metadata
+```
+Deliver metadata to App Store
 ### ios beta
 ```
 fastlane ios beta
