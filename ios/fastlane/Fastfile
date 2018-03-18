@@ -26,6 +26,9 @@ platform :ios do
     match(type: "appstore")
     build_app(scheme: "ReactFinlandApp")
     upload_to_testflight
-    commit_version_bump(message: "[fastlane] Bump version")
+    commit_version_bump(
+      message: "[fastlane] Bump version",
+      xcodeproj: "./ReactFinlandApp.xcodeproj"
+    )
   end
 end
