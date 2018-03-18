@@ -1,0 +1,8 @@
+app_identifier("com.reactfinland.app") # The bundle identifier of your app
+# apple_id() # Your Apple email address
+
+team_id "5QX4BHNLZX" # Developer Portal Team ID
+itc_team_id "118993025" # iTunes Connect Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
