@@ -1,0 +1,1 @@
+Conference application for React Finland 2018 held in Helsinki, Finland on April 24th-26th.
