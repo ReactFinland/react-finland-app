@@ -3,8 +3,9 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
   background-color: ${Colors.snow};
-  border-bottom-color: ${Colors.background};
+  border-bottom-color: ${Colors.grey};
   border-bottom-width: 1px;
+  padding-bottom: 5px;
 `
 
 export const Row = styled.View`
@@ -12,15 +13,16 @@ export const Row = styled.View`
 `
 
 export const Author = styled.Text`
-  color: ${Colors.text};
-  font-size: ${Fonts.size.h6};
-  font-family: ${Fonts.type.bold};
+  color: black;
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
 `
 
 export const About = styled.Text`
-  color: ${Colors.coal};
-  font-size: ${Fonts.size.regular};
+  color: ${Colors.charcoal};
+  font-size: ${Fonts.size.medium};
   font-family: ${Fonts.type.base};
+  padding-top: 5px;
 `
 
 export const SpeakerInfo = styled.View`
@@ -46,8 +48,6 @@ export const RoundedImage = styled.Image`
 `
 
 export const Social = styled.View`
-  background-color: ${Colors.grey};
-  padding: 15px;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;

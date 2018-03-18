@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialLink from './SocialLink'
+import SocialLink from '../SocialLink'
 import { Container, Row, SpeakerInfo, Author, About, ImageContainer, RoundedImage, Social } from '../PersonCommon'
 
 const OrganizerCard = (props) => {

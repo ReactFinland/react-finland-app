@@ -3,35 +3,20 @@ import { Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
 
-import { Metrics, Colors } from '../../Themes'
+import { Metrics, Colors } from '../Themes'
 
 // Add margin between elements, this should probably be handled in the parent
 // component
-const TouchableWithMargin = styled.TouchableHighlight`
+const TouchableWithMargin = styled.TouchableOpacity`
   margin-left: 10px;
   margin-right: 10px;
 `
 
 class SocialLink extends React.Component {
   static Home = (props) => <SocialLink {...props} icon='home' />
-
-  static LinkedIn = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://www.linkedin.com/in/${props.link}`}
-    icon='linkedin-square'
-  />
-
-  static GitHub = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://github.com/${props.link}`}
-    icon='github'
-  />
-
-  static Twitter = (props) => <SocialLink
-    {...props}
-    link={props.link && `https://twitter.com/${props.link}`}
-    icon='twitter'
-  />
+  static LinkedIn = (props) => <SocialLink {...props} icon='linkedin-square' />
+  static GitHub = (props) => <SocialLink {...props} icon='github' />
+  static Twitter = (props) => <SocialLink {...props} icon='twitter' />
 
   constructor (props) {
     super(props)
