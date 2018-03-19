@@ -13,7 +13,7 @@ const routeConfig = {
   AboutScreen: {
     screen: AboutScreen,
     navigationOptions: {
-      title: 'General info'
+      title: 'About'
     }
   },
   LocationScreen: {
