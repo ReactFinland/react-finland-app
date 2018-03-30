@@ -10,23 +10,13 @@ const TouchableOpacity = styled.TouchableOpacity`
   margin-left: 10;
 `
 
-const Link = styled.Text`
-  font-size: ${Fonts.size.regular};
-  font-family: ${Fonts.type.base};
-  color: ${Colors.reactFinlandBlue}
-`
-
 const MenuButton = ({ onPress }) => (
   <TouchableOpacity onPress={onPress}>
     <Icon
-      style={{
-        paddingRight: 5
-      }}
       size={Metrics.icons.small}
       color={Colors.reactFinlandBlue}
       name='bars'
     />
-    <Link>Menu</Link>
   </TouchableOpacity>
 )
 
