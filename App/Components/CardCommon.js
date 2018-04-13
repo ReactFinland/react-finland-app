@@ -56,7 +56,7 @@ margin-left: -15px;
 
 export const Time = styled.Text`
 color: ${Colors.charcoal};
-font-size: ${Fonts.size.tiny};
+font-size: ${Fonts.size.small};
 font-family: ${Fonts.type.base};
 margin-left: 5px;
 `
