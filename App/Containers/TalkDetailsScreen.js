@@ -19,6 +19,7 @@ class TalkDetailsScreen extends Component {
         <TalkDetail
           title={session.title}
           navigation={navigation}
+          location={session.location}
           description={session.description}
           speakers={session.speakers}
         />

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
-
+import { Platform } from 'react-native'
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
+import SocialLink from '../SocialLink';
 
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
@@ -21,6 +22,17 @@ const Top = styled.View`
 const Bottom = styled.View`
   padding: ${Metrics.doubleBaseMargin}px;
 `
+const LocationWrapper = styled.View`
+  padding-left:${Metrics.doubleBaseMargin}px;
+  flex-direction: row;
+`
+const LocationName = styled.Text`
+  padding: ${Metrics.baseMargin}px;
+  color: ${Colors.text};
+  font-size: ${Fonts.size.regular};
+  font-family: ${Fonts.type.base};
+  color: ${Colors.snow};
+`
 
 const Title = styled.Text`
   color: ${Colors.text};
@@ -38,16 +50,26 @@ const Description = styled.Text`
   padding-bottom: ${2 * Metrics.doubleBaseMargin}px;
   background-color: rgba(0,0,0,0);
 `
-
+// supporting only google maps for now since character escaping was not working well on apple maps
+const getLocationLink = location => encodeURI(`https://www.google.com/maps/place/${location.address}`)
+  
 class TalkDetail extends React.Component {
   render () {
-    const { title, description, speakers } = this.props
+    const { title, description, speakers, location } = this.props
     return (
       <BackgroundImage resizeMode='cover' source={require('../../Images/react-finland-background.png')} >
         <Container>
           <Top>
             <Title>{title}</Title>
           </Top>
+          {location &&
+            <LocationWrapper>
+              <SocialLink.Map link={location && getLocationLink(location)} />
+              <LocationName>
+                {location && `${location.name}`}
+              </LocationName>
+            </LocationWrapper>
+          }
           {speakers && <SpeakerList speakers={speakers} />}
           <Bottom>
             <Description>{description}</Description>

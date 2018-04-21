@@ -13,6 +13,7 @@ const TouchableWithMargin = styled.TouchableOpacity`
 `
 
 class SocialLink extends React.Component {
+  static Map = (props) => <SocialLink {...props} icon='map-marker' />
   static Home = (props) => <SocialLink {...props} icon='home' />
   static LinkedIn = (props) => <SocialLink {...props} icon='linkedin-square' />
   static GitHub = (props) => <SocialLink {...props} icon='github' />
