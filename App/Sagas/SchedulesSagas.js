@@ -15,6 +15,11 @@ const getSchedules = {
            title
            description
            type
+           location {
+             name,
+             city,
+             address
+           }
            speakers {
              name
              about
