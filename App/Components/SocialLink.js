@@ -41,13 +41,14 @@ class SocialLink extends React.Component {
   }
 
   render () {
-    const { icon, link } = this.props
+    const { icon, link, children } = this.props
 
     if (!link) return null
 
     return (
-      <TouchableWithMargin onPress={this.onPress}>
+      <TouchableWithMargin style={{flexDirection: 'row'}} onPress={this.onPress}>
         <Icon name={icon} color={Colors.text} size={Metrics.icons.medium} />
+        { children }
       </TouchableWithMargin>
     )
   }

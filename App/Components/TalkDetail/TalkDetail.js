@@ -23,14 +23,16 @@ const Bottom = styled.View`
   padding: ${Metrics.doubleBaseMargin}px;
 `
 const LocationWrapper = styled.View`
-  padding-left:${Metrics.doubleBaseMargin}px;
+  padding-left:${Metrics.baseMargin}px;
+  padding-bottom: ${Metrics.baseMargin}px;
   flex-direction: row;
 `
 const LocationName = styled.Text`
-  padding: ${Metrics.baseMargin}px;
+  padding-left:${Metrics.baseMargin}px;
   color: ${Colors.text};
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
+  text-decoration-line: underline;
   color: ${Colors.snow};
 `
 
@@ -64,10 +66,11 @@ class TalkDetail extends React.Component {
           </Top>
           {location &&
             <LocationWrapper>
-              <SocialLink.Map link={location && getLocationLink(location)} />
-              <LocationName>
-                {location && `${location.name}`}
-              </LocationName>
+              <SocialLink.Map link={location && getLocationLink(location)} >
+                <LocationName>
+                  {location && `${location.name}`}
+                </LocationName>
+              </SocialLink.Map>
             </LocationWrapper>
           }
           {speakers && <SpeakerList speakers={speakers} />}
