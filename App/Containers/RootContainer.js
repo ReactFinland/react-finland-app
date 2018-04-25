@@ -51,7 +51,6 @@ class RootContainer extends Component {
     return (
       <View style={styles.applicationView}>
         <StatusBar
-          hidden={navigation.drawerOpen}
           barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
           backgroundColor={Colors.reactFinlandBlue}
         />
