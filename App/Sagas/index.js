@@ -19,7 +19,7 @@ import { updateSpeakers } from './SpeakersSagas'
 
 /* ------------- API ------------- */
 const client = new ApolloClient({
-  link: new HttpLink({ uri: 'https://api.react-finland.fi/graphql-2018' }),
+  link: new HttpLink({ uri: 'https://api.react-finland.fi/graphql' }),
   cache: new InMemoryCache()
 })
 // The API we use is only used from Sagas, so we create it here and pass along

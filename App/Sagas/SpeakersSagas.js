@@ -5,7 +5,8 @@ import SpeakersActions from '../Redux/SpeakersRedux'
 
 const getSpeakers = {
   query: gql`
-  {
+{
+ conference(id: "graphql-finland-2018") {
     speakers {
       name
       about
@@ -18,7 +19,8 @@ const getSpeakers = {
         linkedin
       }
     },
-  }`
+  }
+}`
 }
 
 // process STARTUP actions

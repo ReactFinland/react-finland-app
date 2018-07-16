@@ -10,9 +10,10 @@ const FlatList = styled.FlatList`
 export default class OrganizersListing extends React.Component {
   renderOrganizerCard ({ item }) {
     const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
+    console.tron.log(image)
     return <OrganizerCard
       author={name}
-      picture={`https://api.react-finland.fi/graphql-2018/images/${image}`}
+      picture={`${image.url}`}
       about={about}
       homepage={homepage}
       twitter={twitter}

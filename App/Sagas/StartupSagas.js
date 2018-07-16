@@ -6,7 +6,7 @@ import SpeakersActions from '../Redux/SpeakersRedux'
 
 // process STARTUP actions
 export function * startup (action) {
-  yield put(ScheduleActions.scheduleUpdate())
+  // yield put(ScheduleActions.scheduleUpdate())
   yield put(OrganizersActions.organizersUpdate())
-  yield put(SpeakersActions.speakersUpdate())
+  // yield put(SpeakersActions.speakersUpdate())
 }
