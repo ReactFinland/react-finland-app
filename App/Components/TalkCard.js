@@ -22,14 +22,14 @@ const getImage = (speakers) => (
 const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
-  get icon() {
+  get icon () {
     const { session } = this.props
     const { type } = session
 
     const iconForType = R.cond([
       [R.equals('lightningTalk'), R.always('star-o')],
-      [R.equals('keynote'),       R.always('lightbulb-o')],
-      [R.T,                       R.always(null)]
+      [R.equals('keynote'), R.always('lightbulb-o')],
+      [R.T, R.always(null)]
     ])
 
     const icon = iconForType(type)

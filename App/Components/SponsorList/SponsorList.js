@@ -58,8 +58,8 @@ class AboutText extends React.Component {
   render () {
     return (
       <BackgroundImage rexizeMode='cover' source={require('../../Images/react-finland-background.png')} >
-      <SponsorContainer>
-        <ScrollView>
+        <SponsorContainer>
+          <ScrollView>
             <Text textcolor={'#ffd700'}>Gold</Text>
             <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
               <GoldImage resizeMode='contain' source={require('../../Images/gofore.png')} />
@@ -82,8 +82,8 @@ class AboutText extends React.Component {
             <View style={{justifyContent: 'center', flexDirection: 'row'}}>
               <VerkkokauppaImage resizeMode='contain' source={require('../../Images/verkkokauppa.png')} />
             </View>
-        </ScrollView>
-          </SponsorContainer>
+          </ScrollView>
+        </SponsorContainer>
       </BackgroundImage>
     )
   }

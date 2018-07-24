@@ -19,7 +19,7 @@ class TalkScreen extends Component {
     const mapping = {
       'WorkshopScreen': pathOr([], ['0', 'intervals'], data),
       'WednesdayScreen': pathOr([], ['1', 'intervals'], data)
-      
+
     }
     return (
       <Screen>
