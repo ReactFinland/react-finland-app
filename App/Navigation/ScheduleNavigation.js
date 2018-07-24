@@ -13,13 +13,13 @@ const routeConfig = {
   WorkshopScreen: {
     screen: WorkshopScreen,
     navigationOptions: {
-      title: 'Tuesday'
+      title: 'Workshops'
     }
   },
   WednesdayScreen: {
     screen: TalkScreen,
     navigationOptions: {
-      title: 'Wednesday'
+      title: 'Conference'
     }
   }
 }

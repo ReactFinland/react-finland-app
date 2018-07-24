@@ -17,6 +17,7 @@ class TalkScreen extends Component {
     let { data, navigation, selectSession } = this.props
     const {state: {routeName}} = navigation
     const mapping = {
+      'WorkshopScreen': pathOr([], ['0', 'intervals'], data),
       'WednesdayScreen': pathOr([], ['1', 'intervals'], data)
       
     }
