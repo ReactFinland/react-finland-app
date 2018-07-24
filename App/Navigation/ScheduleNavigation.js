@@ -21,12 +21,6 @@ const routeConfig = {
     navigationOptions: {
       title: 'Wednesday'
     }
-  },
-  ThursdayScreen: {
-    screen: TalkScreen,
-    navigationOptions: {
-      title: 'Thursday'
-    }
   }
 }
 

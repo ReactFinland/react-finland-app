@@ -6,6 +6,7 @@ import ScheduleActions from '../Redux/ScheduleRedux'
 const getSchedules = {
   query: gql`
   {
+  conference(id: "graphql-finland-2018") {
     schedules {
     day,
        intervals {
@@ -20,22 +21,18 @@ const getSchedules = {
              city,
              address
            }
-           speakers {
-             name
-             about
-             image
-           }
          }
        }
      }
-   }`
+  }
+}`
 }
 
 // process STARTUP actions
 export function * updateSchedule (client, action) {
   yield put(ScheduleActions.scheduleRequest())
   try {
-    const { data: { schedules } } = yield call(client.query, getSchedules)
+    const { data: {conference: { schedules } } } = yield call(client.query, getSchedules)
     yield put(ScheduleActions.scheduleSuccess(schedules))
   } catch (err) {
     yield put(ScheduleActions.scheduleFailure())
