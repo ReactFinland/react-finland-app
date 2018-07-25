@@ -15,7 +15,7 @@ const makeSpeakersText = (speakers) =>
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
-    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />)
+    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `${speaker.image.url}`}} />)
     : null
 )
 

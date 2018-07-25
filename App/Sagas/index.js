@@ -17,10 +17,16 @@ import { updateSchedule } from './SchedulesSagas'
 import { updateOrganizers } from './OrganizersSagas'
 import { updateSpeakers } from './SpeakersSagas'
 
+import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
+import introspectionQueryResultData from './fragmentTypes.json';
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+});
 /* ------------- API ------------- */
 const client = new ApolloClient({
   link: new HttpLink({ uri: 'https://api.react-finland.fi/graphql' }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({fragmentMatcher})
 })
 // The API we use is only used from Sagas, so we create it here and pass along
 // to the sagas which need it.
