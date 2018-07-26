@@ -62,25 +62,14 @@ class AboutText extends React.Component {
           <ScrollView>
             <Text textcolor={'#ffd700'}>Gold</Text>
             <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <GoldImage resizeMode='contain' source={require('../../Images/gofore.png')} />
-              <GoldImage resizeMode='contain' source={require('../../Images/solita.png')} />
             </View>
             <Text textcolor='#c0c0c0'>Silver</Text>
             <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <SilverImage resizeMode='contain' source={require('../../Images/elisa.png')} />
-              <SilverImage resizeMode='contain' source={require('../../Images/nitor.png')} />
-              <SilverImage resizeMode='contain' source={require('../../Images/motley.png')} />
             </View>
             <Text textcolor='#CD7F32' >Bronze</Text>
             <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <AlmaImage resizeMode='contain' source={require('../../Images/alma.png')} />
-              <BronzeImage resizeMode='contain' source={require('../../Images/geniem.png')} />
-              <BronzeWrapper>
-                <BronzeImage resizeMode='contain' source={require('../../Images/rohea.png')} />
-              </BronzeWrapper>
             </View>
             <View style={{justifyContent: 'center', flexDirection: 'row'}}>
-              <VerkkokauppaImage resizeMode='contain' source={require('../../Images/verkkokauppa.png')} />
             </View>
           </ScrollView>
         </SponsorContainer>

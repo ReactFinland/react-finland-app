@@ -88,8 +88,6 @@ export default class SideMenu extends Component {
           <Text textcolor={'#ffd700'}>Gold Sponsors</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <GoldImage resizeMode='contain' source={require('../Images/gofore.png')} />
-          <GoldImage resizeMode='contain' source={require('../Images/solita.png')} />
         </View>
         <TouchableHighlight underlayColor='rgba(0, 0, 0,0.0)' onPress={() => navigation.navigate('Sponsors')}>
           <AllSponsorsLink textcolor={'white'}>All Sponsors</AllSponsorsLink>
