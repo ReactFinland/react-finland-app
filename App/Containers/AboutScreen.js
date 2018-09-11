@@ -8,7 +8,7 @@ export default class AboutScreen extends Component {
     return (
       <ImageBackground
         style={{ flex: 1 }}
-        source={require('../Images/react-finland-background.png')}
+        source={require('../Images/graphql-background.png')}
       >
         <ScrollView style={{ flex: 1 }}>
           <AboutText />

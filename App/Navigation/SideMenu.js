@@ -72,7 +72,7 @@ export default class SideMenu extends Component {
     const { props } = this
     const { navigation } = props
     return (
-      <BackgroundImage resizeMode='cover' source={require('../Images/react-finland-background.png')} >
+      <BackgroundImage resizeMode='cover' source={require('../Images/graphql-background.png')} >
         <ScrollView>
           <Wrapper>
             <View style={{width: 150, height: 100}}>

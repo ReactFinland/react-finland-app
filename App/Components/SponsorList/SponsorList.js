@@ -57,7 +57,7 @@ export const Text = styled.Text`
 class AboutText extends React.Component {
   render () {
     return (
-      <BackgroundImage rexizeMode='cover' source={require('../../Images/react-finland-background.png')} >
+      <BackgroundImage rexizeMode='cover' source={require('../../Images/graphql-background.png')} >
         <SponsorContainer>
           <ScrollView>
             <Text textcolor={'#ffd700'}>Gold</Text>

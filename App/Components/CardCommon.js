@@ -29,6 +29,11 @@ color: black;
 font-size: ${Fonts.size.regular};
 font-family: ${Fonts.type.base};
 `
+export const Description = styled.Text`
+  color: black;
+  font-size: ${Fonts.size.small};
+  font-family: ${Fonts.type.base};
+`
 
 export const TalkInfo = styled.View`
 flex: 1;

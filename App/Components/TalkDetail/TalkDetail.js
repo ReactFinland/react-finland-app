@@ -45,7 +45,7 @@ const Title = styled.Text`
 `
 
 const Description = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.text}; 
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
   color: ${Colors.snow};
@@ -59,7 +59,7 @@ class TalkDetail extends React.Component {
   render () {
     const { title, description, speakers, location } = this.props
     return (
-      <BackgroundImage resizeMode='cover' source={require('../../Images/react-finland-background.png')} >
+      <BackgroundImage resizeMode='cover' source={require('../../Images/graphql-background.png')} >
         <Container>
           <Top>
             <Title>{title}</Title>
