@@ -3,7 +3,8 @@ import DebugConfig from './DebugConfig'
 import AppConfig from './AppConfig'
 
 // Allow/disallow font-scaling in app
-Text.defaultProps.allowFontScaling = AppConfig.allowTextFontScaling
+// Text.defaultProps.allowFontScaling = AppConfig.allowTextFontScaling  // WRONG!
+Text.allowFontScaling = AppConfig.allowTextFontScaling  // Working!
 
 if (__DEV__) {
   // If ReactNative's yellow box warnings are too much, it is possible to turn

@@ -5,7 +5,7 @@ import * as Animatable from 'react-native-animatable'
 import {Container, AlignRight, Description, Speaker, Row, Title, TalkInfo, ImageContainer, RoundedImage} from '../CardCommon'
 import {scaleOnPress} from '../ScaleOnPress'
 
-const WorkshopContainer = Container.extend`
+const WorkshopContainer = styled(Container)`
   height: 150px;
 `
 
