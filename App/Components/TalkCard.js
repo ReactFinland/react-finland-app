@@ -15,21 +15,21 @@ const makeSpeakersText = (speakers) =>
 
 const getImage = (speakers) => (
   speakers && speakers.length > 0
-    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `https://api.react-finland.fi/graphql-2018/images/${speaker.image}`}} />)
+    ? speakers.map(speaker => <RoundedImage key={speaker.name} source={{uri: `${speaker.image.url}`}} />)
     : null
 )
 
 const StyledContainer = Animatable.createAnimatableComponent(Container)
 
 class TalkCard extends React.Component {
-  get icon() {
+  get icon () {
     const { session } = this.props
     const { type } = session
 
     const iconForType = R.cond([
       [R.equals('lightningTalk'), R.always('star-o')],
-      [R.equals('keynote'),       R.always('lightbulb-o')],
-      [R.T,                       R.always(null)]
+      [R.equals('keynote'), R.always('lightbulb-o')],
+      [R.T, R.always(null)]
     ])
 
     const icon = iconForType(type)

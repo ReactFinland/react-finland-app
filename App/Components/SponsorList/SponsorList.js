@@ -1,37 +1,21 @@
 import React from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, WebView, ScrollView, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 import { Fonts } from '../../Themes'
+import { connect } from 'react-redux'
+import { pathOr } from 'ramda'
 
 export const GoldImage = styled.Image`
- height: 50px;
+ height: 100px;
  width: 140;
 `
-export const AlmaImage = styled.Image`
- margin-left: 0px;
- height: 30px;
- width: 75;
-`
 
-export const SilverImage = styled.Image`
- height: 50px;
- width: 80;
-`
-export const BronzeImage = styled.Image`
- height: 35px;
- width: 65;
-`
 export const BronzeWrapper = styled.View`
  padding-left: 10px;
  padding-right: 10px;
  background-color: black;
 `
 
-export const VerkkokauppaImage = styled.Image`
- margin-top: 15px;
- height: 20px;
- width: 150;
-`
 export const BackgroundImage = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
@@ -46,47 +30,76 @@ export const SponsorContainer = styled.View`
 
 export const Text = styled.Text`
   color: ${props => props.textcolor};
+  padding-top: 20;
   padding-left: 20;
   padding-bottom: 15px;
   padding-right: 30;
   text-align: center;
-  font-size: ${Fonts.size.h5};
+  font-size: ${Fonts.size.h3};
   font-family: ${Fonts.type.base};
 `
+const firstHtml = '<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><style>html, body { margin:0; padding:0; overflow:hidden } svg { position:fixed; top:0; left:0; height:100%; width:100% }</style></head><body>'
+const lastHtml = '</body></html>'
 
-class AboutText extends React.Component {
+class SponsorList extends React.Component {
   render () {
+    const {height, width} = Dimensions.get('window');
     return (
       <BackgroundImage rexizeMode='cover' source={require('../../Images/react-finland-background.png')} >
-      <SponsorContainer>
-        <ScrollView>
-            <Text textcolor={'#ffd700'}>Gold</Text>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <GoldImage resizeMode='contain' source={require('../../Images/gofore.png')} />
-              <GoldImage resizeMode='contain' source={require('../../Images/solita.png')} />
+      <View style={{flex:1, backgroundColor: 'rgba(0,0,0, 0.1)'}}>
+        <SponsorContainer>
+          <ScrollView style={{ alignContent: 'center'}}>   
+          <View style={{alignItems: 'center', flexDirection: 'column',margin: 10, padding: 10, borderRadius: 22, backgroundColor: 'rgba(255,255,255, 0.1)'}}>
+            <Text textcolor={'gold'}>Gold</Text>
+            { this.props.gold.map((i, index) => (
+                i.image.url.endsWith('svg')
+                ? <WebView
+                  key={index}
+                  style={[{  width: width/1.5, height: 100, backgroundColor: 'transparent' }]}
+                  scrollEnabled={false}
+                  source={{ html: `${firstHtml}<img height="100%" width="100%" src="${i.image.url}" />${lastHtml}` }} />
+                : <GoldImage resizeMode='contain' key={index} source={{uri: i.image.url}} />
+                )
+              )}
             </View>
-            <Text textcolor='#c0c0c0'>Silver</Text>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <SilverImage resizeMode='contain' source={require('../../Images/elisa.png')} />
-              <SilverImage resizeMode='contain' source={require('../../Images/nitor.png')} />
-              <SilverImage resizeMode='contain' source={require('../../Images/motley.png')} />
+            
+            <View style={{alignItems: 'center', flexDirection: 'column',margin: 10, padding: 10, borderRadius: 22, backgroundColor: 'rgba(255,255,255, 0.1)'}}>
+            <Text textcolor='silver'>Silver</Text>
+            { this.props.silver.map((i, index) => (
+                i.image.url.endsWith('svg')
+                ? <WebView
+                  key={index}
+                  style={[{  width: width/1.5, height: 100, backgroundColor: 'transparent' }]}
+                  scrollEnabled={false}
+                  source={{ html: `${firstHtml}<img height="100%" width="100%" src="${i.image.url}" />${lastHtml}` }} />
+                : <GoldImage resizeMode='contain' key={index} source={{uri: i.image.url}} />
+                )
+              )}
             </View>
-            <Text textcolor='#CD7F32' >Bronze</Text>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-              <AlmaImage resizeMode='contain' source={require('../../Images/alma.png')} />
-              <BronzeImage resizeMode='contain' source={require('../../Images/geniem.png')} />
-              <BronzeWrapper>
-                <BronzeImage resizeMode='contain' source={require('../../Images/rohea.png')} />
-              </BronzeWrapper>
+            
+            <View style={{alignItems: 'center', flexDirection: 'column',margin: 10, padding: 10, borderRadius: 22, backgroundColor: 'rgba(255,255,255, 0.1)'}}>
+              <Text textcolor='white' >Bronze</Text>
+              { this.props.bronze.map((i, index) => (
+                i.image.url.endsWith('svg')
+                ? <WebView
+                  key={index}
+                  style={[{  width: width/1.5, height: 100, backgroundColor: 'transparent' }]}
+                  scrollEnabled={false}
+                  source={{ html: `${firstHtml}<img height="100%" width="100%" src="${i.image.url}" />${lastHtml}` }} />
+                : <GoldImage resizeMode='contain' key={index} source={{uri: i.image.url}} />
+                )
+              )}
             </View>
-            <View style={{justifyContent: 'center', flexDirection: 'row'}}>
-              <VerkkokauppaImage resizeMode='contain' source={require('../../Images/verkkokauppa.png')} />
-            </View>
-        </ScrollView>
-          </SponsorContainer>
+          </ScrollView>
+        </SponsorContainer>
+        </View>
       </BackgroundImage>
     )
   }
 }
-
-export default AboutText
+const mapStateToProps = ({sponsors}) => ({
+  gold:  pathOr([], ['data', 'goldSponsors'], sponsors),
+  silver:  pathOr([], ['data', 'silverSponsors'], sponsors),
+  bronze:  pathOr([], ['data', 'bronzeSponsors'], sponsors)
+})
+export default connect(mapStateToProps)(SponsorList)

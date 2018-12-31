@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import { Platform } from 'react-native'
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
-import SocialLink from '../SocialLink';
+import SocialLink from '../SocialLink'
 
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
@@ -45,7 +45,7 @@ const Title = styled.Text`
 `
 
 const Description = styled.Text`
-  color: ${Colors.text};
+  color: ${Colors.text}; 
   font-size: ${Fonts.size.regular};
   font-family: ${Fonts.type.base};
   color: ${Colors.snow};
@@ -54,7 +54,7 @@ const Description = styled.Text`
 `
 // supporting only google maps for now since character escaping was not working well on apple maps
 const getLocationLink = location => encodeURI(`https://www.google.com/maps/place/${location.address}`)
-  
+
 class TalkDetail extends React.Component {
   render () {
     const { title, description, speakers, location } = this.props

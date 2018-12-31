@@ -2,12 +2,11 @@ import styled from 'styled-components/native'
 import { Fonts, Colors } from '../Themes'
 
 export const Container = styled.View`
-background-color: ${Colors.snow};
-padding: 10px;
-border-bottom-color: ${Colors.grey};
-border-bottom-width: 1px;
+  background-color: ${props => props.nonopenable ? Colors.silver : Colors.snow};
+  padding: 10px;
+  border-bottom-color: ${Colors.grey};
+  border-bottom-width: 1px;
 `
-
 export const AlignRight = styled.View`
 flex-direction: row;
 justify-content: flex-end;
@@ -29,6 +28,11 @@ color: black;
 font-size: ${Fonts.size.regular};
 font-family: ${Fonts.type.base};
 `
+export const Description = styled.Text`
+  color: black;
+  font-size: ${Fonts.size.medium};
+  font-family: ${Fonts.type.base};
+`
 
 export const TalkInfo = styled.View`
 flex: 1;
@@ -42,7 +46,7 @@ margin-left: 15px;
 `
 
 export const TimeInfo = styled.View`
-background-color: ${Colors.snow};
+background-color: ${props => props.nonopenable ? Colors.silver : Colors.snow};
 flex-direction: row;
 align-items: center;
 `

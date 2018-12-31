@@ -3,6 +3,9 @@ import { SectionList, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
 import TalkCard from './TalkCard'
+import OtherCard from './OtherCard'
+
+
 import { Colors, Fonts, Metrics } from '../Themes'
 
 const SectionHeaderText = styled.Text`
@@ -19,7 +22,31 @@ const SectionHeader = styled.View`
 
 export default class TalkListing extends React.Component {
   renderSingleSession = ({ item: session }) => {
-    return <TalkCard
+    if(session.__typename == 'Break'){
+      return <OtherCard
+      onPress={() => { this.props.onSessionSelected(session) }}
+      session={session}
+      begin={session.begin}
+      end={session.end}
+    />
+    }
+    if(session.__typename == 'Lunch'){
+      return <OtherCard
+      onPress={() => { this.props.onSessionSelected(session) }}
+      session={session}
+      begin={session.begin}
+      end={session.end}
+    />
+    }
+    if(session.__typename == 'Lunch'){
+      return <OtherCard
+      onPress={() => { this.props.onSessionSelected(session) }}
+      session={session}
+      begin={session.begin}
+      end={session.end}
+    />
+    }
+    return <TalkCard openable
       onPress={() => { this.props.onSessionSelected(session) }}
       session={session}
       begin={session.begin}
