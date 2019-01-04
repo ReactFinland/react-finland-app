@@ -72,7 +72,7 @@ class SideMenu extends Component {
         <ScrollView>
           <Wrapper>
             <View style={{width: 150, height: 100}}>
-              <LogoImage resizeMode={'contain'} height={100} width={200} source={require('../Images/graphql_logo.png')} />
+              <LogoImage resizeMode={'contain'} height={100} width={200} source={require('../Images/rf-logo-white-with-text.png')} />
             </View>
             <TouchableHighlight underlayColor='rgba(0, 0, 0,0.0)' activeOpacity={0.5} onPress={() => navigation.navigate('DrawerClose')}>
               <Icon style={{backgroundColor: 'transparent'}} name='times' color='rgba(255,255,255, 0.5)' size={Metrics.icons.small} />
