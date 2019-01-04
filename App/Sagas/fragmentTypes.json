@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"INTERFACE","name":"Session","possibleTypes":[{"name":"Talk"},{"name":"Workshop"},{"name":"Break"}]}]}}

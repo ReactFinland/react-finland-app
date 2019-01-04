@@ -5,10 +5,12 @@ import { DrawerItems } from 'react-navigation'
 import styled from 'styled-components/native'
 import { Metrics, Fonts } from '../Themes'
 import Icon from 'react-native-vector-icons/FontAwesome'
-
+import { connect } from 'react-redux'
+import { pathOr } from 'ramda'
 const BackgroundImage = styled.ImageBackground`
   flex: 1;
   justify-content: space-between;
+  background-color: rgba(0,0,0, 0.9);
 `
 
 const LogoImage = styled.ImageBackground`
@@ -33,12 +35,6 @@ export const BronzeImage = styled.Image`
  height: 25px;
  width: 50;
 `
-export const VerkkisImage = styled.Image`
- margin-left: 60px;
- margin-top: 5px;
- height: 20px;
- width: 150;
-`
 const Text = styled.Text`
   color: ${props => props.textcolor};
   text-align: center;
@@ -55,7 +51,7 @@ const AllSponsorsLink = styled.Text`
   padding-bottom: 5px;
   padding-top: 10;
   padding-right: 30;
-  font-size: ${Fonts.size.medium};
+  font-size: ${Fonts.size.h2};
   font-family: ${Fonts.type.base};
 `
 const Wrapper = styled.View`
@@ -67,7 +63,7 @@ const Wrapper = styled.View`
   padding-top: 10px;
 `
 
-export default class SideMenu extends Component {
+class SideMenu extends Component {
   render () {
     const { props } = this
     const { navigation } = props
@@ -76,7 +72,7 @@ export default class SideMenu extends Component {
         <ScrollView>
           <Wrapper>
             <View style={{width: 150, height: 100}}>
-              <LogoImage resizeMode={'contain'} height={100} width={200} source={require('../Images/rf-logo-white-with-text.png')} />
+              <LogoImage resizeMode={'contain'} height={100} width={200} source={require('../Images/graphql_logo.png')} />
             </View>
             <TouchableHighlight underlayColor='rgba(0, 0, 0,0.0)' activeOpacity={0.5} onPress={() => navigation.navigate('DrawerClose')}>
               <Icon style={{backgroundColor: 'transparent'}} name='times' color='rgba(255,255,255, 0.5)' size={Metrics.icons.small} />
@@ -84,17 +80,16 @@ export default class SideMenu extends Component {
           </Wrapper>
           <DrawerItems {...props} />
         </ScrollView>
-        <View style={{justifyContent: 'center', flexDirection: 'row'}}>
-          <Text textcolor={'#ffd700'}>Gold Sponsors</Text>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <GoldImage resizeMode='contain' source={require('../Images/gofore.png')} />
-          <GoldImage resizeMode='contain' source={require('../Images/solita.png')} />
-        </View>
         <TouchableHighlight underlayColor='rgba(0, 0, 0,0.0)' onPress={() => navigation.navigate('Sponsors')}>
-          <AllSponsorsLink textcolor={'white'}>All Sponsors</AllSponsorsLink>
+          <AllSponsorsLink textcolor={'white'}>Sponsors</AllSponsorsLink>
         </TouchableHighlight>
       </BackgroundImage>
     )
   }
 }
+
+const mapStateToProps = ({sponsors}) => ({
+  gold:  pathOr([], ['data', 'goldSponsors'], sponsors)
+})
+
+export default connect(mapStateToProps)(SideMenu)

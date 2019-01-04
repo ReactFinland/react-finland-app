@@ -18,4 +18,4 @@ class DefaultStory extends React.Component {
   }
 }
 storiesOf('SpeakerCard')
-  .add('Default', () => <DefaultStory />)
+  .add('SpeakerCard 2', () => <DefaultStory />)

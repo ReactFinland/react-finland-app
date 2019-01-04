@@ -16,7 +16,7 @@ const openUrl = link => Linking.openURL(link).catch(err => {
 })
 
 const BuyTicketsLink = () => (
-  <TouchableOpacity style={{ marginRight: 10 }} onPress={() => openUrl('https://ti.to/react-finland/2018')}>
+  <TouchableOpacity style={{ marginRight: 10 }} onPress={() => openUrl('https://react-finland.fi/#tickets')}>
     <Link>Buy Tickets</Link>
   </TouchableOpacity>
 )

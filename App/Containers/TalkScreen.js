@@ -17,9 +17,10 @@ class TalkScreen extends Component {
     let { data, navigation, selectSession } = this.props
     const {state: {routeName}} = navigation
     const mapping = {
-      'WednesdayScreen': pathOr([], ['1', 'intervals'], data),
-      'ThursdayScreen': pathOr([], ['2', 'intervals'], data)
-    }
+      'WorkshopScreen': pathOr([], ['0', 'intervals'], data),
+      'ThursdayScreen': pathOr([], ['1', 'intervals'], data),
+      'FridayScreen': pathOr([], ['2', 'intervals'], data)
+  }
     return (
       <Screen>
         <TalkListing
@@ -43,3 +44,4 @@ const mapStateToProps = ({schedule}) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TalkScreen)
+''

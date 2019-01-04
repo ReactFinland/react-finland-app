@@ -47,7 +47,7 @@ class SocialLink extends React.Component {
 
     return (
       <TouchableWithMargin style={{flexDirection: 'row'}} onPress={this.onPress}>
-        <Icon name={icon} color={Colors.text} size={Metrics.icons.medium} />
+        <Icon name={icon} color={Colors.reactFinlandBlue} size={Metrics.icons.medium} />
         { children }
       </TouchableWithMargin>
     )
