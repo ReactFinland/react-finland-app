@@ -3,6 +3,7 @@ import styled from 'styled-components/native'
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import OrganizerCard from './OrganizerCard'
+import { View } from 'react-native'
 
 const FlatList = styled.FlatList`
   background-color: transparent;
@@ -46,8 +47,8 @@ export default class OrganizersListing extends React.Component {
       <Query query={getOrganizers}>
       {({ loading, error, data }) => {
         // TODO show loading and error component
-        if (loading) return null;
-        if (error) return null;
+        if (loading) return <View />;
+        if (error) return <View />;
         const {conference: { organizers }} = data
         return (
         <FlatList
