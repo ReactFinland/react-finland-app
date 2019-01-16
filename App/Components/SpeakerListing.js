@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import SpeakerCard from './SpeakerCard'
 import { Colors } from '../Themes'
+import { ActivityIndicator, View } from 'react-native'
 
 const FlatList = styled.FlatList`
   background-color: ${Colors.background}
@@ -46,8 +47,8 @@ export default class SpeakerListing extends React.Component {
       <Query query={getSpeakers}>
       {({ loading, error, data }) => {
         // TODO show loading and error component
-        if (loading) return null;
-        if (error) return null;
+        if (loading) return <ActivityIndicator size="large" color="#0000ff" />;
+        if (error) return <View />;
         const {conference: { speakers }} = data
         return (
         <FlatList

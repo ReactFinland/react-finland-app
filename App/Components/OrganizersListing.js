@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import OrganizerCard from './OrganizerCard'
-import { View } from 'react-native'
+import { ActivityIndicator, View } from 'react-native'
 
 const FlatList = styled.FlatList`
   background-color: transparent;
@@ -30,7 +30,6 @@ const getOrganizers = gql`
 export default class OrganizersListing extends React.Component {
   renderOrganizerCard ({ item }) {
     const { name, image, about, social: { homepage, twitter, github, linkedin } } = item
-    console.tron.log(image)
     return <OrganizerCard
       author={name}
       picture={image.url}
@@ -47,7 +46,7 @@ export default class OrganizersListing extends React.Component {
       <Query query={getOrganizers}>
       {({ loading, error, data }) => {
         // TODO show loading and error component
-        if (loading) return <View />;
+        if (loading) return <ActivityIndicator size="large" color="#0000ff" />;
         if (error) return <View />;
         const {conference: { organizers }} = data
         return (
