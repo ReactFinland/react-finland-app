@@ -16,20 +16,10 @@ const getSchedules = {
            title
            description
            type
-           ... on Workshop {
-              speakers {
-                name
-                image {
-                  url
-                }
-              }
-            }
-            ... on Talk {
-              speakers {
-                name
-                image {
-                  url
-                }
+            speakers {
+              name
+              image {
+                url
               }
             }
            location {
