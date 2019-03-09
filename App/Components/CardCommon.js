@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import { Fonts, Colors } from '../Themes'
 
 export const Container = styled.View`
-  background-color: ${props => props.nonopenable ? Colors.silver : Colors.snow};
+  background-color: ${props => props.nonopenable ? Colors.transparent : Colors.snow};
   padding: 10px;
   border-bottom-color: ${Colors.grey};
   border-bottom-width: 1px;
@@ -46,7 +46,7 @@ margin-left: 15px;
 `
 
 export const TimeInfo = styled.View`
-background-color: ${props => props.nonopenable ? Colors.silver : Colors.snow};
+background-color: ${props => props.nonopenable ? Colors.transparent : Colors.snow};
 flex-direction: row;
 align-items: center;
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionList, Dimensions } from 'react-native'
+import { SectionList, Dimensions,ImageBackground } from 'react-native'
 import styled from 'styled-components/native'
 
 import TalkCard from './TalkCard'
@@ -30,21 +30,25 @@ export default class TalkListing extends React.Component {
       end={session.end}
     />
     }
-    if(session.__typename == 'Lunch'){
-      return <OtherCard
-      onPress={() => { this.props.onSessionSelected(session) }}
+    if(session.type == 'LUNCH'){
+      return       <ImageBackground
+      style={{ height: 100, width: Metrics.screenWidth }}
+      source={require('../Images/hermes-rivera-258743-unsplash.jpg')}
+    ><OtherCard
       session={session}
       begin={session.begin}
       end={session.end}
-    />
+    /></ImageBackground>
     }
-    if(session.__typename == 'Lunch'){
-      return <OtherCard
-      onPress={() => { this.props.onSessionSelected(session) }}
+    if(session.type == 'COFFEE_BREAK'){
+      return       <ImageBackground
+      style={{ height: 100, width: Metrics.screenWidth }}
+      source={require('../Images/brigitte-tohm-64489-unsplash.jpg')}
+    ><OtherCard
       session={session}
       begin={session.begin}
       end={session.end}
-    />
+    /></ImageBackground>
     }
     return <TalkCard openable
       onPress={() => { this.props.onSessionSelected(session) }}
