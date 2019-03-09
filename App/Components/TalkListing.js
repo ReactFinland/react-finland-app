@@ -21,7 +21,19 @@ const SectionHeader = styled.View`
 `
 
 export default class TalkListing extends React.Component {
+  state = {
+    orientation: ''
+  }
+    _onLayout = () => { // I haven't tried this but I think this or something similar will work
+    const { width, height } = Dimensions.get('window');
+    if(width > height) {
+      this.setState(state => ({ ...state, orientation: 'landscape' }));
+    } else {
+      this.setState(state => ({ ...state, orientation: 'portrait' }));
+    }
+  }
   renderSingleSession = ({ item: session }) => {
+    const { width, height } = Dimensions.get('window')
     if(session.__typename == 'Break'){
       return <OtherCard
       onPress={() => { this.props.onSessionSelected(session) }}
@@ -32,7 +44,7 @@ export default class TalkListing extends React.Component {
     }
     if(session.type == 'LUNCH'){
       return       <ImageBackground
-      style={{ height: 100, width: Metrics.screenWidth }}
+      style={{ height: 100, width }}
       source={require('../Images/hermes-rivera-258743-unsplash.jpg')}
     ><OtherCard
       session={session}
@@ -42,7 +54,7 @@ export default class TalkListing extends React.Component {
     }
     if(session.type == 'COFFEE_BREAK'){
       return       <ImageBackground
-      style={{ height: 100, width: Metrics.screenWidth }}
+      style={{ height: 100, width }}
       source={require('../Images/brigitte-tohm-64489-unsplash.jpg')}
     ><OtherCard
       session={session}
@@ -79,6 +91,7 @@ export default class TalkListing extends React.Component {
 
     return (
       <SectionList
+        onLayout={this._onLayout}
         sections={dataWithSections}
         renderItem={this.renderSingleSession}
         keyExtractor={(item, index) => `list-${index}`}
