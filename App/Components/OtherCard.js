@@ -27,8 +27,6 @@ class OtherCard extends React.Component {
             <Speaker> </Speaker>
           </AlignRight>
           <TimeInfo nonopenable>
-            <Icon name='clock-o' size={Metrics.icons.tiny} color={Colors.charcoal} />
-            <Time>{ begin } - { end }</Time>
           </TimeInfo>
         </Container>
     )

@@ -5,7 +5,7 @@ export const Container = styled.View`
   background-color: ${props => props.nonopenable ? Colors.transparent : Colors.snow};
   padding: 10px;
   border-bottom-color: ${Colors.grey};
-  border-bottom-width: 1px;
+  border-bottom-width: ${props => props.nonopenable ? '0px' : '1px'};;
 `
 export const AlignRight = styled.View`
 flex-direction: row;
@@ -52,15 +52,15 @@ align-items: center;
 `
 
 export const RoundedImage = styled.Image`
-width: 50;
-height: 50;
-border-radius: 25px;
+width: 100;
+height: 100;
+border-radius: 50px;
 margin-left: -15px;
 `
 
 export const Time = styled.Text`
 color: ${Colors.charcoal};
-font-size: ${Fonts.size.small};
+font-size: ${Fonts.size.regular};
 font-family: ${Fonts.type.base};
 margin-left: 5px;
 `

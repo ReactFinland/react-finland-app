@@ -23,9 +23,9 @@ const Container = styled.View`
 `
 
 const RoundedImage = styled.Image`
-  width: 80;
-  height: 80;
-  border-radius: 40px;
+  width: 120;
+  height: 120;
+  border-radius: 60px;
   border-width: 1px;
   border-color: ${Colors.grey}
 `

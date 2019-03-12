@@ -1,24 +1,43 @@
 import React from 'react'
-import { View, SectionList, Text, Dimensions } from 'react-native'
+import { View, SectionList, Text, Dimensions,ImageBackground } from 'react-native'
 
 import styles from './Styles/WorkshopsStyle'
-import WorkshopTile from '../Components/WorkshopTile'
+import TalkCard from '../Components/TalkCard'
+import OtherCard from '../Components/OtherCard'
 
 class Workshops extends React.PureComponent {
-  renderItem = ({section, item}) => {
+  renderItem = ({section, item: session}) => {
+    const { width, height } = Dimensions.get('window');
+    if(session.type == 'LUNCH'){
+      return       <ImageBackground
+      style={{ height: 100, width }}
+      source={require('../Images/hermes-rivera-258743-unsplash.jpg')}
+    ><OtherCard
+      session={session}
+      begin={session.begin}
+      end={session.end}
+    /></ImageBackground>
+    }
+    if(session.type == 'COFFEE_BREAK'){
+      return       <ImageBackground
+      style={{ height: 100, width }}
+      source={require('../Images/brigitte-tohm-64489-unsplash.jpg')}
+    ><OtherCard
+      session={session}
+      begin={session.begin}
+      end={session.end}
+    /></ImageBackground>
+    }
     return (
-      <WorkshopTile
-        section={section}
-        item={item}
-        onPress={() => {
-          this.props.onSessionSelected(item)
-        }}
-      />
+    <TalkCard openable
+      onPress={() => { this.props.onSessionSelected(session) }}
+      session={session}
+    />
     )
   }
 
   renderSectionHeader ({section}) {
-    const title = `${section.begin} - ${section.end}`
+    const title = `${section.begin} - ${section.end} ${section.title ? section.title : ''} `
     const { width } = Dimensions.get('window')
     return (
       <View style={[{width}, styles.sectionHeader]}>

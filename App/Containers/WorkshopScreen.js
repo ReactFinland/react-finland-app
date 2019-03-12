@@ -14,23 +14,7 @@ const Screen = styled.View`
   align-items: center;
 `
 class WorkshopScreen extends Component {
-  render () {
-    const { workshops, selectSession, navigation } = this.props
-    return (
-      <Screen>
-        <Workshops
-          workshops={workshops}
-          onMenuOpen={() => {
-            navigation.navigate('OpenDrawer')
-          }}
-          onSessionSelected={(session) => {
-            selectSession(session)
-            navigation.navigate('TalkDetails')
-          }}
-        />
-      </Screen>
-    )
-  }
+
 }
 
 const mapDispatchToProps = (dispatch) => ({
