@@ -1,7 +1,6 @@
 import React from 'react'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 
-import WorkshopScreen from '../Containers/WorkshopScreen'
 import TalkScreen from '../Containers/TalkScreen'
 import TalkDetails from '../Containers/TalkDetailsScreen'
 import { Colors, Fonts } from '../Themes'
@@ -11,7 +10,7 @@ import { headerTitleStyle } from './styles'
 
 const routeConfig = {
   WorkshopScreen: {
-    screen: WorkshopScreen,
+    screen: TalkScreen,
     navigationOptions: {
       title: 'Workshops'
     }

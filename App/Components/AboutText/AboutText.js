@@ -41,7 +41,7 @@ class AboutText extends React.Component {
           In this single track event you will learn more about React and surrounding topics while meeting some of the leading talents of the community.
         </TextArea>
         <TextArea>
-          The event will be held between 24th and 26th of April (2018) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
+          The event will be held between 24th and 26th of April (2019) in Helsinki. In addition to enjoying the event, this is your chance to explore Finland.
         </TextArea>
       </View>
     )

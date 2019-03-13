@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionList, Dimensions,ImageBackground } from 'react-native'
+import { SectionList, Text, View, Dimensions,ImageBackground } from 'react-native'
 import styled from 'styled-components/native'
 
 import TalkCard from './TalkCard'
@@ -8,6 +8,14 @@ import OtherCard from './OtherCard'
 
 import { Colors, Fonts, Metrics } from '../Themes'
 
+const boldLabel = {
+  fontWeight: 'bold',
+  color: Colors.charcoal,
+  textAlign: 'left',
+  paddingLeft: 20,
+  marginBottom: Metrics.smallMargin,
+  marginTop: Metrics.smallMargin
+}
 const SectionHeaderText = styled.Text`
   color: ${Colors.snow};
   font-size: ${Fonts.size.regular};
@@ -69,30 +77,31 @@ export default class TalkListing extends React.Component {
       end={session.end}
     />
   }
+  renderSectionHeader ({section}) {
+    const title = `${section.begin} - ${section.end} ${section.title ? section.title : ''} `
+    const { width } = Dimensions.get('window')
+    return (
+      <View style={[{width},  {
+        flex: 1,
+        marginTop: 0,
+        width: Metrics.screenWidth,
+        backgroundColor: Colors.grey
+      }]}>
+        <Text style={boldLabel}>{title}</Text>
+      </View>
+    )
+  }
 
   render () {
-    const dataWithSections = this.props.data.map((interval, index) => {
-      const title = interval.sessions.length > 1
-        ? interval.sessions[0].title
-        : null
-      const sessions = interval.sessions.length > 1
-        ? interval.sessions.slice(1)
-        : interval.sessions
-
-      return {
-        data: sessions.map(session => ({
-          ...session,
-          begin: interval.begin,
-          end: interval.end
-        })),
-        title
-      }
-    })
-
+    const data = this.props.data.map(item => ({
+      ...item,
+      data: item.sessions
+    }))
     return (
       <SectionList
+        renderSectionHeader={this.renderSectionHeader}
+        sections={data}
         onLayout={this._onLayout}
-        sections={dataWithSections}
         renderItem={this.renderSingleSession}
         keyExtractor={(item, index) => `list-${index}`}
       />

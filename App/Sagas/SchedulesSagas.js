@@ -10,6 +10,7 @@ const getSchedules = {
     schedules {
     day,
        intervals {
+         title
          begin
          end
          sessions {

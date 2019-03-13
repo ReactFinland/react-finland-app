@@ -57,8 +57,6 @@ class TalkCard extends React.Component {
             <Speaker>{ makeSpeakersText(speakers) }</Speaker>
           </AlignRight>
           <TimeInfo>
-            <Icon name='clock-o' size={Metrics.icons.tiny} color={Colors.charcoal} />
-            <Time>{ begin } - { end }</Time>
           </TimeInfo>
         </StyledContainer>
       </TouchableWithoutFeedback>
