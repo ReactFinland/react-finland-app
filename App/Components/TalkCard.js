@@ -50,12 +50,10 @@ class TalkCard extends React.Component {
           <Row>
             <TalkInfo>
               <Title>{ title || 'To be announced' }</Title>
+              <Speaker>{ makeSpeakersText(speakers) }</Speaker>
             </TalkInfo>
             { image ? <ImageContainer>{ image }</ImageContainer> : null }
           </Row>
-          <AlignRight>
-            <Speaker>{ makeSpeakersText(speakers) }</Speaker>
-          </AlignRight>
           <TimeInfo>
           </TimeInfo>
         </StyledContainer>

@@ -66,11 +66,11 @@ class TalkDetail extends React.Component {
           </Top>
           {location &&
             <LocationWrapper>
-              <SocialLink.Map link={location && getLocationLink(location)} >
+              <SocialLink link={location && getLocationLink(location)} >
                 <LocationName>
                   {location && `${location.name}`}
                 </LocationName>
-              </SocialLink.Map>
+              </SocialLink>
             </LocationWrapper>
           }
           {speakers && <SpeakerList speakers={speakers} />}

@@ -39,10 +39,10 @@ class SpeakerCard extends React.Component {
             </ImageContainer>
           </Row>
           <Social>
-            <SocialLink.Home link={homepage} />
-            <SocialLink.LinkedIn link={linkedin} />
-            <SocialLink.Twitter link={twitter} />
-            <SocialLink.GitHub link={github} />
+            <SocialLink link={homepage} />
+            <SocialLink link={linkedin} />
+            <SocialLink link={twitter} />
+            <SocialLink link={github} />
           </Social>
         </StyledContainer>
       </TouchableWithoutFeedback>

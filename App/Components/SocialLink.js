@@ -2,7 +2,7 @@ import React from 'react'
 import { Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styled from 'styled-components/native'
-
+import R from 'ramda'
 import { Metrics, Colors } from '../Themes'
 
 // Add margin between elements, this should probably be handled in the parent
@@ -11,25 +11,19 @@ const TouchableWithMargin = styled.TouchableOpacity`
   margin-left: 10px;
   margin-right: 10px;
 `
+const getIcon = R.cond([
+    [R.contains('twitter'), R.always('twitter')],
+    [R.contains('linkedin'), R.always('linkedin-square')],
+    [R.contains('google.com/maps'), R.always('map-marker')],
+    [R.contains('github.com'), R.always('github')],
+    [R.T, R.always('home')]
+  ])
 
 class SocialLink extends React.Component {
-  static Map = (props) => <SocialLink {...props} icon='map-marker' />
-  static Home = (props) => <SocialLink {...props} icon='home' />
-  static LinkedIn = (props) => <SocialLink {...props} icon='linkedin-square' />
-  static GitHub = (props) => <SocialLink {...props} icon='github' />
-  static Twitter = (props) => <SocialLink {...props} icon='twitter' />
 
-  constructor (props) {
-    super(props)
-
-    this.onPress = this.onPress.bind(this)
-  }
-
-  onPress () {
+  onPress = () => {
     const { link } = this.props
-
     if (!link) return
-
     Linking.canOpenURL(link).then(supported => {
       if (supported) {
         Linking.openURL(link).catch(err => {
@@ -47,7 +41,7 @@ class SocialLink extends React.Component {
 
     return (
       <TouchableWithMargin style={{flexDirection: 'row'}} onPress={this.onPress}>
-        <Icon name={icon} color={Colors.reactFinlandBlue} size={Metrics.icons.medium} />
+        <Icon name={getIcon(link)} color={Colors.reactFinlandBlue} size={Metrics.icons.medium} />
         { children }
       </TouchableWithMargin>
     )

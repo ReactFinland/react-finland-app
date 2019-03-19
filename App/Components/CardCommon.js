@@ -3,7 +3,7 @@ import { Fonts, Colors } from '../Themes'
 
 export const Container = styled.View`
   background-color: ${props => props.nonopenable ? Colors.transparent : Colors.snow};
-  padding: 10px;
+  padding: 20px;
   border-bottom-color: ${Colors.grey};
   border-bottom-width: ${props => props.nonopenable ? '0px' : '1px'};;
 `
@@ -14,7 +14,7 @@ justify-content: flex-end;
 
 export const Speaker = styled.Text`
 color: ${Colors.charcoal};
-font-size: ${Fonts.size.small};
+font-size: ${Fonts.size.medium};
 font-family: ${Fonts.type.base};
 padding-top: 5px;
 `
