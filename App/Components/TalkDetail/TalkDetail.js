@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Platform } from 'react-native'
+import { Button } from 'react-native'
 import SpeakerList from './SpeakerList'
 import { Colors, Fonts, Metrics } from '../../Themes'
 import SocialLink from '../SocialLink'
@@ -20,7 +20,7 @@ const Top = styled.View`
   padding: ${Metrics.doubleBaseMargin}px;
 `
 const Bottom = styled.View`
-  padding: ${Metrics.doubleBaseMargin}px;
+  margin: ${Metrics.doubleSection}px;
 `
 const LocationWrapper = styled.View`
   padding-left:${Metrics.baseMargin}px;
@@ -57,7 +57,7 @@ const getLocationLink = location => encodeURI(`https://www.google.com/maps/place
 
 class TalkDetail extends React.Component {
   render () {
-    const { title, description, speakers, location } = this.props
+    const { title, description, speakers, location, navigation } = this.props
     return (
       <BackgroundImage resizeMode='cover' source={require('../../Images/react-finland-background.png')} >
         <Container>
@@ -76,6 +76,7 @@ class TalkDetail extends React.Component {
           {speakers && <SpeakerList speakers={speakers} />}
           <Bottom>
             <Description>{description}</Description>
+            <Button style={{marginBottom: 50}} onPress={() => navigation.navigate('FeedbackScreen')} title="FeedBack" />
           </Bottom>
         </Container>
       </BackgroundImage>

@@ -2,7 +2,9 @@ import React from 'react'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 
 import TalkScreen from '../Containers/TalkScreen'
+import FeedbackScreen from '../Containers/FeedbackScreen'
 import TalkDetails from '../Containers/TalkDetailsScreen'
+
 import { Colors, Fonts } from '../Themes'
 import BuyTicketsLink from './BuyTicketsLink'
 import MenuButton from './MenuButton'
@@ -62,6 +64,17 @@ const ScheduleStack = StackNavigator({
         headerLeft: <MenuButton onPress={() => navigation.navigate('DrawerOpen')} />,
         title: 'Schedule',
         headerTitleStyle
+      }
+    }
+  },
+  FeedbackScreen: {
+    screen: FeedbackScreen,
+    navigationOptions: {
+      headerRight: <BuyTicketsLink />,
+      headerBackTitleStyle: {
+        fontFamily: Fonts.type.base,
+        fontSize: Fonts.size.regular,
+        color: Colors.reactFinlandBlue
       }
     }
   },
