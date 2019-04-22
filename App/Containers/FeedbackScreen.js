@@ -1,39 +1,38 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import gql from 'graphql-tag'
 import { ScrollView, Text, KeyboardAvoidingView, TextInput } from 'react-native'
 import { connect } from 'react-redux'
-import { Input, Card, Button, Rating, ButtonGroup } from 'react-native-elements'
-
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { Card, Button, Rating, ButtonGroup } from 'react-native-elements'
 
 import styles from './Styles/FeedbackScreenStyle'
 
 const sendMessage = message => {
-  console.tron.log(message)
+  return fetch('https://rf2019-mern.herokuapp.com/feedback', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(message),
+  }).then((response) => {
+    return response.json()
+  }).catch((error) => {
+      console.tron.error(error);
+  });
 }
 
-class FeedbackScreen extends Component {
-  state = {
-    rating: 5,
-    feedback: '',
-    selectedIndex: 0
-  }
-  setRating = rating => this.setState({rating})
-  updateIndex = (selectedIndex) => {
-    this.setState({selectedIndex})
-  }
-  render () {
-    const buttons = ['Feedback', 'Question']
-  
-    const { rating, selectedIndex, feedback } = this.state
-    const { selectedSession, navigation } = this.props
-    return (
+const FeedbackScreen = ({ selectedSession, navigation }) => {
+  const [selectedIndex, setSelectedIndex ] = useState(0)
+  const [feedback, setFeedback ] = useState('')
+  const [rating, setRating ] = useState(5)
+  return (
       <ScrollView style={styles.container}>
         <KeyboardAvoidingView behavior='position'>
         <Card>
         <ButtonGroup
-          onPress={this.updateIndex}
+          onPress={v => setSelectedIndex(v)}
           selectedIndex={selectedIndex}
-          buttons={buttons}
+          buttons={['Feedback', 'Question']}
           containerStyle={{height: 40}}
         />
         <Text style={{marginTop: 20}} >Your {selectedIndex == 0 ? 'feedback' : 'question' } to:</Text>
@@ -43,25 +42,25 @@ class FeedbackScreen extends Component {
             type='heart'
             ratingCount={5}
             startingValue={5}
-            onFinishRating={rating => this.setRating(rating)}
+            onFinishRating={rating => setRating(rating)}
             imageSize={60}
             />
           }
-
              <TextInput
                multiline 
-               onChangeText={feedback => this.setState({feedback})}
+               onChangeText={feedback => setFeedback(feedback)}
                umberOfLines={8}
                style={{ marginBottom: 40, height: 200, backgroundColor: '#eee' }}
                />
-             <Button onPress={() => sendMessage({ rating: selectedIndex === 0 ? rating : null , feedback, type: selectedIndex === 0 ? 'feedback' : 'question'})} title='Send'></Button>
+             <Button onPress={() => {
+               sendMessage({session_name: selectedSession.title, rating: selectedIndex === 0 ? rating : null , feedback, type: selectedIndex === 0 ? 'feedback' : 'question'})
+               .then(r => console.tron.log(r))
+               }} title='Send'></Button>
              <Button style={{paddingTop: 20}} onPress={() => navigation.goBack()} title='Go Back'></Button>
-
           </Card>
         </KeyboardAvoidingView>
       </ScrollView>
     )
-  }
 }
 
 const mapStateToProps = ({ schedule: { selectedSession } }) => {

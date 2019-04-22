@@ -35,7 +35,7 @@
     "prop-types": "^15.5.10",
     "querystringify": "0.0.4",
     "ramda": "^0.24.1",
-    "react": "16.6.3",
+    "react": "^16.8.6",
     "react-apollo": "^2.2.4",
     "react-native": "^0.59.4",
     "react-native-animatable": "^1.2.4",
