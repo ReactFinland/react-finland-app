@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import gql from 'graphql-tag'
+import Toast from 'react-native-simple-toast'
+
 import { ScrollView, Text, KeyboardAvoidingView, TextInput } from 'react-native'
 import { connect } from 'react-redux'
 import { Card, Button, Rating, ButtonGroup } from 'react-native-elements'
@@ -22,6 +24,7 @@ const sendMessage = message => {
 }
 
 const FeedbackScreen = ({ selectedSession, navigation }) => {
+  const [ sending, setSending ] = useState(false)
   const [selectedIndex, setSelectedIndex ] = useState(0)
   const [feedback, setFeedback ] = useState('')
   const [rating, setRating ] = useState(5)
@@ -52,10 +55,18 @@ const FeedbackScreen = ({ selectedSession, navigation }) => {
                umberOfLines={8}
                style={{ marginBottom: 40, height: 200, backgroundColor: '#eee' }}
                />
-             <Button onPress={() => {
+             <Button disabled={sending} onPress={() => {
+               setSending(true)
                sendMessage({session_name: selectedSession.title, rating: selectedIndex === 0 ? rating : null , feedback, type: selectedIndex === 0 ? 'feedback' : 'question'})
-               .then(r => console.tron.log(r))
-               }} title='Send'></Button>
+               .then(r => {
+                 Toast.show('Feedback sent.');
+                 navigation.goBack()
+                 setSending(false)
+               }).catch(e => {
+                 Toast.show('Sending feedback failed.');
+                 setSending(false)
+               })
+               }} title={sending ? 'Sending...' : 'Send'}></Button>
              <Button style={{paddingTop: 20}} onPress={() => navigation.goBack()} title='Go Back'></Button>
           </Card>
         </KeyboardAvoidingView>
