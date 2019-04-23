@@ -23,11 +23,6 @@ const getSchedules = {
                 url
               }
             }
-           location {
-             name,
-             city,
-             address
-           }
          }
        }
      }
