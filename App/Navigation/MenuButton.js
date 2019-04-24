@@ -5,6 +5,9 @@ import styled from 'styled-components/native'
 import { Colors, Metrics, Fonts } from '../Themes'
 
 const TouchableOpacity = styled.TouchableOpacity`
+  padding-left: 10px
+  height: 30px;
+  width: 50px;
   flex-direction: row;
   align-items: center;
   margin-left: 10;
